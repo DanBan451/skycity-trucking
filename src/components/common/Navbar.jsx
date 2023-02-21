@@ -24,8 +24,6 @@ function NavBarComponent({ navigation }) {
                   isActive ? classes.active : classes.nonActive
                 }`
               }
-
-              exact
               to="/home"
             >
               Home
@@ -37,7 +35,6 @@ function NavBarComponent({ navigation }) {
               }`
             }
               style={{ textAlign: "center", padding: 15 }}
-              exact
               to="/about"
             >
               About Us
@@ -49,7 +46,6 @@ function NavBarComponent({ navigation }) {
               }`
             }
               style={{ textAlign: "center", padding: 15 }}
-              exact
               to="/services"
             >
               Our Services
@@ -81,10 +77,10 @@ function NavBarComponent({ navigation }) {
             <Link className="btn quote-btn" to={"/contact"}>
               Get a Quote
             </Link>
-            <Button className="option">ENG</Button>
+            {/* <Button className="option">ENG</Button>
             <Button className="option">PYC</Button>
             <Button className="option">YKP</Button>
-            <img src={globe} className={classes.globe} />
+            <img src={globe} className={classes.globe} /> */}
           </div>
         </Navbar.Collapse>
       </Container>

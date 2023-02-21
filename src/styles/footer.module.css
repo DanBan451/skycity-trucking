@@ -50,6 +50,13 @@ li,
   margin-bottom: 20px;
 }
 
+.active {
+  color: #017de9;
+}
+.nonActive {
+  color: black;
+}
+
 /* .footer .brand ul {
   padding-left: 0;
   display: flex;
