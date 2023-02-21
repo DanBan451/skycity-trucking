@@ -1,0 +1,73 @@
+.contactWrapper {
+  height: 40vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contactWrapper > * {
+  height: 25%;
+}
+.contactWrapper h1 {
+  /* font-size: 50px; */
+  font-size: clamp(30px, 3vw, 50px);
+  font-weight: bold;
+  margin: 0 20px; 
+}
+
+.contactButtons button {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 15px 60px;
+  border-radius: 30px;
+  color: white;
+  border-width: 0;
+  transition: 0.3s;
+  font-size: clamp(20px, 1.5vw, 25px);
+  padding: clamp(15px, 1vw, 30px) clamp(50px, 3vw, 80px);
+}
+.contactButtons button:first-of-type {
+  margin-right: 2%;
+  background-color: #3e98ff;
+}
+.contactButtons button:first-of-type:hover {
+  background-color: white;
+  color: black;
+}
+
+.contactButtons button:last-of-type {
+  margin-left: 2%;
+  background-color: #204773;
+}
+.contactButtons button:last-of-type:hover {
+  background-color: white;
+  color: black;
+}
+
+@media only screen and (max-width: 500px) {
+  .contactWrapper {
+    height: clamp(350px, 35vw, 1000px);
+    justify-content: space-evenly;
+  }
+  .contactButtons {
+    display: flex;
+    flex-direction: column;
+    /* padding: 0 clamp(100px, 60vw, 200px); */
+    justify-content: center;
+    width: clamp(235px, 50vw, 300px);
+    margin: 0 auto;
+    padding: 0;
+  }
+  .contactButtons button {
+    padding: clamp(15px, 1.5vw, 20px) clamp(20px, 2vw, 40px);
+    font-size: clamp(15px, 1.3vw, 25px);
+    font-weight: bold;
+    color: white;
+    border-width: 0;
+    transition: 0.3s;
+    margin: 10px 0;    
+  }
+  .contactButtons button:last-of-type {
+    margin-left: 0;
+  }
+}

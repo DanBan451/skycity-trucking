@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600&display=swap');
+
+
+h1, h2, span, button {
+	font-family: 'Poppins', sans-serif;	
+}
+h1 { font-weight: 600; }
+h2 { font-weight: 500; }
+span, button { font-weight: 400; }
+
+/* ------------------------Header */
+
+.about {
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 15vh;
+}
+.about span {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 18px;
+}
+.about h1 br {
+  display: none;
+}
+.about span br {
+  display: none;
+}
+
+/* services */
+
+.services {
+  display: grid;  
+  grid-template-columns: 1fr;    
+}
+.service {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+.service div {
+	margin: 25px;
+	margin-bottom: 0px;
+}
+.services .serviceImage {
+	height: 30vh;	
+	background-size: cover;
+	background-position: center;
+	background-color: palegoldenrod;	
+}
+.services h1 {
+  margin: 20px 0;
+}
+.services span {
+  font-size: 18px;
+  display: block;  
+}
+.services .serviceBtn {
+  margin-top: 20px;
+  margin-bottom: 20px;  
+  display: inline-block;      
+}
+.services .serviceBtn {
+  background-color: #0275d8;
+  color: white;
+  margin-bottom: 0;
+}
+.services .serviceBtn:hover {
+  color: black;
+}
+
+.buttonsWrapper {	
+	text-align: center;
+	margin-bottom: 100px;
+}
+.buttonsWrapper h1 {
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-bottom: 30px;
+}
+.buttonsWrapper .buttons .quoteBtn {
+  margin: 8px;  
+}
+.buttonsWrapper .buttons .quoteBtn:nth-child(1) {
+  background-color: #0275d8;
+  color: white;
+}
+.buttonsWrapper .buttons .quoteBtn:nth-child(1):hover {
+  color: black;
+  background-color: white;
+}
+.buttonsWrapper .buttons .quoteBtn:nth-child(2) {
+  background-color: black;
+  color: white;
+}
+.buttonsWrapper .buttons .quoteBtn:nth-child(2):hover {
+  color: black;
+  background-color: white;
+}
+
+@media only screen and (min-width: 600px) {
+  .services {
+    max-width: 750px;
+    margin: auto;
+  }
+  /* .service  */
+  .services img {
+    width: 90%;
+    margin: auto;    
+  }
+  .services div {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .services div {
+    width: 90%;    
+  }
+}
+
+@media only screen and (min-width: 935px) {
+  .about {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .services {
+    width: 80%;
+    max-width: none;
+    margin: auto;
+		margin-bottom: 100px;
+  }  
+  .services .service {
+    flex-direction: row;
+    width: 100%;
+		min-height: 40vh;    
+    max-width: none;
+
+  }
+  .services .service.rev {
+    flex-flow: row-reverse;
+  }
+  .services .service:first-of-type h1 {
+    padding-top: 0px;
+  }
+  .services .service:last-of-type .serviceBtn {
+    margin-bottom: 0px;    
+  }
+
+  .services div {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 0;
+    margin-bottom: 0;
+		justify-content: center;
+		min-height: 0;
+  }   
+  .services h1 {
+    margin-bottom: auto;
+    margin-top: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+  }
+  .services .serviceImage {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+  }
+  .services .serviceBtn {
+    margin-bottom: 20px;
+		width: fit-content;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .about span {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 25px;
+  }
+  .about h1 br {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1260px) {
+  .about span br {
+    display: block;
+  }
+  .services {
+    width: 100%;
+		padding: 20px;    
+  }
+  .services .service {
+		margin-top: auto;		
+		overflow-y: visible;
+		display: flex;		
+    height: 48vh;		
+	}
+	.services .service img {						
+		flex-grow: 0;		
+	}
+	.services .service div {
+		justify-content: center;
+		padding: 0 20px;		
+	}
+
+  .services h1 {
+    font-size: 35px;		
+  }
+  .services span {
+    font-size: 21px;
+  }
+  .services .serviceBtn {
+    font-size: 25px;    
+    display: inline-block;
+    width: fit-content;    
+  } 
+  .buttonsWrapper .buttons .quoteBtn {
+		font-size: 25px;
+    margin: 20px;
+  }  
+}
+
+@media only screen and (min-width: 1600px) {
+	.services {    
+		padding: 75px;
+	}
+	.services .service div {		
+		padding: 0 75px;
+	}  
+}

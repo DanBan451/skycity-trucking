@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600&display=swap');
+
+/* mobile */
+
+.headerWrapper {  
+  margin-bottom: 15vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  width: 100%;
+  height: 50vh;
+  margin: 0 auto;
+  margin-top: 2vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(20, 39, 74, 0.5);
+  background-blend-mode: multiply;
+}
+.header * br {
+  display: none;
+}
+
+/* generic buttons */
+
+.headerButtons a {  
+  margin: 8px;
+  font-family: 'Poppins', sans-serif;	
+  font-weight: 400;
+  text-decoration: none;
+  color: black;      
+  background-color: red;
+  display: inline-block;
+  padding: 12 7;
+  margin: 7 12;
+}
+.headerButtons a:nth-child(1) {
+  background-color: #0275d8;
+  color: white;
+}
+.headerButtons a:nth-child(1):hover {
+  color: white;
+}
+.headerButtons a:nth-child(2) {
+  background-color: white;
+}
+.headerButtons a:nth-child(2):hover {
+  color: white;
+}
+
+/* outside buttons */
+.headerWrapper > .headerButtons {
+  display: none;
+  position: relative; 
+  margin-top: 175px;
+  margin-left: auto;;
+  margin-right: auto;;
+  margin-left: auto;
+}
+.headerWrapper > .headerButtons a:first-of-type:hover {
+  color: black;
+}
+.headerWrapper > .headerButtons a:last-of-type {
+  background-color: black;
+  color: white;
+}
+.headerWrapper > .headerButtons a:last-of-type:hover {
+  color: black;
+  background-color: white;
+}
+
+/* inside buttons */
+
+.header > .headerButtons {
+  display: none;
+}
+
+
+.header .headerContent {
+  text-align: center;
+  width: 90%;  
+  margin: auto;
+  margin-bottom: 0;
+}
+
+.headerContent h1,
+h2 {
+  color: white;
+  text-align: center;
+  margin: 0 auto;    
+}
+.headerContent h2 {
+  margin: 20px 0;
+}
+.headerContent img {
+  width: 35px;
+  margin-top: 80px;
+}
+
+.pagination {
+  display: flex;
+  margin-left: auto;
+  align-items: right;
+  flex-direction: row-reverse;
+}
+.pagination img {
+  width: 10px;
+  height: 10px;
+  margin: 5px;  
+}
+
+/* laptop */
+
+@media only screen and (min-width: 1200px) {  
+  .header * br {
+    display: block;
+  }
+  .header {
+    background-color: rgba(20, 39, 74, 0);    
+  }
+  .headerContent {
+    display: none;
+  }
+  .pagination {
+    margin-top: auto;        
+  }
+
+  .header {
+    width: 85%;      
+    margin: 0 auto;        
+  }
+  .header .headerContent {
+    margin: 0;
+    margin-left: 30px;
+    margin-top: auto;    
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-around;    
+    background-color: white;    
+    height: fit-content; 
+    text-align: left;
+    width: fit-content;
+    padding: 10px;
+    top: 260px;  
+  }
+  .headerContent h1 { 
+    font-size: 40px;
+    font-weight: 600;  
+    line-height: 1.4;
+    margin-bottom: 5px;
+    color: black;    
+    text-align: left;    
+  }
+  .headerContent h2 {
+    line-height: 1.4;
+    font-size: 23px;
+    color: black;
+    text-align: left;
+  }  
+  .headerButtons a {    
+    font-size: 25px;
+    margin: 20px;
+  }
+  .header .headerContent .headerButtons {
+    display: none;
+  }
+  .headerWrapper > .headerButtons {
+    display: block;
+  }
+  .header a {
+    display: none;
+  }
+  
+}
+
