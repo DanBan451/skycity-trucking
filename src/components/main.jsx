@@ -6,12 +6,9 @@ import Footer from "../components/common/Footer";
 
 import warehouse from "../images/home/petrebels-JwMGy1h-JsY-unsplash.jpg";
 
-// Figured it out! It is the images that extensions you have changed!!!!!!!!
-
-
 import twoSemisOnRoad from "../images/home/warehouse.jpg";
 // import twoSemisOnRoad from "../images/home/IMG_5421.jpg";
-import semiOnRoad from "../images/home/warehouse.jpg";
+import semiOnRoad from "../images/home/trusted.jpg";
 // import semiOnRoad from "../images/home/IMG_5417.jpg";
 
 import largeSemi from "../images/home/Large-semi-truck-hauling-freight-on-the-open-highway-in-the-western-USA-under-an-evening-sky.jpg";
