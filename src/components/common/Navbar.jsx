@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { IndexLink, NavLink, Link } from "react-router-dom";
+import { withRouter } from "react-router";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import logo from "../../images/company-logo.png";
 import globe from "../../images/home/globe.svg";
 import classes from "../../styles/navbar.module.css";
 
-function NavBarComponent({ navigation }) {
+function NavBarComponent({ navigation }) {  
   return (
     <Navbar id={classes.navWrapper} expand="xl" className={classes.navbar}>
       <Container className="navbar-inner" fluid>
@@ -17,52 +18,69 @@ function NavBarComponent({ navigation }) {
           <Nav className={`me-auto my-2 my-lg-0 ${classes.navBar}`}>
             <NavLink
               style={{ textAlign: "center", padding: 15 }}
-              className={[classes.navLink]}
-              exact={"true"}
-              // activeClassName={classes.activeClass}              
+
+              className={({isActive}) =>
+                `${classes.navLink} ${
+                  isActive ? classes.active : classes.nonActive
+                }`
+              }
+
+              exact
               to="/home"
             >
               Home
             </NavLink>
             <NavLink
-              className={classes.navLink}
+              className={({isActive}) =>
+              `${classes.navLink} ${
+                isActive ? classes.active : classes.nonActive
+              }`
+            }
               style={{ textAlign: "center", padding: 15 }}
-              exact={"true"}
-              // activeClassName={classes.activeClass} 
+              exact
               to="/about"
             >
               About Us
             </NavLink>
             <NavLink
-              className={classes.navLink}
+              className={({isActive}) =>
+              `${classes.navLink} ${
+                isActive ? classes.active : classes.nonActive
+              }`
+            }
               style={{ textAlign: "center", padding: 15 }}
-              exact={"true"}
-              // activeClassName={classes.activeClass} 
+              exact
               to="/services"
             >
               Our Services
             </NavLink>
             <NavLink
-              className={classes.navLink}
+              className={({isActive}) =>
+              `${classes.navLink} ${
+                isActive ? classes.active : classes.nonActive
+              }`
+            }
               style={{ textAlign: "center", padding: 15 }}
-              exact={"true"}
-              // activeClassName={classes.activeClass} 
               to="/contact"
             >
               Contact Us
             </NavLink>
             <NavLink
-              className={classes.navLink}
+              className={({isActive}) =>
+              `${classes.navLink} ${
+                isActive ? classes.active : classes.nonActive
+              }`
+            }
               style={{ textAlign: "center", padding: 15 }}
-              exact={"true"}
-              // activeClassName={classes.activeClass} 
               to="/careers"
             >
               Careers
             </NavLink>
           </Nav>
           <div className="d-flex options-container">
-            <Link className="btn quote-btn" to={'/contact'}>Get a Quote</Link>
+            <Link className="btn quote-btn" to={"/contact"}>
+              Get a Quote
+            </Link>
             <Button className="option">ENG</Button>
             <Button className="option">PYC</Button>
             <Button className="option">YKP</Button>

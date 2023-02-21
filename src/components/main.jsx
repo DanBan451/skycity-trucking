@@ -5,8 +5,10 @@ import Service from "../components/common/service";
 import Footer from "../components/common/Footer";
 
 import warehouse from "../images/home/petrebels-JwMGy1h-JsY-unsplash.jpg";
-import semiOnRoad from "../images/home/IMG_5417.JPG";
-import twoSemisOnRoad from "../images/home/IMG_5421.JPG";
+
+import twoSemisOnRoad from "../images/home/IMG_5421.jpg";
+import semiOnRoad from "../images/home/IMG_5417.jpg";
+
 import largeSemi from "../images/home/Large-semi-truck-hauling-freight-on-the-open-highway-in-the-western-USA-under-an-evening-sky.jpg";
 import personLookingAtComputer from "../images/home/thisisengineering-raeng-lLrZy195sIU-unsplash.jpg";
 

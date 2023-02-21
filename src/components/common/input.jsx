@@ -10,7 +10,7 @@ const Input = ({ name, value, onChange, label, error, classes  }) => {
         placeholder={label}
         className={classes.input}
         />
-        {error && <div className={`alert alert-danger m-0 ${classes.error}`}>{error}</div>}
+        {error && <div className={`alert alert-danger m-0${classes.error}`}>{error}</div>}
     </div>
   );
 };

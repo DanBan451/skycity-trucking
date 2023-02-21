@@ -69,6 +69,9 @@ ul.careerList .career div h1 {
 ul.careerList .career div span {
   font-size: 20px;  
 }
+ul.careerList .career div img {
+  max-height: 367px;
+}
 
 
 .benefitsWrapper {
@@ -84,14 +87,6 @@ ul.careerList .career div span {
 }
 
 .benefitsWrapper ul {  
-  /* list-style: none;
-  padding-left: 0;  
-  gap: 20px;
-  margin: auto;
-  margin-bottom: 100px;  
-  width: max-content;
-  display: grid;     */
-  /* width: fit-content; */
   display: grid;  
   margin-left: auto;
   margin-right: auto;  
@@ -137,7 +132,7 @@ ul.careerList .career div span {
   max-width: 700px;    
   margin: auto;  
   row-gap: 20px;  
-  margin-bottom: 10vh;
+  margin-bottom: 10vh; 
 }
 .form > div {    
   display: flex;    
@@ -153,6 +148,7 @@ ul.careerList .career div span {
   display: inline-block;    
   width: 100%;    
   padding-left: 20px;  
+  margin-bottom: 10px;
 }
 .form > .required::before {
   content: '*';    

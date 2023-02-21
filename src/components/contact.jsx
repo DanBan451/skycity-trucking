@@ -10,14 +10,14 @@ import fax from "../images/contact/fax.svg";
 import Joi from "joi-browser";
 import Input from "../components/common/input";
 import ReCAPTCHA from "react-google-recaptcha";
+import emailjs from "emailjs-com";
 
 const schema = {
   firstName: Joi.string().required().label("First Name"),
   lastName: Joi.string().required().label("Last Name"),
   email: Joi.string().required().email({ allowTld: true }).label("Email"),
   phone: Joi.number().required().label("Phone"),
-  zipcode: Joi.number().required().label("Zipcode"),
-  state: Joi.string().required().label("State"),
+  description: Joi.string().min(10).max(300).label("Description"),  
 };
 
 export default function Contact() {
@@ -25,10 +25,8 @@ export default function Contact() {
     firstName: "",
     lastName: "",
     email: "",
-    phone: "",
-    zipcode: "",
-    state: "",
-    description: "",
+    phone: "",  
+    description: ""
   });
   const [errors, setErrors] = useState({});
 
@@ -40,7 +38,9 @@ export default function Contact() {
     if (errors) return;
 
     // call server
-    console.log("submitted");
+    emailjs.sendForm('service_jttihy6', 'template_kntzqvm', e.target, '9l16KYABsgoVopG9i').then(res=>{
+      console.log(res);
+    }).catch(err=> console.log(err));        
   };
 
   const handleChange = ({ target }) => {
@@ -72,13 +72,14 @@ export default function Contact() {
       abortEarly: false,
     };
     let { error: result } = Joi.validate(data, schema, options);
-
-    console.log(result.details[0].message);
-    result.details.forEach((element) => {
-      errors[element.context.key] = element.message;
-    });
-
-    return Object.keys(errors).length ? errors : null;
+    
+    if (result) {
+      result.details.forEach((element) => {
+        errors[element.context.key] = element.message;
+      });
+      return errors;
+    }
+    return null;      
   };
 
   return (
@@ -92,7 +93,7 @@ export default function Contact() {
             value={data.firstName}
             onChange={handleChange}
             label={"First Name"}
-            error={errors.firstName}
+            error={errors?.firstName}
             classes={classes}
           />
           <Input
@@ -100,7 +101,7 @@ export default function Contact() {
             value={data.lastName}
             onChange={handleChange}
             label={"Last Name"}
-            error={errors.lastName}
+            error={errors?.lastName}
             classes={classes}
           />
           <Input
@@ -108,73 +109,43 @@ export default function Contact() {
             value={data.email}
             onChange={handleChange}
             label={"Email"}
-            error={errors.email}
+            error={errors?.email}
             classes={classes}
           />
           <Input
             name="phone"
-            value={data.phone}
+            value={data?.phone}
             onChange={handleChange}
             label={"Phone Number"}
-            error={errors.phone}
+            error={errors?.phone}
             classes={classes}
           />
-          <Input
-            name="zipcode"
-            value={data.zipcode}
-            onChange={handleChange}
-            label={"Zipcode"}
-            error={errors.zipcode}
-            classes={classes}
-          />
-          <Input
-            name="state"
-            value={data.state}
-            onChange={handleChange}
-            label={"State"}
-            error={errors.state}
-            classes={classes}
-          />
+          <div className={classes.textArea}>
+            <textarea
+              name="description"
+              value={data?.description}
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="How can we help you?"
+              onChange={handleChange}
+            />
+            {errors?.description && (
+              <div className={`alert alert-danger m-0 mb-3 ${classes.error}`}>
+                {errors?.description}
+              </div>
+            )}
+          </div>
           <ReCAPTCHA
             sitekey="6LfqImYkAAAAAL8VkvEQy-uxn1x_vAYWtcsot2ZA"
-            style={{
-              gridColumn: "1 / span 2",
-              marginTop: "20px",
-            }}
+            style={{ gridColumn: "1 / span 2" }}
+            // (errors.recaptcha && { border: "1px solid red" })
           />
           <button className={"btn btn-primary btn-sm"} type="submit">
             Send Message
           </button>
         </form>
 
-        {/* <div className={classes.form}>
-          <div className={classes.required}>
-            <input type="text" placeholder="First Name" />
-          </div>
-          <div className={classes.required}>
-            <input type="text" placeholder="Last Name" />
-          </div>
-          <div className={classes.required}>
-            <input type="text" placeholder="Email" />
-          </div>
-          <div className={classes.required}>
-            <input type="text" placeholder="Phone Number" />
-          </div>
-          <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="How can we help you?"
-          ></textarea>
-          <ReCAPTCHA
-            sitekey="6LfqImYkAAAAAL8VkvEQy-uxn1x_vAYWtcsot2ZA"
-            style={{
-              gridColumn: "1 / span 2",
-            }}
-          />
-          <button className={"btn btn-primary btn-sm"}>Send Message</button>
-        </div> */}
         <div className={classes.content}>
           <div className={classes.text}>
             <div className={classes.item}>

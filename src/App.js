@@ -10,8 +10,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
+    <BrowserRouter>      
+      <Routes>                
         <Route path="/" element={<Main />} />        
         <Route path="/home" element={<Main />} />        
         <Route path="/about" element={<About />} />        

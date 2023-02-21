@@ -4,6 +4,7 @@ import FooterComponent from "../components/common/Footer";
 import Joi from "joi-browser";
 import Input from "../components/common/input";
 import ReCAPTCHA from "react-google-recaptcha";
+import emailjs from "emailjs-com";
 
 // images
 import group from "../images/careers/memento-media-SuDN17Hzudc-unsplash.jpg";
@@ -36,20 +37,23 @@ export default function Careers() {
     email: "",
     phone: "",
     zipcode: "",
-    state: "",
-    description: "",
+    state: "",    
   });
   const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+      
     const errors = validate();
     setErrors(errors);
+    console.log(errors);
     if (errors) return;
-
+    
     // call server
-    console.log("submitted");
+    emailjs.sendForm('service_jttihy6', 'template_kntzqvm', e.target, '9l16KYABsgoVopG9i').then(res=>{
+      console.log(res);
+    }).catch(err=> console.log(err));  
+    
   };
 
   const handleChange = ({ target }) => {
@@ -81,13 +85,14 @@ export default function Careers() {
       abortEarly: false,
     };
     let { error: result } = Joi.validate(data, schema, options);
-
-    console.log(result.details[0].message);
-    result.details.forEach((element) => {
-      errors[element.context.key] = element.message;
-    });
-
-    return Object.keys(errors).length ? errors : null;
+    
+    if (result) {
+      result.details.forEach((element) => {
+        errors[element.context.key] = element.message;
+      });
+      return errors;
+    }
+    return null;    
   };
 
   return (
@@ -194,18 +199,18 @@ export default function Careers() {
         <form className={classes.form} onSubmit={handleSubmit}>
           <Input
             name="firstName"
-            value={data.firstName}
+            value={data?.firstName}
             onChange={handleChange}
             label={"First Name"}
-            error={errors.firstName}
+            error={errors?.firstName}
             classes={classes}
           />
           <Input
             name="lastName"
-            value={data.lastName}
+            value={data?.lastName}
             onChange={handleChange}
             label={"Last Name"}
-            error={errors.lastName}
+            error={errors?.lastName}
             classes={classes}
           />
           <Input
@@ -213,31 +218,31 @@ export default function Careers() {
             value={data.email}
             onChange={handleChange}
             label={"Email"}
-            error={errors.email}
+            error={errors?.email}
             classes={classes}
           />
           <Input
             name="phone"
-            value={data.phone}
+            value={data?.phone}
             onChange={handleChange}
             label={"Phone Number"}
-            error={errors.phone}
+            error={errors?.phone}
             classes={classes}
           />
           <Input
             name="zipcode"
-            value={data.zipcode}
+            value={data?.zipcode}
             onChange={handleChange}
             label={"Zipcode"}
-            error={errors.zipcode}
+            error={errors?.zipcode}
             classes={classes}
           />
           <Input
             name="state"
-            value={data.state}
+            value={data?.state}
             onChange={handleChange}
             label={"State"}
-            error={errors.state}
+            error={errors?.state}
             classes={classes}
           />
           <ReCAPTCHA

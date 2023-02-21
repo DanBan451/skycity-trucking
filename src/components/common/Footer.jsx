@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../images/company-logo.png";
 import facebookIcon from "../../images/socials/facebook.svg";
 import instagramIcon from "../../images/socials/instagram.svg";
@@ -32,7 +32,17 @@ export default function FooterComponent() {
             <ul>
               <li>Quick Links</li>
               <li>
-                <Link to="/home">Home</Link>
+                <NavLink
+                  className={({ isActive }) =>
+                    `${classes.navLink} ${
+                      isActive ? classes.active : classes.nonActive
+                    }`
+                  }
+                  style={{ textAlign: "center", padding: 15 }}
+                  exact
+                  to="/about"
+                />
+                {/* <Link to="/home">Home</Link> */}
               </li>
               <li>
                 <Link to="/about">About Us</Link>
@@ -76,7 +86,13 @@ export default function FooterComponent() {
           </ul>
         </div>
       </div>
-      <div className={classes.copyright}><span>© Copyright 2022 by Sky City Trucking.<br/>All Rights Reserved.</span></div>
+      <div className={classes.copyright}>
+        <span>
+          © Copyright 2022 by Sky City Trucking.
+          <br />
+          All Rights Reserved.
+        </span>
+      </div>
     </React.Fragment>
   );
 }

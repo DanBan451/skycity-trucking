@@ -21,8 +21,17 @@ a.navlink.nav-link {
   font-family: 'Poppins', sans-serif;	
   color: black;
 }
-.activeClass {
-  color: red;
+.navLink:hover {
+  color: #037de7;
+}
+.active {
+  color: #017de9;
+}
+.nonActive {
+  color: black;
+}
+.globe {
+  margin-left: 15px;
 }
 
 @media screen and (min-width: 1200px) {
