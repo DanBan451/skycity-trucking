@@ -5,7 +5,6 @@ import scrollDown from "../../images/icons8-scroll-down-100.png";
 
 import Image1 from "../../images/home/timelab-pro-sWOvgOOFk1g-unsplash.jpg";
 import Image2 from "../../images/home/airport.jpg";
-// import Image2 from "../../images/home/IMG_5418.jpg";
 // import Image3 from "../../images/home/warehouse.jpg";
 import Image3 from "../../images/home/airport.jpg";
 
