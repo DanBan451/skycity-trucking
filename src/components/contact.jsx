@@ -42,9 +42,9 @@ export default function Contact() {
     if (errors) return;
 
     // call server
-    // emailjs.sendForm('service_l080czw', 'template_zpqantl', e.target, 'HPTwBnzpPBp6w8zW0').then(res=>{
-    //   console.log(res);
-    // }).catch(err=> console.log(err));        
+    emailjs.sendForm('service_l080czw', 'template_zpqantl', e.target, 'HPTwBnzpPBp6w8zW0').then(res=>{
+      console.log(res);
+    }).catch(err=> console.log(err));        
 
     toast.success("Application Submitted!");
     var form = document.getElementById("application-form");

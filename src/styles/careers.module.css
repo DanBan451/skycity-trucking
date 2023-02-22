@@ -50,7 +50,7 @@ ul.careerList {
   max-width: 600px;
   margin: auto;
   gap: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 100px;  
 }
 ul.careerList .career {
   display: flex;
@@ -67,14 +67,13 @@ ul.careerList .career div h1 {
   text-decoration: underline;  
 }
 ul.careerList .career div span {
-  font-size: 20px;  
+  font-size: 16px;    
+  font-weight: 400;  
+  font-family: "Poppins", sans-serif;
 }
 ul.careerList .career img {
   max-width: 600px;
-  object-fit: cover;  
-  /* max-height: 400px; */
-  /* height: 300px;   */
-  /* border: 10px solid red; */
+  object-fit: cover;    
 }
 
 
@@ -87,7 +86,7 @@ ul.careerList .career img {
   margin-right: 10px;  
   text-align: center;
   font-weight: 400;
-  padding-bottom: 50px; 
+  padding-bottom: 50px;   
 }
 
 .benefitsWrapper ul {  
@@ -95,8 +94,10 @@ ul.careerList .career img {
   margin-left: auto;
   margin-right: auto;  
   margin-bottom: 0;
+  padding-left: 0;  
   padding-left: 0;
-  margin-left: 10%;
+  margin-left: 0;
+  margin: 0 10px    
 }
 
 .benefitsWrapper ul li {    
@@ -114,7 +115,8 @@ ul.careerList .career img {
 .benefitsWrapper ul li span {  
   margin: auto;
   margin-left: 0;
-  font-size: 25px;    
+  font-size: 20px;      
+  /* font-size: 25px;     */
   margin-right: auto;  
 }
 
@@ -170,6 +172,7 @@ ul.careerList .career img {
   border-bottom: 2px solid black;
   font-size: 16px;  
   padding: 15px 10px;   
+  border-radius: 0;
 }
 .form textarea {
   margin-bottom: 10px;
@@ -204,6 +207,12 @@ ul.careerList .career img {
 .form > :nth-last-child(1):hover { 
   background-color: white;
   color: black;
+}
+
+@media only screen and (min-width: 430px) {
+  .benefitsWrapper ul {
+    margin-left: 10%;
+  }
 }
 
 @media only screen and (min-width: 930px) {
@@ -247,8 +256,9 @@ ul.careerList .career img {
   }
   .listWrapper {
     display: flex;
-    max-width: 900px;     
-    margin-left: 15%;
+    max-width: 750px;                 
+    /* margin-left: 5%; */
+    margin: auto;
   }
   .benefitsWrapper ul {
     width: fit-content;    
@@ -294,6 +304,12 @@ ul.careerList .career img {
     padding-left: 3vw;
     padding-right: 3vw;
     padding-bottom: 3vw;
+  }
+  .listWrapper {
+    display: flex;
+    max-width: 900px;     
+    margin: 0;
+    margin-left: 15%;
   }
 }
 
