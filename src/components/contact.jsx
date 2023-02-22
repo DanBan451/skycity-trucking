@@ -152,7 +152,6 @@ export default function Contact() {
           <ReCAPTCHA
             sitekey="6LfqImYkAAAAAL8VkvEQy-uxn1x_vAYWtcsot2ZA"
             style={{ gridColumn: "1 / span 2" }}
-            // (errors.recaptcha && { border: "1px solid red" })
           />
             <button className={"btn btn-primary btn-sm"} type="submit" disabled={submitted || validate()}>
               Send Message
@@ -162,46 +161,62 @@ export default function Contact() {
         <div className={classes.content}>
           <div className={classes.text}>
             <div className={classes.item}>
-              <img src={location} alt="" />
-              <label htmlFor="">Headquarters: </label>
-              <span>4101 Industry Dr E, Suite I, Fife, WA 98424</span>
+              <div>
+                <img src={location} alt="" />
+                <label htmlFor="">Corporare office & warehouse: </label>
+              </div>
+              <span>5555 8th St E, Ste B, Fife, Wa 98424</span>
             </div>
             <div className={classes.item}>
-              <img src={mail} alt="" />
-              <label htmlFor="">Email: </label>
-              <span>info@skycitytrucking.com</span>
+              <div>
+                <img src={mail} alt="" />
+                <label htmlFor="">Email: </label>
+              </div>
+              <span>contact@skycitytrucking.com</span>
             </div>
             <div className={classes.item}>
-              <img src={phone} alt="" />
-              <label htmlFor="">Phone: </label>
+              <div>
+                <img src={phone} alt="" />
+                <label htmlFor="">Phone: </label>
+              </div>
               <span>(253) 719-8814</span>
             </div>
             <div className={classes.item}>
-              <img src={fax} alt="" />
-              <label htmlFor="">Fax: </label>
-              <span>(000) 000-000</span>
+              <div>
+                <img src={fax} alt="" />
+                <label htmlFor="">Fax: </label>
+              </div>
+              <span>206.260.7200</span>
             </div>
           </div>
           <div className={classes.text}>
             <div className={classes.item}>
-              <img src={location} alt="" />
-              <label htmlFor="">Branch: </label>
+              <div>
+                <img src={location} alt="" />              
+                <label htmlFor="">Warehouse office: </label>
+              </div>
               <span>4101 Industry Dr E, Suite I, Fife, WA 98424</span>
             </div>
             <div className={classes.item}>
-              <img src={mail} alt="" />
-              <label htmlFor="">Email: </label>
-              <span>info@skycitytrucking.com</span>
+              <div>
+                <img src={mail} alt="" />
+                <label htmlFor="">Email: </label>
+              </div>
+              <span>contact@skycitytrucking.com</span>
             </div>
             <div className={classes.item}>
-              <img src={phone} alt="" />
-              <label htmlFor="">Phone: </label>
+              <div>
+                <img src={phone} alt="" />
+                <label htmlFor="">Phone: </label>
+              </div>
               <span>(253) 719-8814</span>
             </div>
             <div className={classes.item}>
-              <img src={fax} alt="" />
-              <label htmlFor="">Fax: </label>
-              <span>(000) 000-000</span>
+              <div>
+                <img src={fax} alt="" />
+                <label htmlFor="">Fax: </label>
+              </div>
+              <span>206.260.7200</span>
             </div>
           </div>
         </div>

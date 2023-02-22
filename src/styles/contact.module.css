@@ -110,9 +110,7 @@ textarea:focus, input:focus{
   color: black;
 }
 
-.content {  
-  /* width: 85%;   */
-  /* max-width: 535px;     */
+.content {    
   width: 100%;
   max-width: 700px;    
   height: auto;
@@ -121,16 +119,23 @@ textarea:focus, input:focus{
   display: flex;  
   flex-direction: column;
   gap: 5vh;  
-  padding-left: 10px;
+  padding-left: 10px;  
+  margin-left: auto;  
+  margin-right: auto;
+  width: fit-content;
 }
 .text {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;    
+  justify-content: space-between;      
 }
 .text .item {
   padding: 10px 0;
   display: flex;
+  flex-direction: column;    
+}
+.text .item div {
+  display: flex;    
 }
 .text .item img {
   width: 30px;
@@ -144,12 +149,35 @@ textarea:focus, input:focus{
 }
 .text .item span {
   font-size: 18px;
+  margin: 10px 0;
 }
 
 .image {
   background-size: cover;      
   width: 40%;
   margin-left: auto;
+}
+
+@media only screen and (min-width: 650px) {  
+  .content {        
+    align-items: baseline;          
+  }
+  .text .item {    
+    flex-direction: row;    
+    display: block;   
+  }    
+  .text .item div {    
+    flex-direction: row;
+    display: inline;
+  }
+  .text .item div > * {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .text .item span {          
+    margin: 30px 0;            
+    width: auto;    
+  }
 }
 
 @media only screen and (min-width: 1200px) {  

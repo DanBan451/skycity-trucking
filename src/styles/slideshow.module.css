@@ -35,14 +35,13 @@
   font-weight: 500;
   text-decoration: none;
   color: black;
-  background-color: red;
   display: inline-block;
   padding: 12 7;
-  margin: 7 12;
+  margin: 7 12;  
 }
 .headerButtons a:nth-child(1) {
   background-color: #0275d8;
-  color: white;  
+  color: white;    
 }
 .headerButtons a:nth-child(1):hover {  
   border: 1px solid white;  
