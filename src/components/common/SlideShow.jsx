@@ -5,7 +5,6 @@ import scrollDown from "../../images/icons8-scroll-down-100.png";
 
 import Image1 from "../../images/home/timelab-pro-sWOvgOOFk1g-unsplash.jpg";
 import Image2 from "../../images/home/airport.jpg";
-// import Image3 from "../../images/home/warehouse.jpg";
 import Image3 from "../../images/home/betterimage.jpg";
 
 import openCircle from "../../images/home/icons8-circle-100.png";
@@ -45,10 +44,10 @@ class SlideShow extends Component {
               <br /> increase efficiency and deliver freight solutions.
             </h2>
             <div className={classes.headerButtons}>
-              <Link href="" className="btn">
+              <Link href="/contact" className="btn">
                 Ship with Sky City Trucking
               </Link>
-              <Link href="" className="btn">
+              <Link href="/careers" className="btn">
                 Drive for Sky City Trucking
               </Link>
             </div>
