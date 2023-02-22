@@ -1,7 +1,7 @@
 import React from "react";
 import NavbarComponent from "./common/Navbar";
 import FooterComponent from "./common/Footer";
-import aboutImage from "../images/austin-distel-mpN7xjKQ_Ns-unsplash.jpg";
+import aboutImage from "../images/aboutusimage.jpg";
 import arrow from "../images/blue-arrow.svg";
 
 import classes from "../styles/about.module.css";

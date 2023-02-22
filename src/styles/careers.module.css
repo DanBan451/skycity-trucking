@@ -55,7 +55,7 @@ ul.careerList {
 ul.careerList .career {
   display: flex;
   flex-direction: column;
-  gap: 30px;  
+  gap: 30px;    
 }
 ul.careerList .career div {
   display: flex;  
@@ -69,8 +69,12 @@ ul.careerList .career div h1 {
 ul.careerList .career div span {
   font-size: 20px;  
 }
-ul.careerList .career div img {
-  max-height: 367px;
+ul.careerList .career img {
+  max-width: 600px;
+  object-fit: cover;  
+  /* max-height: 400px; */
+  /* height: 300px;   */
+  /* border: 10px solid red; */
 }
 
 

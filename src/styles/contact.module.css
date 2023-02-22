@@ -85,7 +85,7 @@ textarea:focus, input:focus{
   /* grid-column: 1 / span 2;      */
   width: 100%;  
   border: 1.5px solid black;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   height: 17vh;  
   resize: none;
   padding: 10px 10px;     

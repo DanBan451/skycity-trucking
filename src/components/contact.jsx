@@ -11,6 +11,9 @@ import Joi from "joi-browser";
 import Input from "../components/common/input";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "emailjs-com";
+import { ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const schema = {
   firstName: Joi.string().required().label("First Name"),
@@ -29,6 +32,7 @@ export default function Contact() {
     description: ""
   });
   const [errors, setErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,9 +42,17 @@ export default function Contact() {
     if (errors) return;
 
     // call server
-    emailjs.sendForm('service_jttihy6', 'template_kntzqvm', e.target, '9l16KYABsgoVopG9i').then(res=>{
-      console.log(res);
-    }).catch(err=> console.log(err));        
+    // emailjs.sendForm('service_l080czw', 'template_zpqantl', e.target, 'HPTwBnzpPBp6w8zW0').then(res=>{
+    //   console.log(res);
+    // }).catch(err=> console.log(err));        
+
+    toast.success("Application Submitted!");
+    var form = document.getElementById("application-form");
+    var elements = form.elements;
+    for (var i = 0, len = elements.length; i < len; ++i) {
+      elements[i].readOnly = true;
+    }
+    setSubmitted(true);
   };
 
   const handleChange = ({ target }) => {
@@ -84,10 +96,11 @@ export default function Contact() {
 
   return (
     <div>
+      <ToastContainer />
       <NavbarComponent />
       <h1 className={classes.title}>Contact Us</h1>
       <div className={classes.contactWrapper}>
-        <form className={classes.form} onSubmit={handleSubmit}>
+        <form id='application-form' className={classes.form} onSubmit={handleSubmit} style={{ opacity: (submitted) ? 0.5 : 1 }}>
           <Input
             name="firstName"
             value={data.firstName}
@@ -141,9 +154,9 @@ export default function Contact() {
             style={{ gridColumn: "1 / span 2" }}
             // (errors.recaptcha && { border: "1px solid red" })
           />
-          <button className={"btn btn-primary btn-sm"} type="submit">
-            Send Message
-          </button>
+            <button className={"btn btn-primary btn-sm"} type="submit" disabled={submitted || validate()}>
+              Send Message
+            </button>
         </form>
 
         <div className={classes.content}>

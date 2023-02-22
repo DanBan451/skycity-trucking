@@ -5,8 +5,7 @@ import classes from "../../styles/main.module.css";
 
 const Service = ({ image, title, desc, actionCall, styles, endpoint }) => { 
   return (
-    <div className={`${classes.service} ${[styles]}`}>
-      {/* <img src={image} /> */}
+    <div className={`${classes.service} ${[styles]}`}>      
       <div style={{ backgroundImage: `url(${image})` }} className={`${classes.serviceImage}`} />
       <div>
         <h1>{title}</h1>

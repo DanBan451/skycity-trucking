@@ -28,6 +28,7 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center
 }
 
 .content {
@@ -174,7 +175,7 @@ h1 {
   height: 65%;    */
   width: 85%;
   height: 100%;
-  object-fit: cover;    
+  object-fit: cover;      
   box-shadow: 9px 10px 17px -5px rgba(0, 0, 0, 0.49);
   -webkit-box-shadow: 9px 10px 17px -5px rgba(0, 0, 0, 0.49);
   -moz-box-shadow: 9px 10px 17px -5px rgba(0, 0, 0, 0.49);

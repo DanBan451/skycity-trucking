@@ -6,20 +6,29 @@ import logo from "../../images/company-logo.png";
 import globe from "../../images/home/globe.svg";
 import classes from "../../styles/navbar.module.css";
 
-function NavBarComponent({ navigation }) {  
+function NavBarComponent({ navigation }) {
   return (
     <Navbar id={classes.navWrapper} expand="xl" className={classes.navbar}>
       <Container className="navbar-inner" fluid>
-        <Navbar.Brand to="#">
-          <img src={logo} className={classes.logo} />
+        <Navbar.Brand to="/home">
+          <NavLink
+            style={{ textAlign: "center", padding: 15 }}
+            className={({ isActive }) =>
+              `${classes.navLink} ${
+                isActive ? classes.active : classes.nonActive
+              }`
+            }
+            to="/home"
+          >
+            <img src={logo} className={classes.logo} />
+          </NavLink>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className={`me-auto my-2 my-lg-0 ${classes.navBar}`}>
             <NavLink
               style={{ textAlign: "center", padding: 15 }}
-
-              className={({isActive}) =>
+              className={({ isActive }) =>
                 `${classes.navLink} ${
                   isActive ? classes.active : classes.nonActive
                 }`
@@ -29,44 +38,44 @@ function NavBarComponent({ navigation }) {
               Home
             </NavLink>
             <NavLink
-              className={({isActive}) =>
-              `${classes.navLink} ${
-                isActive ? classes.active : classes.nonActive
-              }`
-            }
+              className={({ isActive }) =>
+                `${classes.navLink} ${
+                  isActive ? classes.active : classes.nonActive
+                }`
+              }
               style={{ textAlign: "center", padding: 15 }}
               to="/about"
             >
               About Us
             </NavLink>
             <NavLink
-              className={({isActive}) =>
-              `${classes.navLink} ${
-                isActive ? classes.active : classes.nonActive
-              }`
-            }
+              className={({ isActive }) =>
+                `${classes.navLink} ${
+                  isActive ? classes.active : classes.nonActive
+                }`
+              }
               style={{ textAlign: "center", padding: 15 }}
               to="/services"
             >
               Our Services
             </NavLink>
             <NavLink
-              className={({isActive}) =>
-              `${classes.navLink} ${
-                isActive ? classes.active : classes.nonActive
-              }`
-            }
+              className={({ isActive }) =>
+                `${classes.navLink} ${
+                  isActive ? classes.active : classes.nonActive
+                }`
+              }
               style={{ textAlign: "center", padding: 15 }}
               to="/contact"
             >
               Contact Us
             </NavLink>
             <NavLink
-              className={({isActive}) =>
-              `${classes.navLink} ${
-                isActive ? classes.active : classes.nonActive
-              }`
-            }
+              className={({ isActive }) =>
+                `${classes.navLink} ${
+                  isActive ? classes.active : classes.nonActive
+                }`
+              }
               style={{ textAlign: "center", padding: 15 }}
               to="/careers"
             >

@@ -31,18 +31,8 @@ export default function FooterComponent() {
           <div className={classes.links}>
             <ul>
               <li>Quick Links</li>
-              <li>
-                <NavLink
-                  className={({ isActive }) =>
-                    `${classes.navLink} ${
-                      isActive ? classes.active : classes.nonActive
-                    }`
-                  }
-                  style={{ textAlign: "center", padding: 15 }}
-                  exact
-                  to="/about"
-                />
-                {/* <Link to="/home">Home</Link> */}
+              <li>                
+                <Link to="/home">Home</Link>
               </li>
               <li>
                 <Link to="/about">About Us</Link>
@@ -64,10 +54,13 @@ export default function FooterComponent() {
           <div className={classes.contact}>
             <ul>
               <li>Contact Information</li>
-              <li>Phone: (253) 719-8814</li>
-              <li>Email: info@skycitytrucking.com</li>
-              <li>Address: 4101 Industry Dr E, Suite I, Fife, WA 98424</li>
-              <li>Office Hours: 5:00 AM - 4:00 PM (Monday-Friday)</li>
+              <li><strong>Phone</strong>: (253) 719-8814</li>
+              <li><strong>Email</strong>: contact@skycitytrucking.com</li>             
+              <li><strong>Fax</strong>: 206.260.7200</li>             
+              <li><strong>Corporate office & Warehouse Address</strong>: <br/>5555 8th St E, Ste B, Fife, Wa 98424</li>
+              <li><strong>Warehouse office</strong>: 4101 Industry Dr E, Suite I, Fife, WA 98424</li>
+              <li><strong>Office Hours</strong>: 5:00 AM - 6:00 PM (Monday-Friday)</li>              
+              <li>For emergency/ after-hours inquiries, customer<br/>service representive is available 24/7.</li>              
             </ul>
           </div>
           <ul className={classes.icons}>
