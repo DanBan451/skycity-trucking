@@ -21,6 +21,7 @@ const schema = {
   email: Joi.string().required().email({ allowTld: true }).label("Email"),
   phone: Joi.number().required().label("Phone"),
   description: Joi.string().min(10).max(300).label("Description"),  
+  captcha: Joi.string().required().label("Captcha")
 };
 
 export default function Contact() {
@@ -29,7 +30,8 @@ export default function Contact() {
     lastName: "",
     email: "",
     phone: "",  
-    description: ""
+    description: "",
+    captcha: ""
   });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -93,6 +95,13 @@ export default function Contact() {
     }
     return null;      
   };
+  
+  const handleCaptchaComplete = () => {            
+    setAccount({
+      ...data,
+      ['captcha']: 'complete'
+    });
+  }
 
   return (
     <div>
@@ -152,6 +161,7 @@ export default function Contact() {
           <ReCAPTCHA
             sitekey="6LfqImYkAAAAAL8VkvEQy-uxn1x_vAYWtcsot2ZA"
             style={{ gridColumn: "1 / span 2" }}
+            onChange={handleCaptchaComplete}
           />
             <button className={"btn btn-primary btn-sm"} type="submit" disabled={submitted || validate()}>
               Send Message

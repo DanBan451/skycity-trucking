@@ -31,6 +31,7 @@ const schema = {
   phone: Joi.number().required().label("Phone"),
   zipcode: Joi.number().required().label("Zipcode"),
   state: Joi.string().required().label("State"),
+  captcha: Joi.string().required().label("Captcha")
 };
 
 export default function Careers() {
@@ -41,10 +42,11 @@ export default function Careers() {
     phone: "",
     zipcode: "",
     state: "",
+    captcha: ""
   });
   const [errors, setErrors] = useState({ });
   const [submitted, setSubmitted] = useState(false);
-  const [captcha, setCaptcha] = useState(false);
+  // const [captcha, setCaptcha] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,17 +56,17 @@ export default function Careers() {
     if (errors) return;
 
     // call server
-    emailjs
-      .sendForm(
-        "service_l080czw",
-        "template_kjwh8zl",
-        e.target,
-        "HPTwBnzpPBp6w8zW0"
-      )
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => console.log(err));
+    // emailjs
+    //   .sendForm(
+    //     "service_l080czw",
+    //     "template_kjwh8zl",
+    //     e.target,
+    //     "HPTwBnzpPBp6w8zW0"
+    //   )
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => console.log(err));
     
     toast.success("Application Submitted!");
     var form = document.getElementById("application-form");
@@ -74,10 +76,6 @@ export default function Careers() {
     }
     setSubmitted(true);
   };
-
-  const handleCaptchaComplete = () => {
-
-  } 
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -94,6 +92,23 @@ export default function Careers() {
     });
   };
 
+  const validate = () => {
+    const errors = {};
+    const options = {
+      abortEarly: false,
+    };
+    let { error: result } = Joi.validate(data, schema, options);
+    
+    if (result) {
+      result.details.forEach((element) => {
+        errors[element.context.key] = element.message;
+      });      
+      console.log(errors);
+      return errors;
+    }
+    return null;
+  };
+
   const validateProperty = (name, value) => {
     let obj = { [name]: value };
     let subSchema = { [name]: schema[name] };
@@ -102,21 +117,13 @@ export default function Careers() {
 
     return error ? error.details[0].message : null;
   };
-  const validate = () => {
-    const errors = {};
-    const options = {
-      abortEarly: false,
-    };
-    let { error: result } = Joi.validate(data, schema, options);
 
-    if (result) {
-      result.details.forEach((element) => {
-        errors[element.context.key] = element.message;
-      });
-      return errors;
-    }
-    return null;
-  };
+  const handleCaptchaComplete = () => {            
+    setAccount({
+      ...data,
+      ['captcha']: 'complete'
+    });
+  }
 
   return (
     <React.Fragment>
@@ -279,7 +286,7 @@ export default function Careers() {
                 marginTop: "20px",
               }}              
               onChange={handleCaptchaComplete}
-            />
+            />            
             <button className={"btn btn-primary btn-sm"} type="submit" disabled={submitted || validate()}>
               Send Message
             </button>
