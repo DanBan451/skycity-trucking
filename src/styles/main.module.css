@@ -6,7 +6,7 @@ h1, h2, span, button {
 }
 h1 { font-weight: 600; }
 h2 { font-weight: 500; }
-span, button { font-weight: 500; }
+span, button { font-weight: 400; }
 
 /* ------------------------Header */
 
@@ -162,17 +162,18 @@ span, button { font-weight: 500; }
     width: 50%;    
     margin-top: 0;
     margin-bottom: 0;
-		justify-content: center;
-		/* min-height: 0; */
+		justify-content: center;		
     padding-left: 20px;
     padding-right: 20px;
   }   
   .services h1 {
     margin-bottom: auto;
     margin-top: 0;
-    font-size: 30px;
+    /* font-size: 30px; */
+    /* font-size: px; */
     margin-bottom: 20px;
     padding-top: 20px;
+    /* background-color: red; */
   }
   .services .serviceImage {
     display: flex;
@@ -200,7 +201,7 @@ span, button { font-weight: 500; }
 
 @media only screen and (min-width: 1260px) {
   .about span br {
-    display: block;
+    /* display: block; */
   }
   .services {
     width: 100%;
@@ -221,7 +222,7 @@ span, button { font-weight: 500; }
 	}
 
   .services h1 {
-    font-size: 35px;		
+    font-size: 30px;		
   }
   .services span {
     font-size: 21px;
@@ -238,6 +239,9 @@ span, button { font-weight: 500; }
 }
 
 @media only screen and (min-width: 1600px) {
+  .about span br {
+    display: block;
+  }
 	.services {    
 		padding: 75px;
 	}

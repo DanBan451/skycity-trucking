@@ -240,6 +240,9 @@ ul.careerList .career img {
   ul.careerList .career {
     flex-direction: row;                                    
   }
+  ul.careerList .career div span {
+    font-size: clamp(16px, 1.7vw, 19px);    
+  }
   ul.careerList .career div, ul.careerList .career img {  
     width: 50%;    
     max-width: 600px;
@@ -252,7 +255,10 @@ ul.careerList .career img {
   
   .benefitsWrapper h1 {
     text-align: left;
-    margin-left: 10%;
+    /* margin-left: 5%; */
+    margin: auto;
+    width: 95%;
+    padding-left: 20px;
   }
   .listWrapper {
     display: flex;
@@ -272,7 +278,9 @@ ul.careerList .career img {
   
   .applyWrapper h1 {
     text-align: left;
-    margin-left: 10%;
+    margin: auto;
+    width: 95%;
+    padding-left: 20px;
   }
   .applyWrapper .form {
     margin-left: 15%;       
