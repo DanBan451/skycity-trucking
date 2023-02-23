@@ -29,9 +29,7 @@
 
 /* generic buttons */
 
-.headerButtons a {
-  /* margin: 8px; */
-  /* margin: 2%; */
+.headerButtons a {  
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   text-decoration: none;
@@ -113,7 +111,9 @@ h2 {
   display: flex;
   margin-left: auto;
   align-items: right;
-  flex-direction: row-reverse;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  
 }
 .pagination img {
   width: 10px;

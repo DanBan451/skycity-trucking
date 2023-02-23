@@ -22,11 +22,16 @@ class SlideShow extends Component {
   updateImage() {
     let currentImage =
       this.state.currentImage != 2 ? this.state.currentImage + 1 : 0;
+    
     this.setState({ currentImage });
   }
 
   render() {
     const images = [Image1, Image2, Image3];
+
+    // images.map((image, index) => {
+    //   console.log(index);
+    // })
 
     return (
       <div className={classes.headerWrapper}>
@@ -60,12 +65,13 @@ class SlideShow extends Component {
             {images.map((image, index) => (
               <img
                 src={
-                  this.state.currentImage == index ? closedCircle : openCircle
+                  (this.state.currentImage) === index ? closedCircle : openCircle
                 }
                 alt=""
-              />
+              />              
             ))}
           </div>
+
         </div>
 
         <div className={classes.headerButtons}>
