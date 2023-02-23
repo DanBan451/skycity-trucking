@@ -44,10 +44,10 @@ class SlideShow extends Component {
               <br /> increase efficiency and deliver freight solutions.
             </h2>
             <div className={classes.headerButtons}>
-              <Link to='/contact' className="btn">
+              <Link to='/contact' className="btn m-2">
                 Ship with Sky City Trucking
               </Link>
-              <Link to='/careers' className="btn">
+              <Link to='/careers' className="btn m-2">
                 Drive for Sky City Trucking
               </Link>
             </div>
