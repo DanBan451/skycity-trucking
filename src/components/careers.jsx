@@ -44,6 +44,7 @@ export default function Careers() {
   });
   const [errors, setErrors] = useState({ });
   const [submitted, setSubmitted] = useState(false);
+  const [captcha, setCaptcha] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -73,6 +74,10 @@ export default function Careers() {
     }
     setSubmitted(true);
   };
+
+  const handleCaptchaComplete = () => {
+
+  } 
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -272,8 +277,8 @@ export default function Careers() {
               style={{
                 gridColumn: "1 / span 2",
                 marginTop: "20px",
-              }}
-              disabled={true}
+              }}              
+              onChange={handleCaptchaComplete}
             />
             <button className={"btn btn-primary btn-sm"} type="submit" disabled={submitted || validate()}>
               Send Message

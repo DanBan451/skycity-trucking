@@ -180,7 +180,7 @@ textarea:focus, input:focus{
   }
 }
 
-@media only screen and (min-width: 1200px) {  
+@media only screen and (min-width: 1400px) {  
   .contactWrapper {    
     flex-direction: row;    
     max-width: 1500px;
