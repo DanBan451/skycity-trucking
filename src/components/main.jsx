@@ -28,7 +28,7 @@ export default function Main({ navigation }) {
 
       <SlideShow />
 
-      <div className={classes.about}>
+      <div className={classes.about} id='section1'>
         <h1>
           Freight services specialized in every aspect. <br /> Customized to
           your needs and delivered with excellence.

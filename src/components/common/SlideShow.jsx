@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import ReactScroll from "react-scroll";
 import classes from "../../styles/slideshow.module.css";
 import scrollDown from "../../images/icons8-scroll-down-100.png";
 
@@ -29,10 +30,6 @@ class SlideShow extends Component {
   render() {
     const images = [Image1, Image2, Image3];
 
-    // images.map((image, index) => {
-    //   console.log(index);
-    // })
-
     return (
       <div className={classes.headerWrapper}>
         <div
@@ -56,9 +53,9 @@ class SlideShow extends Component {
                 Drive for Sky City Trucking
               </Link>
             </div>
-            <a href="">
+            <ReactScroll.Link to='section1'>
               <img src={scrollDown} alt="" />
-            </a>
+            </ReactScroll.Link>
           </div>
 
           <div className={classes.pagination}>
