@@ -13,7 +13,6 @@
 a.navlink.nav-link {
   color: red;
   font-size: 20px;
-
 }
 .navLink {
   text-decoration: none;
@@ -30,6 +29,7 @@ a.navlink.nav-link {
 .nonActive {
   color: black;
 }
+
 .globe {
   margin-left: 15px;
 }

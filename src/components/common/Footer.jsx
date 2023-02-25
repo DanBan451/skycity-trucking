@@ -5,8 +5,10 @@ import facebookIcon from "../../images/socials/facebook.svg";
 import instagramIcon from "../../images/socials/instagram.svg";
 import linkedInIcon from "../../images/socials/linkedin.svg";
 import classes from "../../styles/footer.module.css";
+import { useTranslation } from "react-i18next";
 
-export default function FooterComponent() {
+export default function FooterComponent() {  
+  const { t } = useTranslation(); 
   return (
     <React.Fragment>
       <div className={classes.footerWrapper}>
@@ -14,7 +16,7 @@ export default function FooterComponent() {
           <div className={classes.brand}>
             <img src={logo} alt="" />
             <ul className={classes.icons}>
-              <h1>Follow Us</h1>
+              <h1>{t("footer.header-h1")}</h1>
               <div>
                 <a href="">
                   <img src={facebookIcon} />
@@ -30,41 +32,41 @@ export default function FooterComponent() {
           </div>
           <div className={classes.links}>
             <ul>
-              <li>Quick Links</li>
+              <li>{t("footer.links-header")}</li>
               <li>                
-                <Link to="/home">Home</Link>
+                <Link to="/home">{t('footer.link_1')}</Link>
               </li>
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/about">{t('footer.link_2')}</Link>
               </li>
               <li>
-                <Link to="/services">Our Services</Link>
+                <Link to="/services">{t('footer.link_3')}</Link>
               </li>
               <li>
-                <Link to="/contact">Contact Us</Link>
+                <Link to="/contact">{t('footer.link_4')}</Link>
               </li>
               <li>
-                <Link to="/careers">Careers</Link>
+                <Link to="/careers">{t('footer.link_5')}</Link>
               </li>
               <li>
-                <Link to="/contact">Get a Quote</Link>
+                <Link to="/contact">{t('footer.link_6')}</Link>
               </li>
             </ul>
           </div>
           <div className={classes.contact}>
             <ul>
-              <li>Contact Information</li>
-              <li><strong>Phone</strong>: (253) 719-8814</li>
-              <li><strong>Email</strong>: contact@skycitytrucking.com</li>             
-              <li><strong>Fax</strong>: 206.260.7200</li>             
-              <li><strong>Corporate office & Warehouse Address</strong>: <br/>5555 8th St E, Ste B, Fife, Wa 98424</li>
-              <li><strong>Warehouse office</strong>: 4101 Industry Dr E, Suite I, Fife, WA 98424</li>
-              <li><strong>Office Hours</strong>: 5:00 AM - 6:00 PM (Monday-Friday)</li>              
-              <li>For emergency/ after-hours inquiries, customer<br/>service representive is available 24/7.</li>              
+              <li>{t('footer.contact-header')}</li>
+              <li><strong>{t('footer.phone')}</strong>: (253) 719-8814</li>
+              <li><strong>{t('footer.email')}</strong>: contact@skycitytrucking.com</li>             
+              <li><strong>{t('footer.fax')}</strong>: 206.260.7200</li>             
+              <li><strong>{t('footer.corp-office')}</strong>: <br/>5555 8th St E, Ste B, Fife, Wa 98424</li>
+              <li><strong>{t('footer.ware-office')}</strong>: 4101 Industry Dr E, Suite I, Fife, WA 98424</li>
+              <li><strong>{t('footer.hours-1')}</strong>{t('footer.hours-2')}</li>              
+              <li>{t('footer.emergency-1')}<br/>{t('footer.emergency-2')}</li>              
             </ul>
           </div>
           <ul className={classes.icons}>
-            <h1>Follow Us</h1>
+            <h1>{t('footer.header-h1')}</h1>
             <div>
               <a href="">
                 <img src={facebookIcon} />
@@ -81,9 +83,9 @@ export default function FooterComponent() {
       </div>
       <div className={classes.copyright}>
         <span>
-          © Copyright 2022 by Sky City Trucking.
-          <br />
-          All Rights Reserved.
+          {t('footer.copyright-1')}          
+          <br />          
+          {t('footer.copyright-2')}          
         </span>
       </div>
     </React.Fragment>

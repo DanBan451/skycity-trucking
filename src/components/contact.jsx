@@ -14,6 +14,7 @@ import emailjs from "emailjs-com";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useTranslation } from "react-i18next";
 
 const schema = {
   firstName: Joi.string().required().label("First Name"),
@@ -36,6 +37,8 @@ export default function Contact() {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
+  const { t } = useTranslation(); 
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -48,7 +51,7 @@ export default function Contact() {
       console.log(res);
     }).catch(err=> console.log(err));        
 
-    toast.success("Application Submitted!");
+    toast.success(t('contact.toastSubmitted'));
     var form = document.getElementById("application-form");
     var elements = form.elements;
     for (var i = 0, len = elements.length; i < len; ++i) {
@@ -107,14 +110,14 @@ export default function Contact() {
     <div>
       <ToastContainer />
       <NavbarComponent />
-      <h1 className={classes.title}>Contact Us</h1>
+      <h1 className={classes.title}>{t('contact.header-h1')}</h1>
       <div className={classes.contactWrapper}>
         <form id='application-form' className={classes.form} onSubmit={handleSubmit} style={{ opacity: (submitted) ? 0.5 : 1 }}>
           <Input
             name="firstName"
             value={data.firstName}
             onChange={handleChange}
-            label={"First Name"}
+            label={t('contact.label_1')}
             error={errors?.firstName}
             classes={classes}
           />
@@ -122,7 +125,7 @@ export default function Contact() {
             name="lastName"
             value={data.lastName}
             onChange={handleChange}
-            label={"Last Name"}
+            label={t('contact.label_2')}
             error={errors?.lastName}
             classes={classes}
           />
@@ -130,7 +133,7 @@ export default function Contact() {
             name="email"
             value={data.email}
             onChange={handleChange}
-            label={"Email"}
+            label={t('contact.label_3')}
             error={errors?.email}
             classes={classes}
           />
@@ -138,7 +141,7 @@ export default function Contact() {
             name="phone"
             value={data?.phone}
             onChange={handleChange}
-            label={"Phone Number"}
+            label={t('contact.label_4')}
             error={errors?.phone}
             classes={classes}
           />
@@ -149,7 +152,7 @@ export default function Contact() {
               id=""
               cols="30"
               rows="10"
-              placeholder="How can we help you?"
+              placeholder={t('contact.description')}
               onChange={handleChange}
             />
             {errors?.description && (
@@ -164,7 +167,7 @@ export default function Contact() {
             onChange={handleCaptchaComplete}
           />
             <button className={"btn btn-primary btn-sm"} type="submit" disabled={submitted || validate()}>
-              Send Message
+              {t('contact.button')}
             </button>
         </form>
 
@@ -173,60 +176,60 @@ export default function Contact() {
             <div className={classes.item}>
               <div>
                 <img src={location} alt="" />
-                <label htmlFor="">Corporare office & warehouse: </label>
+                <label htmlFor="">{t('contact.content_1.label')}</label>
               </div>
-              <span>5555 8th St E, Ste B, Fife, Wa 98424</span>
+              <span>{t('contact.content_1.span')}</span>
             </div>
             <div className={classes.item}>
               <div>
                 <img src={mail} alt="" />
-                <label htmlFor="">Email: </label>
+                <label htmlFor="">{t('contact.content_2.label')}</label>
               </div>
-              <span>contact@skycitytrucking.com</span>
+              <span>{t('contact.content_2.span')}</span>
             </div>
             <div className={classes.item}>
               <div>
                 <img src={phone} alt="" />
-                <label htmlFor="">Phone: </label>
+                <label htmlFor="">{t('contact.content_3.label')}</label>
               </div>
-              <span>(253) 719-8814</span>
+              <span>{t('contact.content_3.span')}</span>
             </div>
             <div className={classes.item}>
               <div>
                 <img src={fax} alt="" />
-                <label htmlFor="">Fax: </label>
+                <label htmlFor="">{t('contact.content_4.label')}</label>
               </div>
-              <span>206.260.7200</span>
+              <span>{t('contact.content_4.span')}</span>
             </div>
           </div>
           <div className={classes.text}>
             <div className={classes.item}>
               <div>
                 <img src={location} alt="" />              
-                <label htmlFor="">Warehouse office: </label>
+                <label htmlFor="">{t('contact.content_5.label')}</label>
               </div>
-              <span>4101 Industry Dr E, Suite I, Fife, WA 98424</span>
+              <span>{t('contact.content_5.span')}</span>
             </div>
             <div className={classes.item}>
               <div>
                 <img src={mail} alt="" />
-                <label htmlFor="">Email: </label>
+                <label htmlFor="">{t('contact.content_6.label')}</label>
               </div>
-              <span>contact@skycitytrucking.com</span>
+              <span>{t('contact.content_6.span')}</span>
             </div>
             <div className={classes.item}>
               <div>
                 <img src={phone} alt="" />
-                <label htmlFor="">Phone: </label>
+                <label htmlFor="">{t('contact.content_7.label')}</label>
               </div>
-              <span>(253) 719-8814</span>
+              <span>{t('contact.content_7.span')}</span>
             </div>
             <div className={classes.item}>
               <div>
                 <img src={fax} alt="" />
-                <label htmlFor="">Fax: </label>
+                <label htmlFor="">{t('contact.content_8.label')}</label>
               </div>
-              <span>206.260.7200</span>
+              <span>{t('contact.content_8.span')}</span>
             </div>
           </div>
         </div>

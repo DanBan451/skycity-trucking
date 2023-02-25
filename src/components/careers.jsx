@@ -7,6 +7,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "emailjs-com";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 import "react-toastify/dist/ReactToastify.css";
 
 // images
@@ -46,7 +47,8 @@ export default function Careers() {
   });
   const [errors, setErrors] = useState({ });
   const [submitted, setSubmitted] = useState(false);
-  // const [captcha, setCaptcha] = useState(false);
+  
+  const { t } = useTranslation(); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,7 +70,7 @@ export default function Careers() {
       })
       .catch((err) => console.log(err));
     
-    toast.success("Application Submitted!");
+    toast.success(t('careers.toastMessage'));
     var form = document.getElementById("application-form");
     var elements = form.elements;
     for (var i = 0, len = elements.length; i < len; ++i) {
@@ -132,110 +134,87 @@ export default function Careers() {
         <NavbarComponent />
 
         <div className={classes.header}>
-          <h1>Join Our Team!</h1>
+          <h1>{t('careers.header-h1')}</h1>
           <img src={group} alt="" />
         </div>
 
-        <p className={classes.description}>
-          We value our drivers and staff. We believe that because of our great
-          team culture, Sky City Trucking would not be where it is today.
-          Everyone plays a big part in our trucking family, therefore we want to
-          give back and help each other succeed whatever position it may be.
-        </p>
+        <t className={classes.description}>
+          {t('careers.header-desc')}
+        </t>
 
         <ul className={classes.careerList}>
           <div className={classes.career}>
             <img src={driver} alt="" />
             <div>
-              <h1>Company Driver</h1>
+              <h1>{t('careers.career_1.h1')}</h1>
               <span>
-                Sky City Trucking offers driving opportunities with a wide range
-                of equipment. We offer competitive pay along with new and
-                maintained equipment, as well as an excellent lease-purchase
-                program. Whether you need more miles or local work, we have
-                options for you! Dedicated routes, predictable home time and
-                24/7 dispatch. Flexible hours and schedules for the long
-                distance driver and the local drivers. We provide our drivers
-                with clean and maintained trucks. We understand that this is
-                your daily workspace therefore we make sure you are comfortable.
-                If you're looking for a growth opportunity, join us at Sky City
-                Trucking.
+                {t('careers.career_1.span')}
               </span>
             </div>
           </div>
           <div className={classes.career}>
             <img src={owner} alt="" />
             <div>
-              <h1>Owner Operator</h1>
+              <h1>{t('careers.career_2.h1')}</h1>
               <span>
-                We have top paying freight that keeps our owner-operators
-                earning and satisfied. We area trusted and reliable carrier
-                because we value our clients and our team. We offer a variety of
-                services with competitive rates, |dedicated lanes, and a top
-                fuel-discount program in the industry. We have on-site
-                professional dispatchers and bookkeepers that are always
-                available for you.
+                {t('careers.career_2.span')}
               </span>
             </div>
           </div>
           <div className={classes.career}>
             <img src={staff} alt="" />
             <div>
-              <h1>Logistics Coordinator</h1>
+              <h1>{t('careers.career_3.h1')}</h1>
               <span>
-                We value our employees as much as we believe strongly in our
-                culture and morals, that is what sets us apart in the industry.
-                We're looking for hard-working and driven individuals who want
-                to make an impact in oun company. We offer top pay and bonuses.
-                We invite you to come join our team
+                {t('careers.career_3.span')}
               </span>
             </div>
           </div>
         </ul>
 
         <div className={classes.benefitsWrapper}>
-          <h1>The Benefits of our Company</h1>
+          <h1>{t('careers.benefits-h1')}</h1>
 
           <div className={classes.listWrapper}>
             <ul className={classes.left}>
               <li>
                 <img src={ribon} alt="" />
-                <span>Full Benefits</span>
+                <span>{t('careers.benefit_1')}</span>
               </li>
               <li>
                 <img src={dollar} alt="" />
-                <span>Bonus Pay</span>
+                <span>{t('careers.benefit_2')}</span>
               </li>
               <li>
                 <img src={clock} alt="" />
-                <span>Flexible Hours & Schedules</span>
+                <span>{t('careers.benefit_3')}</span>
               </li>
             </ul>
             <ul className={classes.right}>
               <li>
                 <img src={thumbsup} alt="" />
-                <span>Great Team Culture</span>
+                <span>{t('careers.benefit_4')}</span>
               </li>
               <li>
                 <img src={arrow} alt="" />
-                <span>Growth & Opportunity</span>
+                <span>{t('careers.benefit_5')}</span>
               </li>
               <li>
                 <img src={cycle} alt="" />
-                <span>Consistent</span>
+                <span>{t('careers.benefit_6')}</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className={classes.applyWrapper}>
-          <h1>Apply Now!</h1>
+          <h1>{t('careers.apply-h1')}</h1>
           <form id='application-form' className={classes.form} onSubmit={handleSubmit} style={{ opacity: (submitted) ? 0.5 : 1 }}>
             <Input
               name="firstName"
               value={data?.firstName}
               onChange={handleChange}
-              label={"First Name"}
+              label={t('careers.label_1')}
               error={errors?.firstName}
               classes={classes}
             />
@@ -243,7 +222,7 @@ export default function Careers() {
               name="lastName"
               value={data?.lastName}
               onChange={handleChange}
-              label={"Last Name"}
+              label={t('careers.label_2')}
               error={errors?.lastName}
               classes={classes}
             />
@@ -251,7 +230,7 @@ export default function Careers() {
               name="email"
               value={data.email}
               onChange={handleChange}
-              label={"Email"}
+              label={t('careers.label_3')}
               error={errors?.email}
               classes={classes}
             />
@@ -259,7 +238,7 @@ export default function Careers() {
               name="phone"
               value={data?.phone}
               onChange={handleChange}
-              label={"Phone Number"}
+              label={t('careers.label_4')}
               error={errors?.phone}
               classes={classes}
             />
@@ -267,7 +246,7 @@ export default function Careers() {
               name="zipcode"
               value={data?.zipcode}
               onChange={handleChange}
-              label={"Zipcode"}
+              label={t('careers.label_5')}
               error={errors?.zipcode}
               classes={classes}
             />
@@ -275,7 +254,7 @@ export default function Careers() {
               name="state"
               value={data?.state}
               onChange={handleChange}
-              label={"State"}
+              label={t('careers.label_6')}
               error={errors?.state}
               classes={classes}
             />
@@ -288,7 +267,7 @@ export default function Careers() {
               onChange={handleCaptchaComplete}
             />            
             <button className={"btn btn-primary btn-sm"} type="submit" disabled={submitted || validate()}>
-              Send Message
+              {t('careers.button')}
             </button>
           </form>
         </div>

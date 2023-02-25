@@ -1,12 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { IndexLink, NavLink, Link } from "react-router-dom";
-import { withRouter } from "react-router";
+import { NavLink, Link } from "react-router-dom";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+import i18n from "i18next";
+
 import logo from "../../images/company-logo.png";
 import globe from "../../images/home/globe.svg";
 import classes from "../../styles/navbar.module.css";
 
 function NavBarComponent({ navigation }) {
+  const [language, setLanguage] = useState("EN");
+  const { t } = useTranslation();
+
+  const handleLanguageChange = (value) => {
+    i18n.changeLanguage(value);
+    setLanguage(value);
+  };
+
+  useEffect(() => {
+    // console.log(language, i18n.language);
+    if (language !== i18n.language) {
+      i18n.changeLanguage(language);
+    }
+  }, []);
+
   return (
     <Navbar id={classes.navWrapper} expand="xl" className={classes.navbar}>
       <Container className="navbar-inner" fluid>
@@ -35,7 +52,7 @@ function NavBarComponent({ navigation }) {
               }
               to="/home"
             >
-              Home
+              {t("navbar.home")}
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -46,7 +63,7 @@ function NavBarComponent({ navigation }) {
               style={{ textAlign: "center", padding: 15 }}
               to="/about"
             >
-              About Us
+              {t("navbar.about")}
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -57,7 +74,7 @@ function NavBarComponent({ navigation }) {
               style={{ textAlign: "center", padding: 15 }}
               to="/services"
             >
-              Our Services
+              {t("navbar.services")}
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -68,7 +85,7 @@ function NavBarComponent({ navigation }) {
               style={{ textAlign: "center", padding: 15 }}
               to="/contact"
             >
-              Contact Us
+              {t("navbar.contact")}
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -79,17 +96,35 @@ function NavBarComponent({ navigation }) {
               style={{ textAlign: "center", padding: 15 }}
               to="/careers"
             >
-              Careers
+              {t("navbar.careers")}
             </NavLink>
           </Nav>
           <div className="d-flex options-container">
             <Link className="btn quote-btn" to={"/contact"}>
-              Get a Quote
+              {t("navbar.quote")}
             </Link>
-            {/* <Button className="option">ENG</Button>
-            <Button className="option">PYC</Button>
-            <Button className="option">YKP</Button>
-            <img src={globe} className={classes.globe} /> */}
+            <Button
+              className={`option`}
+              style={{ color: language == "EN" ? "#017de9" : "black" }}
+              onClick={() => handleLanguageChange("EN")}
+            >
+              ENG
+            </Button>
+            <Button
+              className={`option`}
+              style={{ color: language == "RS" ? "#017de9" : "black" }}
+              onClick={() => handleLanguageChange("RS")}
+            >
+              PYC
+            </Button>
+            <Button
+              className={`option`}
+              style={{ color: language == "UK" ? "#017de9" : "black" }}
+              onClick={() => handleLanguageChange("UK")}
+            >
+              YKP
+            </Button>
+            <img src={globe} className={classes.globe} />
           </div>
         </Navbar.Collapse>
       </Container>

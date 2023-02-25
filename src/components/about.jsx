@@ -4,123 +4,91 @@ import FooterComponent from "./common/Footer";
 import aboutImage from "../images/aboutusimage.jpg";
 import arrow from "../images/blue-arrow.svg";
 
+import { useTranslation } from "react-i18next";
 import classes from "../styles/about.module.css";
 
 export default function About({ navigation }) {
+
+  const { t } = useTranslation(); 
+
   return (
     <div id={classes.about}>
       <NavbarComponent />
 
       <div className={classes.header}>
-        <h1>About Us</h1>
+        <h1>{t('about.header-h1')}</h1>
         <img src={aboutImage} alt="" />
       </div>
 
       <div className={classes.content}>
         <div className={classes.description}>
           <p>
-            We believe in providing safe and reliable services no matter the
-            destination. We're dedicated to deliver the best service possible,
-            putting the power of logistics to work for you. Our transportatioon
-            solutions help you get better results, encounter fewer problems, and
-            get more done every day. 
-            <br/><br/>Specializing in cross docking services to
-            help you reduce warehouse costs, shorten delivery lead times, and
-            increase order fill rates. Utilizing our 90,000 sq. ft. warehouse,
-            our professional and knowledgeable staff is prepared to handle all
-            forms of freight from ground height to oversized. Whether you have
-            an urgent, temporary or long term storage need, our warehousing team
-            is equipped to create an individual plan for you.
+            {t('about.content.p_1')}
+            <br/><br/>{t('about.content.p_2')}
           </p>
         </div>
         <div className={classes.features}>
-          <h1>COMPANY FEATURES & SERVICES</h1>
+          <h1>{t('about.features.h1')}</h1>
           <ul>
             <li>
               <img src={arrow} alt="" />
-              <span>Full Truckload & LTL Services Nationwide</span>
+              {t('about.features.span_1')}
             </li>
             <li>
               <img src={arrow} alt="" />
-              <span>Drayage, Import & Export Services Nationwide</span>
+              {t('about.features.span_2')}
             </li>
             <li>
               <img src={arrow} alt="" />
-              <span>Rail Service</span>
+              {t('about.features.span_3')}
             </li>
             <li>
               <img src={arrow} alt="" />
-              <span>Canada Cross-Border</span>
+              {t('about.features.span_4')}
             </li>
             <li>
               <img src={arrow} alt="" />
-              <span>Dry Van, Reefer, Flatbed, Stepdeck, Over-Sized,
-Pilot Cars, Super & Standard Chassis</span>
+              {t('about.features.span_5')}
             </li>
             <li>
               <img src={arrow} alt="" />
-              <span>Onsite Top-Pick Crane</span>
+              {t('about.features.span_6')}
             </li>
             <li>
               <img src={arrow} alt="" />
-              <span>Air Services</span>
+              {t('about.features.span_7')}
             </li>
             <li>
               <img src={arrow} alt="" />
-              <span>90,000 sq. ft. Warehouse Space</span>
+              {t('about.features.span_8')}
             </li>
             <li>
               <img src={arrow} alt="" />
-              <span>Food-grade & Temp. Controlled Storage</span>
+              {t('about.features.span_9')}
             </li>
             <li>
               <img src={arrow} alt="" />
-              <span>Warehouse Software for Labeling & Repacking</span>
+              {t('about.features.span_10')}
             </li>
             <li>
               <img src={arrow} alt="" />
-              <span>Dedicated Warehousing & Distribution</span>
+              {t('about.features.span_11')}
             </li>
             <li>
               <img src={arrow} alt="" />
-              <span>Specialist</span>
+              {t('about.features.span_12')}
             </li>
             <li>
               <img src={arrow} alt="" />
-              <span>Redeliveries</span>
+              {t('about.features.span_13')}
             </li>
             <li>
               <img src={arrow} alt="" />
-              <span>Brokerage Division</span>
+              {t('about.features.span_14')}
             </li>
           </ul>
         </div>
       </div>
-
-      {/* <h1 className={classes.title}>About Us</h1>
-      <div className={classes.contentWrapper}>
-        <h1>Who we Are</h1>
-
-        <div className={classes.content}>
-          <span className={classes.text}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </span>
-          <div className={classes.image}>
-            <img src={aboutImage} alt="" />                   
-          </div>                    
-        </div>
-
-        <button className={classes.button} onClick={() => navigation.navigate("contact")}>
-          Contact Us
-        </button>
-      </div> */}
-
       <FooterComponent />
     </div>
   );
