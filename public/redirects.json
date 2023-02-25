@@ -1,0 +1,20 @@
+[
+  {
+    "source": "/locales/:locale/:file",
+    "target": "/locales/en/:file",
+    "statusCode": 200,
+    "condition": { "file": "!translation.json" }
+  },
+  {
+    "source": "/locales/:locale/:file",
+    "target": "/locales/ru/:file",
+    "statusCode": 200,
+    "condition": { "file": "!translation.json" }
+  },
+  {
+    "source": "/locales/:locale/:file",
+    "target": "/locales/uk/:file",
+    "statusCode": 200,
+    "condition": { "file": "!translation.json" }
+  }
+]
