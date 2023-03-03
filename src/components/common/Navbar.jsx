@@ -18,7 +18,6 @@ function NavBarComponent({ navigation }) {
   };
 
   useEffect(() => {
-    // console.log(language, i18n.language);
     if (language !== i18n.language) {
       i18n.changeLanguage(language);
     }
