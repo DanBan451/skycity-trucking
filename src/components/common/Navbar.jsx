@@ -17,10 +17,11 @@ function NavBarComponent({ navigation }) {
     setLanguage(value);
   };
 
+
   useEffect(() => {
     if (language !== i18n.language) {
       i18n.changeLanguage(language);
-    }
+    }            
   }, []);
 
   return (
@@ -33,7 +34,7 @@ function NavBarComponent({ navigation }) {
               `${classes.navLink} ${
                 isActive ? classes.active : classes.nonActive
               }`
-            }
+            }            
             to="/home"
           >
             <img src={logo} className={classes.logo} />
@@ -49,7 +50,8 @@ function NavBarComponent({ navigation }) {
                   isActive ? classes.active : classes.nonActive
                 }`
               }
-              to="/home"
+              id="navlink-home"
+              to="/"
             >
               {t("navbar.home")}
             </NavLink>
@@ -61,6 +63,7 @@ function NavBarComponent({ navigation }) {
               }
               style={{ textAlign: "center", padding: 15 }}
               to="/about"
+              id="navlink-about"
             >
               {t("navbar.about")}
             </NavLink>

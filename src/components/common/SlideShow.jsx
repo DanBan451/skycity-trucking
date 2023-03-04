@@ -17,7 +17,7 @@ const SlideShow = ({ t }) => {
   let [currentImage, setCurrentImage] = useState(0);  
   
   const updateImage = () => {
-    let newCurrentImage = currentImage != 2 ? currentImage + 1 : 0;
+    let newCurrentImage = currentImage !== 2 ? currentImage + 1 : 0;
     setCurrentImage(newCurrentImage);
   };
   
@@ -26,7 +26,7 @@ const SlideShow = ({ t }) => {
       updateImage();
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [currentImage]);
 
   const images = [Image1, Image2, Image3];
 
