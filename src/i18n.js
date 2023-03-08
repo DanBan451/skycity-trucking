@@ -19,7 +19,10 @@ i18n.use(Backend)
         keySeparator: '.',
         interpolation: {
             escapeValue: false // no need for react. it escapes by default
-        }
+        },
+        backend: {
+            loadPath: '/public/locales/{{lng}}/{{ns}}.json',
+          },
     })
 
 export default i18n
