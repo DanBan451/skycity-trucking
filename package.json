@@ -2,6 +2,7 @@
   "name": "skycity-trucking",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://www.skycity.solutions/",
   "dependencies": {
     "@brighthr/component-navbar": "^0.0.4",
     "bootstrap": "^5.2.1",
