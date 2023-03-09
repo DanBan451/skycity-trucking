@@ -3,9 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - yarn install
-        - mkdir -p public/locales
-        - cp -r public/locales/* build/public/locales/
+        - yarn install        
     build:
       commands:
         - yarn run build
@@ -13,6 +11,7 @@ frontend:
     baseDirectory: build
     files:
       - '**/*'
+      - 'public/locales/**/*'
   cache:
     paths:
       - node_modules/**/*
