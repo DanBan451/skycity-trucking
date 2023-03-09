@@ -21,7 +21,7 @@ i18n.use(Backend)
             escapeValue: false // no need for react. it escapes by default
         },
         backend: {            
-            loadPath: '/locales/{{lng}}/translation.json'
+            loadPath: 'public/locales/{{lng}}/translation.json'
           },
     })
 
