@@ -21,9 +21,6 @@ i18n
     interpolation: {
       escapeValue: false, // no need for react. it escapes by default
     },
-    // backend: {
-    //     loadPath: '/locales/{{lng}}/translation.json'
-    //   },
     backend: {
       loadPath: (lng, ns) => {
         // Get the base URL of the app
@@ -34,7 +31,7 @@ i18n
 
         // Construct the load path for the translation file
         const path = isProduction
-          ? `${baseUrl}locales/${lng}/${ns}.json`
+          ? `https://www.skycity.solutions/locales/${lng}/${ns}.json`
           : `/locales/${lng}/${ns}.json`;
 
         return path;
