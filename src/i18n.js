@@ -1,6 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import Backend from "i18next-http-backend";
+import Backend from "i18next-xhr-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 const fallbackLng = ["en"];
@@ -21,22 +21,27 @@ i18n
     interpolation: {
       escapeValue: false, // no need for react. it escapes by default
     },
-    backend: {
-      loadPath: (lng, ns) => {
-        // Get the base URL of the app
-        const baseUrl = window.location.origin + window.location.pathname;
+    
+    backend: XHR,
+    backendOption: {
+      loadPath: "/locales/{{lng}}/{{ns}}.json",      
+      allowMultiLoading: true,        
+    }
 
-        // Check if the app is running in production
-        const isProduction = process.env.NODE_ENV === "production";
+    // loadPath: (lng, ns) => {
+    //   // Get the base URL of the app
+    //   const baseUrl = window.location.origin + window.location.pathname;
 
-        // Construct the load path for the translation file
-        const path = isProduction
-          ? `/locales/{{lng}}/{{ns}}.json`
-          : `/locales/${lng}/${ns}.json`;
+    //   // Check if the app is running in production
+    //   const isProduction = process.env.NODE_ENV === "production";
 
-        return path;
-      },
-    },
+    //   // Construct the load path for the translation file
+    //   const path = isProduction
+    //     ? `/locales/{{lng}}/{{ns}}.json`
+    //     : `/locales/${lng}/${ns}.json`;
+
+    //   return path;
+    // },
   });
 
 export default i18n;
