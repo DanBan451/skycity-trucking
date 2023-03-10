@@ -105,7 +105,7 @@ function NavBarComponent({ navigation }) {
             <Link className="btn quote-btn" to={"/contact"}>
               {t("navbar.quote")}
             </Link>
-            <Button
+            {/* <Button
               className={`option`}
               style={{ color: language == "EN" ? "#017de9" : "black" }}
               onClick={() => handleLanguageChange("EN")}
@@ -125,8 +125,8 @@ function NavBarComponent({ navigation }) {
               onClick={() => handleLanguageChange("UK")}
             >
               YKP
-            </Button>
-            <img src={globe} className={classes.globe} />
+            </Button> */}
+            {/* <img src={globe} className={classes.globe} /> */}
           </div>
         </Navbar.Collapse>
       </Container>
