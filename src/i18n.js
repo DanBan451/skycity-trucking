@@ -22,26 +22,20 @@ i18n
       escapeValue: false, // no need for react. it escapes by default
     },
     
-    backend: XHR,
-    backendOption: {
-      loadPath: "/locales/{{lng}}/{{ns}}.json",      
-      allowMultiLoading: true,        
-    }
+    loadPath: (lng, ns) => {
+      // Get the base URL of the app
+      const baseUrl = window.location.origin + window.location.pathname;
 
-    // loadPath: (lng, ns) => {
-    //   // Get the base URL of the app
-    //   const baseUrl = window.location.origin + window.location.pathname;
+      // Check if the app is running in production
+      const isProduction = process.env.NODE_ENV === "production";
 
-    //   // Check if the app is running in production
-    //   const isProduction = process.env.NODE_ENV === "production";
+      // Construct the load path for the translation file
+      const path = isProduction
+        ? `/locales/{{lng}}/{{ns}}.json`
+        : `/locales/${lng}/${ns}.json`;
 
-    //   // Construct the load path for the translation file
-    //   const path = isProduction
-    //     ? `/locales/{{lng}}/{{ns}}.json`
-    //     : `/locales/${lng}/${ns}.json`;
-
-    //   return path;
-    // },
+      return path;
+    },
   });
 
 export default i18n;
