@@ -31,7 +31,7 @@ i18n
 
         // Construct the load path for the translation file
         const path = isProduction
-          ? `https://www.skycity.solutions/locales/${lng}/${ns}.json`
+          ? `https://www.skycity.solutions/public/locales/${lng}/${ns}.json`
           : `/locales/${lng}/${ns}.json`;
 
         return path;
