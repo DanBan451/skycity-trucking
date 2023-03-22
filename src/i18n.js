@@ -34,6 +34,8 @@ i18n
         ? `/locales/{{lng}}/{{ns}}.json`
         : `/locales/${lng}/${ns}.json`;
 
+      console.log("Translation file URL: ", baseUrl + path);
+
       return path;
     },
   });
