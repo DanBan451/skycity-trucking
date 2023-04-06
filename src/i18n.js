@@ -1,10 +1,31 @@
+// import i18next from "i18next";
+// import i18nextXHRbackend from "i18next-xhr-backend";
+// import { initReactI18next } from "react-i18next";
+
+// const fallbackLng = ["en"];
+// const availableLanguages = ["en", "ru", "uk"];
+
+// i18next
+//   .use(i18nextXHRbackend)
+//   .use(initReactI18next)
+//   .init({
+//     fallbackLng,
+//     lng: "en",
+//     whitelist: availableLanguages,
+//     backend: {
+//       loadPath: "/locales/{{lng}}/{{ns}}.json",
+//     },
+//   });
+
+// export default i18next;
+
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import Backend from "i18next-xhr-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-const fallbackLng = ["en"];
-const availableLanguages = ["en", "ru", "uk"];
+const fallbackLng = ["EN"];
+const availableLanguages = ["EN", "RU", "UK"];
 
 i18n
   .use(Backend)
@@ -21,7 +42,7 @@ i18n
     interpolation: {
       escapeValue: false, // no need for react. it escapes by default
     },
-    
+
     loadPath: (lng, ns) => {
       // Get the base URL of the app
       const baseUrl = window.location.origin + window.location.pathname;
