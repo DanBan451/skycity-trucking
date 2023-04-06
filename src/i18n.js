@@ -51,8 +51,9 @@ i18n
       const isProduction = process.env.NODE_ENV === "production";
 
       // Construct the load path for the translation file
+
       const path = isProduction
-        ? `/locales/{{lng.toLowerCase()}}/{{ns}}.json`
+        ? `/locales/${lng.charAt(0).toLowerCase() + lng.slice(1)}/${ns}.json`
         : `/locales/${lng}/${ns}.json`;
 
       console.log("Translation file URL: ", baseUrl + path);
