@@ -52,7 +52,7 @@ i18n
 
       // Construct the load path for the translation file
       const path = isProduction
-        ? `/locales/{{lng}}/{{ns}}.json`
+        ? `/locales/{{lng.toLowerCase()}}/{{ns}}.json`
         : `/locales/${lng}/${ns}.json`;
 
       console.log("Translation file URL: ", baseUrl + path);
