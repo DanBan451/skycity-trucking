@@ -43,12 +43,12 @@ function NavBarComponent({ navigation }) {
           </a>
         </div>
 
-        <div className={classes.options}>
+        {/* <div className={classes.options}>
           <a>ENG</a>
           <a>PYC</a>
           <a>YKP</a>
           <img src={globe} alt="" />
-        </div>
+        </div> */}
 
       </div>
     </div>
