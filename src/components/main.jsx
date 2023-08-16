@@ -3,16 +3,10 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import NavbarComponent from "../components/common/Navbar";
-import Service from "../components/common/service";
 import Footer from "../components/common/Footer";
-import SlideShow from "../components/common/SlideShow";
 
 import warehouse from "../images/homepage/warehouse.jpg";
 import mountain from "../images/homepage/mountain.jpg";
-import twoSemisOnRoad from "../images/home/IMG_5417.jpg";
-import semiOnRoad from "../images/home/IMG_5417.jpg";
-import largeSemi from "../images/home/IMG_5417.jpg";
-import personLookingAtComputer from "../images/home/IMG_5417.jpg";
 
 import classes from "../styles/main.module.css";
 import Contact from "./common/contact";
