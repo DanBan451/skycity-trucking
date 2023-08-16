@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useWindowDimensions from "../utils/useWindowDimensions";
 import logo from "../images/company-logo.png";
-import globe from "../images/home/globe.svg";
-import menuIcon from "../images/menu.png";
 
 import classes from "../styles/navbar.module.css";
 

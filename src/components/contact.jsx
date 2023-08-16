@@ -3,10 +3,6 @@ import { useState } from "react";
 import NavbarComponent from "../components/common/Navbar";
 import FooterComponent from "../components/common/Footer";
 import classes from "../styles/contact.module.css";
-import location from "../images/contact/location.svg";
-import mail from "../images/contact/mail.svg";
-import phone from "../images/contact/phone.svg";
-import fax from "../images/contact/fax.svg";
 import Joi from "joi-browser";
 import Input from "../components/common/input";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -15,7 +11,6 @@ import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useTranslation } from "react-i18next";
-import { Form, Row, Col, Button } from "react-bootstrap";
 
 const schema = {
   name: Joi.string().required().label("Name"),

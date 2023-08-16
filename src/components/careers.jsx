@@ -2,20 +2,12 @@ import React, { useState } from "react";
 import NavbarComponent from "../components/common/Navbar";
 import FooterComponent from "../components/common/Footer";
 import Joi from "joi-browser";
-import Input from "../components/common/input";
-import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "emailjs-com";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-// images
-import group from "../images/careers/arlington-research-kN_kViDchA0-unsplash.jpg";
-import driver from "../images/careers/arlington-research-kN_kViDchA0-unsplash.jpg";
-import owner from "../images/careers/arlington-research-kN_kViDchA0-unsplash.jpg";
-import staff from "../images/careers/arlington-research-kN_kViDchA0-unsplash.jpg";
 
 import office from "../images/careerspage/darkoffice.jpg";
 import officeSmall from "../images/careerspage/darkoffice-small.png";
@@ -25,14 +17,6 @@ import horizon from "../images/careerspage/horizontruck.jpg";
 import horizonSmall from "../images/careerspage/horizon-small.png";
 import network from "../images/careerspage/network.jpg";
 import networkSmall from "../images/careerspage/network-small.png";
-
-// beneftis icons
-import arrow from "../images/careers/benefits/arrow.svg";
-import clock from "../images/careers/benefits/clock.svg";
-import cycle from "../images/careers/benefits/cycle.svg";
-import dollar from "../images/careers/benefits/dollar.svg";
-import ribon from "../images/careers/benefits/ribon.svg";
-import thumbsup from "../images/careers/benefits/thumbsup.svg";
 
 import classes from "../styles/careers.module.css";
 import { Link } from "react-router-dom";

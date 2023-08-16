@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import classes from "../styles/quotemodal.module.css";
 import Joi from "joi-browser";
-import emailjs from "emailjs-com";
 import Input from "./common/input";
 
 

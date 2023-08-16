@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import i18n from "i18next";
 
 import logo from "../../images/company-logo.png";
-import globe from "../../images/home/globe.svg";
 import classes from "../../styles/navbar.module.css";
 
 function NavBarComponent({ handleOpenModal }) {
@@ -57,7 +56,7 @@ function NavBarComponent({ handleOpenModal }) {
                 id="navlink-home"
                 to="/"
               >
-                {t("navbar.home")}
+                Home
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
@@ -69,7 +68,7 @@ function NavBarComponent({ handleOpenModal }) {
                 to="/about"
                 id="navlink-about"
               >
-                {t("navbar.about")}
+                About
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
@@ -80,7 +79,7 @@ function NavBarComponent({ handleOpenModal }) {
                 style={{ textAlign: "center", padding: 15 }}
                 to="/services"
               >
-                {t("navbar.services")}
+                Services
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
@@ -91,7 +90,7 @@ function NavBarComponent({ handleOpenModal }) {
                 style={{ textAlign: "center", padding: 15 }}
                 to="/careers"
               >
-                {t("navbar.careers")}
+                Careers
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
@@ -102,12 +101,12 @@ function NavBarComponent({ handleOpenModal }) {
                 style={{ textAlign: "center", padding: 15 }}
                 to="/contact"
               >
-                {t("navbar.contact")}
+                Contact
               </NavLink>
             </Nav>
             <div className="d-flex options-container">
               <Link className="btn quote-btn" to={""} onClick={handleOpenModal}>
-                {t("navbar.quote")}
+                Quote
               </Link>
               {/* <Button
               className={`option`}

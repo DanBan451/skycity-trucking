@@ -7,8 +7,8 @@ import linkedInIcon from "../../images/socials/linkedin.svg";
 import classes from "../../styles/footer.module.css";
 import { useTranslation } from "react-i18next";
 
-export default function FooterComponent() {  
-  const { t } = useTranslation(); 
+export default function FooterComponent() {
+  const { t } = useTranslation();
   return (
     <React.Fragment>
       <div className={classes.footerWrapper}>
@@ -32,41 +32,58 @@ export default function FooterComponent() {
           </div>
           <div className={classes.links}>
             <ul>
-              <li>{t("footer.links-header")}</li>
-              <li>                
-                <Link to="/home">{t('footer.link_1')}</Link>
+              <li>Quick Links</li>
+              <li>
+                <Link to="/home">Home</Link>
               </li>
               <li>
-                <Link to="/about">{t('footer.link_2')}</Link>
+                <Link to="/about">About</Link>
               </li>
               <li>
-                <Link to="/services">{t('footer.link_3')}</Link>
+                <Link to="/services">Our Services</Link>
               </li>
               <li>
-                <Link to="/contact">Careers</Link>
+                <Link to="/contact">Contact Us</Link>
               </li>
               <li>
-                <Link to="/careers">Contact Us</Link>
+                <Link to="/careers">Careers</Link>
               </li>
               <li>
-                <Link to="/contact">{t('footer.link_6')}</Link>
+                <Link to="/contact">Get a Quote</Link>
               </li>
             </ul>
           </div>
           <div className={classes.contact}>
             <ul>
-              <li>{t('footer.contact-header')}</li>
-              <li><strong>{t('footer.phone')}</strong>: (123) 456-7890</li>
-              <li><strong>{t('footer.email')}</strong>: contact@vytrucking.com</li>             
-              <li><strong>{t('footer.fax')}</strong>: (123) 456-7890</li>             
-              <li><strong>{t('footer.corp-office')}</strong>: <br/>example address</li>
-              <li><strong>{t('footer.ware-office')}</strong>: example address</li>
-              <li><strong>{t('footer.hours-1')}</strong>: exmaple office hours</li>              
-              <li>{t('footer.emergency-1')}<br/>{t('footer.emergency-2')}</li>              
+              <li>Contact Information</li>
+              <li>
+                <strong>Phone</strong>: (123) 456-7890
+              </li>
+              <li>
+                <strong>Email</strong>: contact@vytrucking.com
+              </li>
+              <li>
+                <strong>Fax</strong>: (123) 456-7890
+              </li>
+              <li>
+                <strong>Corporate office & Warehouse Address:</strong>: <br />
+                example address
+              </li>
+              <li>
+                <strong>Warehouse Address</strong>: example address
+              </li>
+              <li>
+                <strong>Office Hours:</strong>: exmaple office hours
+              </li>
+              <li>
+                For emergency/ after-hours inquiries, customer
+                <br />
+                service representive is available 24/7.
+              </li>
             </ul>
           </div>
           <ul className={classes.icons}>
-            <h1>{t('footer.header-h1')}</h1>
+            <h1>{t("footer.header-h1")}</h1>
             <div>
               <a href="">
                 <img src={facebookIcon} />
@@ -83,9 +100,9 @@ export default function FooterComponent() {
       </div>
       <div className={classes.copyright}>
         <span>
-          {"© Copyright 2022 by V&Y Horizon."}          
-          <br />          
-          {t('footer.copyright-2')}          
+          {"© Copyright 2022 by V&Y Horizon."}
+          <br />
+          {t("footer.copyright-2")}
         </span>
       </div>
     </React.Fragment>
