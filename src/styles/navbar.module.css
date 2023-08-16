@@ -5,7 +5,15 @@
 /* Mobile */
 
 .navbar {
-  margin: 10px;  
+  /* margin: 10px;   */
+  width: 100vw;  
+  margin-left: 0;
+  z-index: 10;
+  position: static;
+  display: block;
+  /* position: sticky; */
+  /* top: 0px; */
+  background-color: white;
 }
 .logo {
   width: 150px;  
@@ -18,13 +26,12 @@ a.navlink.nav-link {
   text-decoration: none;
   font-size: 17px;
   font-family: 'Poppins', sans-serif;	
-  color: black;
 }
 .navLink:hover {
-  color: #037de7;
+  color: #005cac;
 }
 .active {
-  color: #017de9;
+  color: #005cac;
 }
 .nonActive {
   color: black;
@@ -36,7 +43,9 @@ a.navlink.nav-link {
 
 @media screen and (min-width: 1200px) {
   #navWrapper .navBar {   
-    margin-left: 20px; 
+    margin-right: 30px; 
+    margin-left: auto;
+    
   }
   #navWrapper .navLink {  		    
     border-bottom: 1px solid white;     

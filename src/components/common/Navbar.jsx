@@ -8,7 +8,7 @@ import logo from "../../images/company-logo.png";
 import globe from "../../images/home/globe.svg";
 import classes from "../../styles/navbar.module.css";
 
-function NavBarComponent({ navigation }) {
+function NavBarComponent({ handleOpenModal }) {
   const [language, setLanguage] = useState("EN");
   const { t } = useTranslation();
 
@@ -20,28 +20,18 @@ function NavBarComponent({ navigation }) {
   useEffect(() => {
     if (language !== i18n.language) {
       i18n.changeLanguage(language);
-    }            
+    }
   }, []);
 
   return (
-    <Navbar id={classes.navWrapper} expand="xl" className={classes.navbar}>
-      <Container className="navbar-inner" fluid>
-        <Navbar.Brand to="/home">
-          <NavLink
-            style={{ textAlign: "center", padding: 15 }}
-            className={({ isActive }) =>
-              `${classes.navLink} ${
-                isActive ? classes.active : classes.nonActive
-              }`
-            }            
-            to="/home"
-          >
-            <img src={logo} className={classes.logo} />
-          </NavLink>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav className={`me-auto my-2 my-lg-0 ${classes.navBar}`}>
+    <div>      
+      <Navbar
+        id={classes.navWrapper}
+        expand="xl"
+        className={`${classes.navbar}`}
+      >
+        <Container className="navbar-inner" fluid>
+          <Navbar.Brand to="/home">
             <NavLink
               style={{ textAlign: "center", padding: 15 }}
               className={({ isActive }) =>
@@ -49,62 +39,77 @@ function NavBarComponent({ navigation }) {
                   isActive ? classes.active : classes.nonActive
                 }`
               }
-              id="navlink-home"
-              to="/"
+              to="/home"
             >
-              {t("navbar.home")}
+              <img src={logo} className={classes.logo} />
             </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                `${classes.navLink} ${
-                  isActive ? classes.active : classes.nonActive
-                }`
-              }
-              style={{ textAlign: "center", padding: 15 }}
-              to="/about"
-              id="navlink-about"
-            >
-              {t("navbar.about")}
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                `${classes.navLink} ${
-                  isActive ? classes.active : classes.nonActive
-                }`
-              }
-              style={{ textAlign: "center", padding: 15 }}
-              to="/services"
-            >
-              {t("navbar.services")}
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                `${classes.navLink} ${
-                  isActive ? classes.active : classes.nonActive
-                }`
-              }
-              style={{ textAlign: "center", padding: 15 }}
-              to="/contact"
-            >
-              {t("navbar.contact")}
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                `${classes.navLink} ${
-                  isActive ? classes.active : classes.nonActive
-                }`
-              }
-              style={{ textAlign: "center", padding: 15 }}
-              to="/careers"
-            >
-              {t("navbar.careers")}
-            </NavLink>
-          </Nav>
-          <div className="d-flex options-container">
-            <Link className="btn quote-btn" to={"/contact"}>
-              {t("navbar.quote")}
-            </Link>
-            {/* <Button
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
+            <Nav className={`my-2 my-lg-0 ${classes.navBar}`}>
+              <NavLink
+                style={{ textAlign: "center", padding: 15 }}
+                className={({ isActive }) =>
+                  `${classes.navLink} ${
+                    isActive ? classes.active : classes.nonActive
+                  }`
+                }
+                id="navlink-home"
+                to="/"
+              >
+                {t("navbar.home")}
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  `${classes.navLink} ${
+                    isActive ? classes.active : classes.nonActive
+                  }`
+                }
+                style={{ textAlign: "center", padding: 15 }}
+                to="/about"
+                id="navlink-about"
+              >
+                {t("navbar.about")}
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  `${classes.navLink} ${
+                    isActive ? classes.active : classes.nonActive
+                  }`
+                }
+                style={{ textAlign: "center", padding: 15 }}
+                to="/services"
+              >
+                {t("navbar.services")}
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  `${classes.navLink} ${
+                    isActive ? classes.active : classes.nonActive
+                  }`
+                }
+                style={{ textAlign: "center", padding: 15 }}
+                to="/careers"
+              >
+                {t("navbar.careers")}
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  `${classes.navLink} ${
+                    isActive ? classes.active : classes.nonActive
+                  }`
+                }
+                style={{ textAlign: "center", padding: 15 }}
+                to="/contact"
+              >
+                {t("navbar.contact")}
+              </NavLink>
+            </Nav>
+            <div className="d-flex options-container">
+              <Link className="btn quote-btn" to={""} onClick={handleOpenModal}>
+                {t("navbar.quote")}
+              </Link>
+              {/* <Button
               className={`option`}
               style={{ color: language == "EN" ? "#017de9" : "black" }}
               onClick={() => handleLanguageChange("EN")}
@@ -126,10 +131,11 @@ function NavBarComponent({ navigation }) {
               YKP
             </Button>
             <img src={globe} className={classes.globe} /> */}
-          </div>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+            </div>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>      
+    </div>
   );
 }
 

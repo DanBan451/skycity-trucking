@@ -43,10 +43,10 @@ export default function FooterComponent() {
                 <Link to="/services">{t('footer.link_3')}</Link>
               </li>
               <li>
-                <Link to="/contact">{t('footer.link_4')}</Link>
+                <Link to="/contact">Careers</Link>
               </li>
               <li>
-                <Link to="/careers">{t('footer.link_5')}</Link>
+                <Link to="/careers">Contact Us</Link>
               </li>
               <li>
                 <Link to="/contact">{t('footer.link_6')}</Link>
@@ -56,12 +56,12 @@ export default function FooterComponent() {
           <div className={classes.contact}>
             <ul>
               <li>{t('footer.contact-header')}</li>
-              <li><strong>{t('footer.phone')}</strong>: (253) 719-8814</li>
-              <li><strong>{t('footer.email')}</strong>: contact@skycitytrucking.com</li>             
-              <li><strong>{t('footer.fax')}</strong>: 206.260.7200</li>             
-              <li><strong>{t('footer.corp-office')}</strong>: <br/>5555 8th St E, Ste B, Fife, Wa 98424</li>
-              <li><strong>{t('footer.ware-office')}</strong>: 4101 Industry Dr E, Suite I, Fife, WA 98424</li>
-              <li><strong>{t('footer.hours-1')}</strong>{t('footer.hours-2')}</li>              
+              <li><strong>{t('footer.phone')}</strong>: (123) 456-7890</li>
+              <li><strong>{t('footer.email')}</strong>: contact@vytrucking.com</li>             
+              <li><strong>{t('footer.fax')}</strong>: (123) 456-7890</li>             
+              <li><strong>{t('footer.corp-office')}</strong>: <br/>example address</li>
+              <li><strong>{t('footer.ware-office')}</strong>: example address</li>
+              <li><strong>{t('footer.hours-1')}</strong>: exmaple office hours</li>              
               <li>{t('footer.emergency-1')}<br/>{t('footer.emergency-2')}</li>              
             </ul>
           </div>
@@ -83,7 +83,7 @@ export default function FooterComponent() {
       </div>
       <div className={classes.copyright}>
         <span>
-          {t('footer.copyright-1')}          
+          {"© Copyright 2022 by V&Y Horizon."}          
           <br />          
           {t('footer.copyright-2')}          
         </span>
