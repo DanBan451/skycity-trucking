@@ -12,18 +12,28 @@ h1 {
 .header {
   height: 50vh;
   width: 100vw;
-  background-image: url("../images/servicespage/darkfreight-1500_x_692.png");
   background-size: cover;
-  /* background-position: 0px -150px; */
   background-position: right;
   background-repeat: no-repeat;
   display: flex;
   background-color: rgba(98, 98, 98, 0.5);
   background-blend-mode: multiply;
 }
+.header::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: multiply;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
 .header h1 {
   color: white;
   margin: auto;
+  z-index: 4;
 }
 
 .scrollButton {
@@ -45,6 +55,11 @@ h1 {
 @media only screen and (min-width: 1050px) {
   .header h1 {
     font-size: clamp(30px, 3vw, 60px);        
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .header {
+    height: 85vh;
   }
 }
 @media only screen and (min-width: 1500px) {
@@ -239,7 +254,7 @@ h1 {
 .capacity > h1 {
   margin-bottom: clamp(50px, 4vw, 100px);
 }
-.capacity img {
+.capacity .image {
   height: 30vh;
   /* background-size: cover;   */
   object-fit: cover;
@@ -288,7 +303,7 @@ h1 {
     margin-bottom: 20vw;
     width: 95vw;    
   }
-  .capacity img {
+  .capacity .image {
     display: flex;
     width: 100%;
     height: 60vh;

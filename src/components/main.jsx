@@ -1,44 +1,30 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { ParallaxBanner } from "react-scroll-parallax";
 
 import NavbarComponent from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 
+import main from "../images/homepage/main.jpg";
 import warehouse from "../images/homepage/warehouse.jpg";
 import mountain from "../images/homepage/mountain.jpg";
+import wheel from "../images/homepage/handeonwheel.jpg";
+import wheelSmall from "../images/homepage/wheel-1200.jpg";
 
 import classes from "../styles/main.module.css";
 import Contact from "./common/contact";
 
-import QuoteModal from "./QuoteModal";
-
-import { ToastContainer } from "react-toastify";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
 export default function Main({ navigation }) {
   const { t } = useTranslation();
 
-  const [modalOpen, setModalOpen] = useState(false);
-  const handleOpenModal = () => {
-    setModalOpen(true);
-  };
-  const handleCloseModal = (submitted) => {
-    if (submitted) {
-      toast.success("Quote Submitted!");
-    }
-    setModalOpen(false);
-  };
-
   return (
     <React.Fragment>
-      <ToastContainer />
-      <QuoteModal isOpen={modalOpen} onClose={handleCloseModal} />
       <div className={classes.wrapper}>
-        <NavbarComponent handleOpenModal={handleOpenModal} />
-
-        <div className={classes.header}>
+        <ParallaxBanner
+          className={classes.header}
+          layers={[{ image: main, speed: 20 }]}
+        >
           <div className={classes.divider}>
             <h1>
               Lorem ipsum dolor sit amet, <br /> consectetuer adipiscing elit.
@@ -52,12 +38,12 @@ export default function Main({ navigation }) {
               </Link>
             </div>
           </div>
-        </div>
+        </ParallaxBanner>
 
         <div className={`${classes.service} ${classes.rev}`}>
-          <div
-            style={{ backgroundImage: `url(${warehouse})` }}
-            className={`${classes.serviceImage}`}
+          <ParallaxBanner
+            className={classes.serviceImage}
+            layers={[{ image: warehouse, speed: 20 }]}
           />
           <div className={classes.serviceContent}>
             <h1>{"Why V&Y Horizon?"}</h1>
@@ -82,7 +68,10 @@ export default function Main({ navigation }) {
             Shipping Services to fill your logistics and transportation
             operations.
           </h1>
-          <img src={mountain} alt="" />
+          <ParallaxBanner
+            className={classes.shippingImage}
+            layers={[{ image: mountain, speed: 20 }]}
+          ></ParallaxBanner>
           <div className={classes.cards}>
             <div className={classes.card}>
               <h1>Lorem Ipsum</h1>
@@ -130,7 +119,10 @@ export default function Main({ navigation }) {
             montes, nascetur ridiculus mus. Donec quam
           </span>
         </div>
-        <div className={classes.bottomHeader}>
+        <ParallaxBanner
+          className={classes.bottomHeader}
+          layers={[{ image: wheel, speed: 20 }]}
+        >
           <div className={classes.divider}>
             <span>JOIN OUR TEAM</span>
             <div>
@@ -144,7 +136,7 @@ export default function Main({ navigation }) {
               Join Our Team
             </Link>
           </div>
-        </div>
+        </ParallaxBanner>
 
         <Contact />
 

@@ -5,16 +5,14 @@
 /* Mobile */
 
 .navbar {
-  /* margin: 10px;   */
   width: 100vw;  
   margin-left: 0;
-  z-index: 10;
-  position: static;
+  position: fixed;
   display: block;
-  /* position: sticky; */
-  /* top: 0px; */
+  z-index: 10;
   background-color: white;
 }
+
 .logo {
   width: 150px;  
 }

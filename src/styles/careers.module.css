@@ -13,8 +13,7 @@ h1 {
 
 .header {
   height: 50vh;
-  width: 100vw;
-  background-image: url("../images/careerspage/main-small.png");
+  width: 100vw;  
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
@@ -25,8 +24,21 @@ h1 {
   display: flex;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
 }
-.header div {
+.header::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+.header div:last-of-type {
   margin: auto;
+  z-index: 4;
 }
 .header h1 {
   color: white;
@@ -83,9 +95,8 @@ h1 {
 /* --------banner */
 
 .banner {
-  height: 30vh;
+  height: 40vh;
   width: 100vw;
-  background-image: url("../images/careerspage/flash-small.png");
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
@@ -96,10 +107,22 @@ h1 {
   display: flex;
   margin-bottom: clamp(70px, 10vw, 120px);
 }
+.banner::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
 .banner h1 {
   margin: auto;
   color: white;
   font-size: 18px;
+  z-index: 4;
 }
 .banner h1 strong {
   font-size: 35px;
@@ -157,8 +180,9 @@ ul.careerList .career div p {
   font-weight: 400;
   font-family: "Poppins", sans-serif;
 }
-ul.careerList .career img {
+ul.careerList .career .image {
   max-width: 600px;
+  height: 40vh;
   object-fit: cover;
 }
 ul.careerList .career .button {
@@ -397,11 +421,11 @@ ul.careerList .career .button:hover {
     font-size: clamp(16px, 1.7vw, 19px);
   }
   ul.careerList .career div,
-  ul.careerList .career img {
-    width: 50%;
+  ul.careerList .career .image {
+    width: 100%;
     max-width: 600px;
   }
-  ul.careerList .career img {
+  ul.careerList .career .image {
     object-fit: cover;
     height: 40vh;
     margin-right: auto;

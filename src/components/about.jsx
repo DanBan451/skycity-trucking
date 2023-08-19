@@ -3,18 +3,19 @@ import { Link } from "react-router-dom";
 import NavbarComponent from "./common/Navbar";
 import FooterComponent from "./common/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ParallaxBanner } from "react-scroll-parallax";
 
 import { useTranslation } from "react-i18next";
 import classes from "../styles/about.module.css";
 import Contact from "./common/contact";
+
+import highway from "../images/aboutpage/iStock-1413625824.jpg";
 
 export default function About({ navigation }) {
   const { t } = useTranslation();
 
   return (
     <div id={classes.about}>
-      <NavbarComponent />
-
       <div className={classes.header}>
         <h1>About V&Y Horizon</h1>
         <p>
@@ -39,7 +40,12 @@ export default function About({ navigation }) {
         </Link>
       </div>
 
-      <div className={classes.image} />
+      <ParallaxBanner
+        className={classes.image}
+        layers={[{ image: highway, speed: 20 }]}
+      />
+
+      {/* <div className={classes.image} /> */}
 
       <div className={classes.mission}>
         <span>OUR MISSION</span>
@@ -56,7 +62,7 @@ export default function About({ navigation }) {
       </div>
 
       <div className={classes.values}>
-        <h1>Our Core Values</h1>        
+        <h1>Our Core Values</h1>
         <div className={classes.card}>
           <h1>1</h1>
           <div>
@@ -100,7 +106,7 @@ export default function About({ navigation }) {
           </div>
         </div>
       </div>
-      
+
       <Contact />
 
       {/* <div className={classes.content}>

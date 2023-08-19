@@ -2,10 +2,13 @@ import React, { img } from "react";
 import NavbarComponent from "../components/common/Navbar";
 import FooterComponent from "../components/common/Footer";
 import { Link } from "react-router-dom";
+import { ParallaxBanner } from "react-scroll-parallax";
+
 import classes from "../styles/services.module.css";
 import Cards from "../Cards";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import darkFreight from "../images/servicespage/darkfreight.jpg";
 import freight from "../images/servicespage/freight.jpg";
 import freightSmall from "../images/servicespage/freight-1500_x_1001.png";
 import whitebluetrucks from "../images/servicespage/whitebluetrucks.jpg";
@@ -20,14 +23,15 @@ export default function Services({ navigation }) {
 
   return (
     <div>
-      <NavbarComponent />
-
-      <div className={classes.header}>
+      <ParallaxBanner
+        className={classes.header}
+        layers={[{ image: darkFreight, speed: 20 }]}
+      >
         <h1>
           Services &<br />
           Freight Solutions
         </h1>
-      </div>
+      </ParallaxBanner>
 
       <Link className={classes.scrollButton}>
         <FontAwesomeIcon
@@ -113,12 +117,17 @@ export default function Services({ navigation }) {
 
       <div className={classes.capacity}>
         <h1>Capacity in any market at any time.</h1>
-        <img
+        <ParallaxBanner
+          className={classes.image}
+          layers={[{ image: birdseye, speed: 20 }]}
+        />
+
+        {/* <img
           srcset={`${birdseye} 1500w,
               ${birdseyeSmall} 768w`}
           sizes="(max-width: 768px) 100vw, 1500px"
           alt="Birds Eye Freight"
-        />
+        /> */}
         <div className={classes.cards}>
           <div className={classes.card}>
             <h1>Lorem Ipsum</h1>
@@ -153,8 +162,8 @@ export default function Services({ navigation }) {
       <div className={classes.serviceFooter}>
         <span>REQUEST A QUOTE TODAY</span>
         <h1>
-          Lorem ipsum dolor sit amet consectetur <br/>adipisicing elit. Officia
-          commodi.
+          Lorem ipsum dolor sit amet consectetur <br />
+          adipisicing elit. Officia commodi.
         </h1>
         <Link className={`${classes.button}`}>Get a Quote!</Link>
       </div>

@@ -107,29 +107,7 @@ function NavBarComponent({ handleOpenModal }) {
             <div className="d-flex options-container">
               <Link className="btn quote-btn" to={""} onClick={handleOpenModal}>
                 Quote
-              </Link>
-              {/* <Button
-              className={`option`}
-              style={{ color: language == "EN" ? "#017de9" : "black" }}
-              onClick={() => handleLanguageChange("EN")}
-            >
-              ENG
-            </Button>
-            <Button
-              className={`option`}
-              style={{ color: language == "RS" ? "#017de9" : "black" }}
-              onClick={() => handleLanguageChange("RS")}
-            >
-              PYC
-            </Button>
-            <Button
-              className={`option`}
-              style={{ color: language == "UK" ? "#017de9" : "black" }}
-              onClick={() => handleLanguageChange("UK")}
-            >
-              YKP
-            </Button>
-            <img src={globe} className={classes.globe} /> */}
+              </Link>              
             </div>
           </Navbar.Collapse>
         </Container>

@@ -232,7 +232,6 @@ export default function Contact() {
   return (
     <div>
       <ToastContainer />
-      <NavbarComponent />
       <div className={classes.header}>
         <h1 className={classes.title}>Request a Quote Today!</h1>
         <p className={classes.subTitle}>

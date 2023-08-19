@@ -8,7 +8,10 @@ import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ParallaxBanner } from "react-scroll-parallax";
 
+import main from "../images/careerspage/main.jpg";
+import flash from "../images/careerspage/flash-small.png";
 import office from "../images/careerspage/darkoffice.jpg";
 import officeSmall from "../images/careerspage/darkoffice-small.png";
 import snowtruck from "../images/careerspage/snowtruck.jpg";
@@ -127,14 +130,15 @@ export default function Careers() {
     <React.Fragment>
       <ToastContainer />
       <div className={classes.careers}>
-        <NavbarComponent />
-
-        <div className={classes.header}>
+        <ParallaxBanner
+          className={classes.header}
+          layers={[{ image: main, speed: 20 }]}
+        >
           <div>
             <h1>Come work with us</h1>
             <Link className={classes.button}>Current Opening</Link>
           </div>
-        </div>
+        </ParallaxBanner>
 
         <p className={classes.description}>
           Lorem ipsum dolor sit amet <span>consectetur adipisicing</span> elit.
@@ -142,12 +146,15 @@ export default function Careers() {
           expedita perferendis at praesentium, ipsa nulla?
         </p>
 
-        <div className={classes.banner}>
+        <ParallaxBanner
+          className={classes.banner}
+          layers={[{ image: flash, speed: 20 }]}
+        >
           <h1>
             <strong>Life is a highway,</strong>
             <br /> and truckers drive the soul of the nation.
           </h1>
-        </div>
+        </ParallaxBanner>
 
         <p className={classes.description2}>
           What's your passion? Check out and check one of the tabs below!
@@ -155,7 +162,11 @@ export default function Careers() {
 
         <ul className={classes.careerList}>
           <div className={classes.career}>
-            <img
+            <ParallaxBanner
+              className={classes.image}
+              layers={[{ image: office, speed: 20 }]}
+            />
+            {/* <img
               src={officeSmall}
               srcset={`
     ${officeSmall} 1500w,
@@ -163,7 +174,7 @@ export default function Careers() {
   `}
               sizes="(max-width: 1500px) 100vw, 1500px"
               alt="Dark Office"
-            />
+            /> */}
             <div>
               <h1>Office Team</h1>
               <p>
@@ -182,7 +193,11 @@ export default function Careers() {
             </div>
           </div>
           <div className={classes.career}>
-            <img
+            <ParallaxBanner
+              className={classes.image}
+              layers={[{ image: snowtruck, speed: 20 }]}
+            />
+            {/* <img
               src={snowtruckSmall}
               srcset={`
     ${snowtruckSmall} 1500w,
@@ -190,7 +205,7 @@ export default function Careers() {
   `}
               sizes="(max-width: 1500px) 100vw, 1500px"
               alt="Snow Truck"
-            />
+            /> */}
             <div>
               <h1>Company Drivers</h1>
               <p>
@@ -209,7 +224,11 @@ export default function Careers() {
             </div>
           </div>
           <div className={classes.career}>
-            <img
+            <ParallaxBanner
+              className={classes.image}
+              layers={[{ image: horizon, speed: 20 }]}
+            />
+            {/* <img
               src={horizonSmall}
               srcset={`
     ${horizonSmall} 1500w,
@@ -217,7 +236,7 @@ export default function Careers() {
   `}
               sizes="(max-width: 1500px) 100vw, 1500px"
               alt="Horizon Truck"
-            />
+            /> */}
             <div>
               <h1>Owner Operators</h1>
               <p>
@@ -236,7 +255,11 @@ export default function Careers() {
             </div>
           </div>
           <div className={classes.career}>
-            <img
+            <ParallaxBanner
+              className={classes.image}
+              layers={[{ image: network, speed: 20 }]}
+            />
+            {/* <img
               src={networkSmall}
               srcset={`
     ${networkSmall} 1500w,
@@ -244,7 +267,7 @@ export default function Careers() {
   `}
               sizes="(max-width: 1500px) 100vw, 1500px"
               alt="Network"
-            />
+            /> */}
             <div>
               <h1>Career Network</h1>
               <p>
@@ -269,19 +292,31 @@ export default function Careers() {
           <ul className="social-links">
             <li>
               <Link className={classes.icon}>
-                <FontAwesomeIcon icon={["fab", "twitter"]} size={'2x'} color="white" />
+                <FontAwesomeIcon
+                  icon={["fab", "twitter"]}
+                  size={"2x"}
+                  color="white"
+                />
                 <span>V&Y Horizon</span>
               </Link>
             </li>
             <li>
               <Link className={classes.icon}>
-                <FontAwesomeIcon icon={["fab", "facebook"]} size={'2x'} color="white" />
+                <FontAwesomeIcon
+                  icon={["fab", "facebook"]}
+                  size={"2x"}
+                  color="white"
+                />
                 <span>V&Y Horizon</span>
               </Link>
             </li>
             <li>
               <Link className={classes.icon}>
-                <FontAwesomeIcon icon={["fab", "linkedin"]} size={'2x'} color="white" />
+                <FontAwesomeIcon
+                  icon={["fab", "linkedin"]}
+                  size={"2x"}
+                  color="white"
+                />
                 <span>V&Y Horizon</span>
               </Link>
             </li>
