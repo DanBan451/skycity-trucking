@@ -17,7 +17,6 @@ button {
   font-weight: 400;
 }
 
-
 .wrapper {
   height: 100vh;
   /* overflow-y: auto; */
@@ -36,9 +35,9 @@ button {
   position: relative;
 }
 .header::after {
+  background-color: rgba(0, 0, 0, 0.5);
   content: "";
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: multiply;
   z-index: 3;
   height: 100%;
@@ -50,11 +49,12 @@ button {
 .header * {
   color: white;
 }
-.header .divider h1, .button {
+.header .divider h1,
+.button {
   /* z-index: 20; */
 }
-.header .divider {   
-  margin: auto;  
+.header .divider {
+  margin: auto;
   z-index: 2;
   margin-top: auto;
   margin-bottom: auto;
@@ -64,19 +64,19 @@ button {
   flex-direction: column;
   width: 450px;
   text-align: center;
-  gap: 25px;  
+  gap: 25px;
   top: 0px;
-  bottom: 0px;  
-  z-index: 4;  
+  bottom: 0px;
+  z-index: 4;
 }
-.header .divider > div  {
+.header .divider > div {
   z-index: 12;
 }
 .header .divider h1 br {
   display: none;
 }
 .header .divider h1 {
-  font-size: 25px;  
+  font-size: 25px;
 }
 .header .divider div {
   display: flex;
@@ -110,19 +110,135 @@ button {
 }
 
 @media (min-width: 1000px) {
+  /* changes here */
   .header {
     justify-content: left;
   }
   .header::after {
-    background-color: rgba(0, 0, 0, 0.1);
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    background-color: rgba(255, 255, 255, 0.2);
   }
   .header .divider {
-    margin-left: 5vw;
+    margin-left: 3vw;
     width: max-content;
     align-items: flex-start;
-  }  
+  }
+  .header .divider h1 {
+    font-weight: 600;
+    /* color: black; */
+  }
   .header .divider h1 br {
     display: block;
+  }
+
+  /* here */
+
+  /* .header .divider h1 span {
+    display: inline-block;
+    font-weight: 600;
+    color: #0275d8;
+  } */
+
+  .words-wrapper {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    margin-left: 8px;
+  }
+
+  .word-container {
+    position: relative;
+    overflow: hidden; /* Hide the last child when it's hidden */
+  }
+
+  .words-wrapper b {
+    color: #005cac;
+    width: 100%; /* Take up full width */
+  }
+
+  b.is-visible {
+    opacity: 1;
+    top: 100%;
+    transition: translateY(-100%) 2s;
+  }
+
+  b.is-hidden {
+    opacity: 0;
+    /* transform: translateY(100%); */
+    position: absolute;
+    width: 0; /* Set the width to zero when hidden */
+  }
+
+  /* pulse effect */
+
+  .pulseWrapper {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 4;
+  }
+  .pulseWrapper .pulse {
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    display: flex;
+    position: absolute;
+    right: 100px;
+    top: 100px;
+  }
+  .pulseWrapper .pulse h1 {
+    z-index: 4;
+    padding: 0px;
+    margin: auto;
+    font-size: 20px;
+  }
+  .pulseWrapper .pulse::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border-radius: 100%;
+  }
+
+  .pulseWrapper .circle {
+    height: 200px;
+    width: 200px;
+    /* background-color: red; */
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.7);
+    border-radius: 100%;
+    z-index: 5;
+    position: absolute;
+    right: 100px;
+    top: 100px;
+    animation: expandAndFade 3s infinite;
+    transform-origin: center center;
+    opacity: 0; /* Initially set to 0 */
+  }
+
+  .pulseWrapper .circle.circle-1 {
+    animation-delay: 1s;
+  }
+
+  .pulseWrapper .circle.circle-2 {
+    animation-delay: 3s;
+  }
+
+  .pulseWrapper .circle.circle-3 {
+    animation-delay: 5s;
+  }
+
+  @keyframes expandAndFade {
+    0% {
+      transform: scale(1);
+      opacity: 1; /* Initially fully visible */
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0; /* Fade out at the end */
+    }
   }
 }
 
@@ -138,6 +254,7 @@ button {
   }
   .header .divider h1 {
     font-size: 40px;
+    text-align: left;
   }
   .header .button {
     font-size: 25px;
@@ -172,7 +289,7 @@ button {
   margin-bottom: 0px;
 }
 .service .serviceImage {
-  /* width: 100%; */  
+  /* width: 100%; */
   height: 40vh;
   background-size: contain;
   background-position: right;
@@ -226,7 +343,7 @@ button {
 }
 @media only screen and (min-width: 1100px) {
   .service {
-    flex-direction: row;    
+    flex-direction: row;
     min-height: 40vh;
     max-width: none;
     padding-bottom: 20vh;
@@ -242,11 +359,11 @@ button {
     width: 100%;
   }
   .service .serviceImage {
-    display: flex; 
-    height: 60vh;    
+    display: flex;
+    height: 60vh;
     object-position: right;
   }
-  
+
   .service.rev {
     flex-flow: row-reverse;
   }
@@ -262,9 +379,9 @@ button {
   }
   .service h1 {
     margin-bottom: auto;
-    margin-top: 0;    
+    margin-top: 0;
     margin-bottom: 60px;
-    padding-top: 20px;    
+    padding-top: 20px;
   }
   .service .serviceBtn {
     margin-bottom: 20px;
@@ -481,7 +598,6 @@ button {
   background-blend-mode: multiply;
   position: relative;
   margin-bottom: clamp(100px, 20vw, 200px);
-  
 }
 .bottomHeader::after {
   content: "";

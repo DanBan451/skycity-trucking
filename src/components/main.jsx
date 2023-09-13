@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import $ from "jquery";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ParallaxBanner } from "react-scroll-parallax";
@@ -18,6 +19,38 @@ import Contact from "./common/contact";
 export default function Main({ navigation }) {
   const { t } = useTranslation();
 
+  const words = ["Transportation", "Warehousing", "Drayage"];
+  const [index, setIndex] = useState(0);
+
+  // $(document).ready(function () {
+  //   const words = $(".words-wrapper b");
+  //   let currentIndex = 0;
+
+  //   function toggleWord() {
+  //     words.eq(currentIndex).toggleClass("is-visible is-hidden");
+  //     currentIndex = (currentIndex + 1) % words.length;
+  //     words.eq(currentIndex).toggleClass("is-visible is-hidden");
+  //   }
+
+  //   setInterval(toggleWord, 3000);
+  // });
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setIndex((prevIndex) => {
+        if (prevIndex + 1 >= words.length) {
+          return 0;
+        } else {
+          return prevIndex + 1;
+        }
+      });
+    }, 3000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
   return (
     <React.Fragment>
       <div className={classes.wrapper}>
@@ -27,7 +60,27 @@ export default function Main({ navigation }) {
         >
           <div className={classes.divider}>
             <h1>
-              Lorem ipsum dolor sit amet, <br /> consectetuer adipiscing elit.
+              Old-School Robust Services
+              <br />
+              With Modern
+              <span className={classes["words-wrapper"]}>
+                <span className={classes["word-container"]}>
+                  {words.map((word, i) => (
+                    <b
+                      className={`${
+                        index === i
+                          ? classes["is-visible"]
+                          : classes["is-hidden"]
+                      }`}
+                      key={i}
+                    >
+                      {word}
+                    </b>
+                  ))}
+                </span>
+              </span>
+              <br />
+              You Can Count On!
             </h1>
             <div>
               <Link className={`btn ${classes.button}`} to={"/contact"}>
@@ -37,6 +90,14 @@ export default function Main({ navigation }) {
                 Contact Us
               </Link>
             </div>
+          </div>
+          <div className={classes.pulseWrapper}>  
+            <div className={classes.pulse}>
+              <h1>Let's Talk!</h1>
+            </div>
+            <div className={`${classes['circle']} ${classes['cirlce-1']}`}></div>
+            <div className={`${classes['circle']} ${classes['cirlce-2']}`}></div>
+            <div className={`${classes['circle']} ${classes['cirlce-3']}`}></div>
           </div>
         </ParallaxBanner>
 
