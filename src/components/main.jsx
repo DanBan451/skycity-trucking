@@ -22,19 +22,6 @@ export default function Main({ navigation }) {
   const words = ["Transportation", "Warehousing", "Drayage"];
   const [index, setIndex] = useState(0);
 
-  // $(document).ready(function () {
-  //   const words = $(".words-wrapper b");
-  //   let currentIndex = 0;
-
-  //   function toggleWord() {
-  //     words.eq(currentIndex).toggleClass("is-visible is-hidden");
-  //     currentIndex = (currentIndex + 1) % words.length;
-  //     words.eq(currentIndex).toggleClass("is-visible is-hidden");
-  //   }
-
-  //   setInterval(toggleWord, 3000);
-  // });
-
   useEffect(() => {
     const intervalId = setInterval(() => {
       setIndex((prevIndex) => {
@@ -53,6 +40,9 @@ export default function Main({ navigation }) {
 
   return (
     <React.Fragment>
+      <div className={classes.blueprint}>
+        <div className={classes.stream1}></div>
+      </div>
       <div className={classes.wrapper}>
         <ParallaxBanner
           className={classes.header}
@@ -64,20 +54,17 @@ export default function Main({ navigation }) {
               <br />
               With Modern
               <span className={classes["words-wrapper"]}>
-                <span className={classes["word-container"]}>
-                  {words.map((word, i) => (
-                    <b
-                      className={`${
-                        index === i
-                          ? classes["is-visible"]
-                          : classes["is-hidden"]
-                      }`}
-                      key={i}
-                    >
-                      {word}
-                    </b>
-                  ))}
-                </span>
+                <span>Ghost</span>
+                {words.map((word, i) => (
+                  <b
+                    className={`${
+                      index === i ? classes["is-visible"] : classes["is-hidden"]
+                    }`}
+                    key={i}
+                  >
+                    {word}
+                  </b>
+                ))}
               </span>
               <br />
               You Can Count On!
@@ -91,13 +78,19 @@ export default function Main({ navigation }) {
               </Link>
             </div>
           </div>
-          <div className={classes.pulseWrapper}>  
+          <div className={classes.pulseWrapper}>
             <div className={classes.pulse}>
               <h1>Let's Talk!</h1>
             </div>
-            <div className={`${classes['circle']} ${classes['cirlce-1']}`}></div>
-            <div className={`${classes['circle']} ${classes['cirlce-2']}`}></div>
-            <div className={`${classes['circle']} ${classes['cirlce-3']}`}></div>
+            <div
+              className={`${classes["circle"]} ${classes["cirlce-1"]}`}
+            ></div>
+            <div
+              className={`${classes["circle"]} ${classes["cirlce-2"]}`}
+            ></div>
+            <div
+              className={`${classes["circle"]} ${classes["cirlce-3"]}`}
+            ></div>
           </div>
         </ParallaxBanner>
 

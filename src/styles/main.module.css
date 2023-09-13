@@ -32,7 +32,7 @@ button {
   margin: auto;
   display: flex;
   justify-content: center;
-  position: relative;
+  position: relative;  
 }
 .header::after {
   background-color: rgba(0, 0, 0, 0.5);
@@ -133,41 +133,56 @@ button {
 
   /* here */
 
-  /* .header .divider h1 span {
-    display: inline-block;
-    font-weight: 600;
-    color: #0275d8;
-  } */
 
   .words-wrapper {
     display: inline-block;
     position: relative;
     text-align: left;
-    margin-left: 8px;
+    margin-left: 8px;    
   }
-
-  .word-container {
-    position: relative;
-    overflow: hidden; /* Hide the last child when it's hidden */
+  .words-wrapper span {
+    width: 0px;
+    display: inline-block;
+    color: transparent;
   }
 
   .words-wrapper b {
-    color: #005cac;
-    width: 100%; /* Take up full width */
-  }
-
-  b.is-visible {
-    opacity: 1;
-    top: 100%;
-    transition: translateY(-100%) 2s;
-  }
-
-  b.is-hidden {
-    opacity: 0;
-    /* transform: translateY(100%); */
+    color: #005cac;    
+    
+    /* making default start at top */
+    /* start at the top of the span container ALWAYS */            
+    opacity: 0;    
     position: absolute;
-    width: 0; /* Set the width to zero when hidden */
+    top: -100%;
+    transition: top 1s;
   }
+
+  b.is-visible { 
+    top: 0%;
+    opacity: 1;
+  }
+  b.is-hidden { 
+    animation-name: goDownFadeAndTopHide;    
+    animation-duration: 1s;
+  }
+
+
+  
+  @keyframes goDownFadeAndTopHide {
+    0% {      
+      top: 0%; 
+      opacity: 1;
+    }
+    99% {
+      top: 100%;
+      opacity: 0;
+    }
+    100% {
+      top: -100%;
+    }
+  }
+
+
 
   /* pulse effect */
 
@@ -213,7 +228,7 @@ button {
     position: absolute;
     right: 100px;
     top: 100px;
-    animation: expandAndFade 3s infinite;
+    /* animation: expandAndFade 3s infinite; */
     transform-origin: center center;
     opacity: 0; /* Initially set to 0 */
   }
@@ -240,6 +255,29 @@ button {
       opacity: 0; /* Fade out at the end */
     }
   }
+
+  /* blueprint */
+
+  .blueprint {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;        
+  }
+  .blueprint .stream1 {
+    border: 2px solid black;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    height: 6000px;
+    top: 100vh;
+  }
+  .shippingService {
+    z-index: 5;
+    background-color: white;
+  }
+
+
 }
 
 @media (min-width: 1200px) {
