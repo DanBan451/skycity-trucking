@@ -17,6 +17,15 @@ button {
   font-weight: 400;
 }
 
+.fixed {
+  /* width: 100vw;
+  height: 50vh;
+  bottom: 0;
+  position: fixed;
+  background-color: red;
+  z-index: 0; */
+}
+
 .wrapper {
   height: 100vh;
   /* overflow-y: auto; */
@@ -32,7 +41,7 @@ button {
   margin: auto;
   display: flex;
   justify-content: center;
-  position: relative;  
+  position: relative;
 }
 .header::after {
   background-color: rgba(0, 0, 0, 0.5);
@@ -133,12 +142,11 @@ button {
 
   /* here */
 
-
   .words-wrapper {
     display: inline-block;
     position: relative;
     text-align: left;
-    margin-left: 8px;    
+    margin-left: 8px;
   }
   .words-wrapper span {
     width: 0px;
@@ -147,30 +155,28 @@ button {
   }
 
   .words-wrapper b {
-    color: #005cac;    
-    
+    color: #005cac;
+
     /* making default start at top */
-    /* start at the top of the span container ALWAYS */            
-    opacity: 0;    
+    /* start at the top of the span container ALWAYS */
+    opacity: 0;
     position: absolute;
     top: -100%;
     transition: top 1s;
   }
 
-  b.is-visible { 
+  b.is-visible {
     top: 0%;
     opacity: 1;
   }
-  b.is-hidden { 
-    animation-name: goDownFadeAndTopHide;    
+  b.is-hidden {
+    animation-name: goDownFadeAndTopHide;
     animation-duration: 1s;
   }
 
-
-  
   @keyframes goDownFadeAndTopHide {
-    0% {      
-      top: 0%; 
+    0% {
+      top: 0%;
       opacity: 1;
     }
     99% {
@@ -182,8 +188,6 @@ button {
     }
   }
 
-
-
   /* pulse effect */
 
   .pulseWrapper {
@@ -193,19 +197,25 @@ button {
     z-index: 4;
   }
   .pulseWrapper .pulse {
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
     border-radius: 100%;
     display: flex;
     position: absolute;
-    right: 100px;
-    top: 100px;
+    right: 200px;
+    top: 470px;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 1);
+    text-decoration: none;
+    z-index: 4;
+  }
+  .pulseWrapper .pulse:hover {
+    box-shadow: 0 0 10px rgb(0, 0, 0);
   }
   .pulseWrapper .pulse h1 {
     z-index: 4;
     padding: 0px;
     margin: auto;
-    font-size: 20px;
+    font-size: 16px;
   }
   .pulseWrapper .pulse::before {
     content: "";
@@ -219,30 +229,33 @@ button {
   }
 
   .pulseWrapper .circle {
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
     /* background-color: red; */
     box-shadow: 0 0 10px rgba(52, 152, 219, 0.7);
     border-radius: 100%;
-    z-index: 5;
+    z-index: 3;
     position: absolute;
-    right: 100px;
-    top: 100px;
-    /* animation: expandAndFade 3s infinite; */
+    right: 200px;
+    top: 470px;
     transform-origin: center center;
     opacity: 0; /* Initially set to 0 */
+    animation: expandAndFade 3s infinite;
   }
 
-  .pulseWrapper .circle.circle-1 {
+  .pulseWrapper .circle-1 {
     animation-delay: 1s;
+    box-shadow: 0 0 15px #00274a;
   }
 
-  .pulseWrapper .circle.circle-2 {
+  .pulseWrapper .circle-2 {
     animation-delay: 3s;
+    box-shadow: 0 0 20px #005cac;
   }
 
-  .pulseWrapper .circle.circle-3 {
-    animation-delay: 5s;
+  .pulseWrapper .circle-3 {
+    animation-delay: 3.2s;
+    box-shadow: 0 0 25px #0188ff;
   }
 
   @keyframes expandAndFade {
@@ -255,29 +268,6 @@ button {
       opacity: 0; /* Fade out at the end */
     }
   }
-
-  /* blueprint */
-
-  .blueprint {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 0;        
-  }
-  .blueprint .stream1 {
-    border: 2px solid black;
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    height: 6000px;
-    top: 100vh;
-  }
-  .shippingService {
-    z-index: 5;
-    background-color: white;
-  }
-
-
 }
 
 @media (min-width: 1200px) {
@@ -320,8 +310,18 @@ button {
   padding-bottom: 100px;
   background-color: white;
   margin: 10px;
-  padding-top: 10vh;
+  padding-top: 10vh;  
+  opacity: 0.99;
 }
+
+/* creating z-index effect */
+.service .serviceImage, .service .serviceContent {
+  z-index: 1;
+}
+.service .blueprint .stream1 {
+  z-index: -10;
+}
+
 .service div {
   /* margin: 25px; */
   margin-bottom: 0px;
@@ -362,7 +362,8 @@ button {
 /* media queries */
 
 @media only screen and (min-width: 600px) {
-  .service > * {
+  .service > .serviceImage,
+  .service > .serviceContent {
     max-width: 750px;
     margin: auto;
   }
@@ -377,6 +378,29 @@ button {
   }
   .service div {
     /* width: 90%; */
+  }
+}
+
+/* Scroll-down line */
+@media only screen and (min-width: 1000px) {
+  .service {
+    position: relative;
+    display: flex;
+  }
+  .service .blueprint {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    padding-top: 10vh;
+  }
+  .service .stream1 {
+    border: 1px solid black;
+    height: 100%;
+    margin-top: auto;
+    width: 0%;
   }
 }
 @media only screen and (min-width: 1100px) {
@@ -428,8 +452,6 @@ button {
 }
 @media only screen and (min-width: 1260px) {
   .service {
-    width: 100%;
-    padding: 20px;
     padding-bottom: 10vh;
     padding-top: 10vh;
   }
@@ -442,15 +464,15 @@ button {
   .service img {
     flex-grow: 0;
   }
-  .service div {
+  .service .serviceContent {
     justify-content: center;
     padding: 0 20px;
   }
 
-  .service h1 {
+  .service .serviceContent h1 {
     font-size: 50px;
   }
-  .service span {
+  .service .serviceContent span {
     font-size: 21px;
   }
   .service .serviceBtn {
@@ -461,9 +483,8 @@ button {
 }
 @media only screen and (min-width: 1600px) {
   .service {
-    /* padding: 75px; */
   }
-  .service div {
+  .service .serviceContent div {
     padding: 0 75px;
   }
 }
@@ -481,7 +502,7 @@ button {
   margin-left: auto;
   margin-right: auto;
   width: 95%;
-  margin-bottom: 25vw;
+  /* margin-bottom: 25vw; */
   transform-style: preserve-3d;
 }
 
@@ -535,32 +556,108 @@ button {
   border-color: gray;
 }
 
+@media only screen and (min-width: 1000px) {
+  .shippingService {
+    position: relative;
+  }
+
+  /* blueprint */
+  .shippingService.blueprint .stream1 {
+    margin: -40px auto;
+    border: 1px solid black;
+    height: 30px;
+    width: 0px;
+  }
+  .shippingService.blueprint .stream2 {
+    margin: -40px auto;
+    border: 1px solid black;
+    height: 30px;
+    width: 0px;
+  }
+  .shippingService.blueprint .stream3 {
+    margin: -40px auto;
+    border: 1px solid black;
+    height: 10px;
+    width: 0px;
+  }
+  .shippingService.blueprint .stream4 {
+    border: 1px solid black;
+    width: 80%;
+    /* height: 10px;        */
+    margin: auto;
+    margin-top: -10px;
+  }
+
+  .shippingService.blueprint .streamDivider {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: -40px auto;
+    gap: 0;
+  }
+
+  .shippingService.blueprint .stream5 {
+    border: 1px solid black;
+    width: 0px;
+    height: 30px;
+    align-self: baseline;
+    margin-right: auto;
+    margin-top: -10px;
+  }
+  .shippingService.blueprint .stream6 {
+    border: 1px solid black;
+    width: 0px;
+    height: 30px;
+    margin-top: -10px;
+  }
+  .shippingService.blueprint .stream7 {
+    border: 1px solid black;
+    width: 0px;
+    margin-top: -10px;
+    height: 30px;
+    margin-left: auto;
+  }
+
+  /* streamSection */
+
+  .streamSection {
+    height: 20vw;
+    width: 100%;    
+  }
+  .streamSection .stream1 {
+    border: 1px solid black;
+    width: 0px;
+    height: 100%;
+    margin: auto;
+  }  
+}
+
 @media only screen and (min-width: 1100px) {
   .shippingService {
     width: 95%;
     max-width: none;
-    text-align: center;
+    /* text-align: center; */
     gap: 50px;
-    margin-bottom: 20vw;
+    /* margin-bottom: 20vw; */
   }
-  /* .shippingService img {
-    display: flex;
-    width: 100%;
-    height: 60vh;
-    object-fit: cover;
-    object-position: right;
-  } */
+  .shippingService > span,
+  .shippingService > h1 {
+    text-align: center;
+  }
   .shippingService .cards {
     display: flex;
     flex-direction: row;
     /* background-color: aqua; */
-    text-align: left;
+    /* text-align: left; */
     gap: 7vw;
   }
   .shippingService .cards .card {
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+  .shippingService .cards .card h1 {
+    text-align: center;
   }
 }
 
@@ -575,8 +672,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 3vw;
-  max-width: 700px;
-  padding-bottom: clamp(10px, 30vw, 300px);
+  max-width: 700px;  
 }
 .about span {
   display: inline-block;
@@ -590,11 +686,20 @@ button {
   display: none;
 }
 
-/* @media only screen and (min-width: 935px) {
-  .about {
-    width: 90%;  
-  }  
-} */
+/* blueprint */
+
+@media only screen and (min-width: 1000px) {
+  .about .stream1 {
+    margin: -40px auto;
+    /* border: 1px solid black;
+    height: 30px; */
+  }
+  .about .stream2 {
+    margin: -40px auto;
+    border: 1px solid black;
+    height: 30px;
+  }
+}
 @media only screen and (min-width: 1100px) {
   .about {
     max-width: 80%;
@@ -623,6 +728,22 @@ button {
 }
 
 /* ----------------- about */
+
+.streamSection2 {
+  height: clamp(10px, 30vw, 300px);
+  width: 100%;
+  margin-bottom: 10px;
+}
+.streamSection2 .stream1 {
+  width: 0px;
+  height: 100%;
+  margin: 20px auto; 
+  border: 1px solid black;  
+}
+
+
+
+
 
 .bottomHeader {
   height: 50vh;

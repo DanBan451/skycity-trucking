@@ -40,9 +40,14 @@ export default function Main({ navigation }) {
 
   return (
     <React.Fragment>
-      <div className={classes.blueprint}>
+      {/* <div className={classes.blueprint}>
         <div className={classes.stream1}></div>
+      </div> */}
+
+      <div className={classes.fixed}>
+
       </div>
+
       <div className={classes.wrapper}>
         <ParallaxBanner
           className={classes.header}
@@ -79,22 +84,26 @@ export default function Main({ navigation }) {
             </div>
           </div>
           <div className={classes.pulseWrapper}>
-            <div className={classes.pulse}>
+            <Link to="/contact" className={classes.pulse}>
               <h1>Let's Talk!</h1>
-            </div>
+            </Link>
             <div
-              className={`${classes["circle"]} ${classes["cirlce-1"]}`}
+              className={`${classes["circle"]} ${classes["circle-1"]}`}
             ></div>
             <div
-              className={`${classes["circle"]} ${classes["cirlce-2"]}`}
+              className={`${classes["circle"]} ${classes["circle-2"]}`}
             ></div>
             <div
-              className={`${classes["circle"]} ${classes["cirlce-3"]}`}
+              className={`${classes["circle"]} ${classes["circle-3"]}`}
             ></div>
           </div>
         </ParallaxBanner>
 
         <div className={`${classes.service} ${classes.rev}`}>
+          <div className={classes.blueprint}>
+            <div className={classes.stream1} />
+          </div>
+
           <ParallaxBanner
             className={classes.serviceImage}
             layers={[{ image: warehouse, speed: 20 }]}
@@ -116,16 +125,25 @@ export default function Main({ navigation }) {
           </div>
         </div>
 
-        <div className={classes.shippingService}>
+        <div className={`${classes.shippingService} ${classes.blueprint}`}>
           <span>SHIPPING SERVICES</span>
+          <div className={classes.stream1} />
           <h1>
             Shipping Services to fill your logistics and transportation
             operations.
           </h1>
+          <div className={classes.stream2} />
           <ParallaxBanner
             className={classes.shippingImage}
             layers={[{ image: mountain, speed: 20 }]}
           ></ParallaxBanner>
+          <div className={classes.stream3} />
+          <div className={classes.stream4} />
+          <div className={classes.streamDivider}>
+            <div className={classes.stream5} />
+            <div className={classes.stream6} />
+            <div className={classes.stream7} />
+          </div>
           <div className={classes.cards}>
             <div className={classes.card}>
               <h1>Lorem Ipsum</h1>
@@ -160,9 +178,15 @@ export default function Main({ navigation }) {
           </div>
         </div>
 
+        <div className={classes.streamSection}>
+          <div className={classes.stream1} />
+        </div>
+
         <div className={classes.about} id="section1">
           <span>What we do</span>
+          <div className={classes.stream1}/>
           <h1>Lorem ipsum dolor sit amet, consectetuer</h1>
+          <div className={classes.stream2}/>
           <span>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
             commodo ligula eget dolor. Aenean massa. Cum sociis natoque
@@ -173,6 +197,11 @@ export default function Main({ navigation }) {
             montes, nascetur ridiculus mus. Donec quam
           </span>
         </div>
+
+        <div className={classes.streamSection2}>
+          <div className={classes.stream1} />
+        </div>
+
         <ParallaxBanner
           className={classes.bottomHeader}
           layers={[{ image: wheel, speed: 20 }]}
