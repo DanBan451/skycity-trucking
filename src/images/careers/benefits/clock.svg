@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56.011" height="56.011" viewBox="0 0 56.011 56.011">
+  <g id="_4295555_time_analogue_clock_date_hours_icon" data-name="4295555_time_analogue_clock_date_hours_icon" transform="translate(0 56.011) rotate(-90)">
+    <path id="Path_69" data-name="Path 69" d="M28.006,0A28.006,28.006,0,1,0,56.011,28.006,28.006,28.006,0,0,0,28.006,0Zm0,51.344A23.338,23.338,0,1,1,51.344,28.006,23.338,23.338,0,0,1,28.006,51.344Z" fill="#efa462"/>
+    <rect id="Rectangle_134" data-name="Rectangle 134" width="3.501" height="3.501" transform="translate(26.255 8.168)" fill="#efa462"/>
+    <rect id="Rectangle_135" data-name="Rectangle 135" width="3.501" height="3.501" transform="translate(8.168 26.255)" fill="#efa462"/>
+    <rect id="Rectangle_136" data-name="Rectangle 136" width="3.501" height="3.501" transform="matrix(0.707, 0.707, -0.707, 0.707, 40.889, 12.645)" fill="#efa462"/>
+    <rect id="Rectangle_137" data-name="Rectangle 137" width="3.501" height="3.501" transform="matrix(-0.707, -0.707, 0.707, -0.707, 15.313, 43.176)" fill="#efa462"/>
+    <rect id="Rectangle_138" data-name="Rectangle 138" width="3.501" height="3.501" transform="translate(15.217 12.741) rotate(45)" fill="#efa462"/>
+    <rect id="Rectangle_139" data-name="Rectangle 139" width="3.501" height="3.501" transform="translate(40.794 43.272) rotate(-135)" fill="#efa462"/>
+    <path id="Path_70" data-name="Path 70" d="M40.587,22.5H22.5V44.088H26V26H44.088V22.5Z" transform="translate(3.755 3.755)" fill="#efa462"/>
+  </g>
+</svg>

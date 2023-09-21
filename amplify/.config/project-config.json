@@ -1,0 +1,17 @@
+{
+  "providers": [
+    "awscloudformation"
+  ],
+  "projectName": "skycitytrucking",
+  "version": "3.1",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "react",
+    "config": {
+      "SourceDir": "/Users/danieldobrovolskiy/Documents/skycity-trucking/src",
+      "DistributionDir": "/Users/danieldobrovolskiy/Documents/skycity-trucking/build",
+      "BuildCommand": "npm run build",
+      "StartCommand": "npm start"
+    }
+  }
+}

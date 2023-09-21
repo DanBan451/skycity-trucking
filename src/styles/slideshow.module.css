@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600&display=swap");
+
+
+/* mobile */
+
+.headerWrapper {
+  margin-bottom: 10vh;
+  display: flex;
+  flex-direction: column;  
+}
+
+.header {
+  width: 100%;    
+  height: auto;
+  margin: 0 auto;  
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(20, 39, 74, 0.5);
+  background-blend-mode: multiply;
+}
+.header * br {
+  display: none;
+}
+
+/* generic buttons */
+
+.headerButtons a {  
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  padding: 12 7;
+  margin: 7 12;  
+}
+.headerButtons a:nth-child(1) {
+  background-color: #0275d8;
+  color: white;    
+}
+.headerButtons a:nth-child(1):hover {  
+  border: 1px solid white;  
+  background-color: transparent;  
+}
+.headerButtons a:nth-child(2) {
+  background-color: white;
+}
+.headerButtons a:nth-child(2):hover {
+  color: white;
+  border: 1px solid white;  
+  background-color: transparent;  
+}
+
+/* outside buttons */
+.headerWrapper > .headerButtons {
+  display: none;
+  position: relative;
+  margin-top: 175px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+.headerWrapper > .headerButtons a:first-of-type:hover {
+  color: black;
+  border: 1px solid #0275d8;  
+  background-color: transparent;  
+}
+.headerWrapper > .headerButtons a:last-of-type {
+  background-color: black;
+  color: white;
+}
+.headerWrapper > .headerButtons a:last-of-type:hover {
+  color: black;
+  border: 1px solid black;  
+  background-color: transparent;  
+}
+
+/* inside buttons */
+
+.header > .headerButtons {
+  display: none;
+}
+
+.header .headerContent {
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 0;
+}
+
+.headerContent h1,
+h2 {
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.headerContent h2 {
+  margin: 20px 0;
+}
+.headerContent img {
+  width: 35px;
+  margin-top: 80px;
+}
+
+.pagination {
+  display: flex;
+  margin-left: auto;
+  align-items: right;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  
+}
+.pagination img {
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+}
+
+/* laptop */
+
+@media only screen and (min-width: 1200px) {
+  .header {
+    height: 50vh;    
+    max-width: 1523px; 
+    width: 98%;
+    
+    background-color: rgba(20, 39, 74, 0);
+  }
+  .header * br {
+    display: block;
+  }
+  .headerContent {
+    display: none;
+  }
+  .pagination {
+    margin-top: auto;
+  }
+
+  .headerWrapper {    
+    align-items: center;
+  }
+  .header .headerContent {
+    margin: 0;
+    margin-left: 30px;
+    margin-top: auto;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    height: fit-content;
+    text-align: left;
+    width: fit-content;
+    padding: 10px;
+    top: 260px;
+  }
+  .headerContent h1,
+  h2 {
+    margin-top: 0px;
+  }
+  .headerContent h1 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 5px;
+    color: black;
+    text-align: left;
+  }
+  .headerContent h2 {
+    line-height: 1.4;
+    font-size: 23px;
+    color: black;
+    text-align: left;
+  }
+  .headerButtons a {
+    font-size: 25px;
+    margin: 20px;
+  }
+  .header .headerContent .headerButtons {
+    display: none;
+  }
+  .headerWrapper > .headerButtons {
+    display: block;
+  }
+  .header a {
+    display: none;
+  }
+}
