@@ -304,6 +304,8 @@ export default function Careers() {
           </div>
         </ul>
 
+        
+
         <div className={classes.careerFooter}>
           <span>Please dont forget to follow us</span>
           <ul className="social-links">
