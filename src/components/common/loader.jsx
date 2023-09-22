@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "../../styles/loader.module.css";
 
-export default function Loader({ src, styles, index, classNameProp, id }) {
+export default function Loader({ src, styles, index, classNameProp, id, small, medium, large }) {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const handleImageLoad = () => {
@@ -18,7 +18,12 @@ export default function Loader({ src, styles, index, classNameProp, id }) {
         index={index || 0}
         className={classNameProp}
         id={id}
-        // srcSet=""
+        srcSet={`
+        ${small || src} 320w,
+        ${medium || src} 640w,
+        ${large || src} 1200w,
+        ${src || src} 1920w
+      `}
       />
     </React.Fragment>
   );

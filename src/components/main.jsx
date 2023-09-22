@@ -14,7 +14,11 @@ import Footer from "../components/common/Footer";
 
 import classes from "../styles/main.module.css";
 
-import main from "../images/homepage/main.jpg";
+import mainSmall from "../images/homepage/main-320.jpg";
+import mainMedium from "../images/homepage/main-640.jpg";
+import mainLarge from "../images/homepage/main-1200.jpg";
+import mainBeyond from "../images/homepage/main.jpg";
+
 import warehouse from "../images/homepage/warehouse.jpg";
 import mountain from "../images/homepage/mountain.jpg";
 import wheel from "../images/homepage/handeonwheel.jpg";
@@ -183,7 +187,7 @@ export default function Main({ navigation }) {
           className={classes.header}
           // layers={[{ image: main, speed: 20 }]}
         >
-          <Loader src={main} classNameProp={classes.loaderHeaderImage} />
+          <Loader src={mainBeyond} small={mainSmall} medium={mainMedium} large={mainLarge} classNameProp={classes.loaderHeaderImage} />
           <div className={classes.divider}>
             <h1>
               {"Old-School Robust Services "}
