@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { animateScroll as scroll } from "react-scroll";
-import NavbarComponent from "../components/common/Navbar";
 import FooterComponent from "../components/common/Footer";
 import classes from "../styles/contact.module.css";
 import Joi from "joi-browser";

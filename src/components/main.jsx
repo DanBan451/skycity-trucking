@@ -239,7 +239,7 @@ export default function Main({ navigation }) {
 
         <FastMarquee className={classes.marqueeWrapper}>
           {partnerships.map((image, id) => (
-            <img src={image} alt="" />
+            <img src={image} alt="" key={`partnership-${id}`} />
           ))}
         </FastMarquee>
 

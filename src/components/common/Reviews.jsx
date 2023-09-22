@@ -1,15 +1,6 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-
-import image1 from "../../images/careers/Truck Driver Owner Driver.jpg";
-import image2 from "../../images/careers/arlington-research-kN_kViDchA0-unsplash.jpg";
-import image3 from "../../images/careers/memento-media-SuDN17Hzudc-unsplash.jpg";
 import image4 from "../../images/partnerships/XPO_Logistics_logo.svg.png";
 import image5 from "../../images/partnerships/Saia_logo.svg.png";
 import neil from "../../images/partnerships/scott_neil.jpg";
@@ -44,8 +35,8 @@ function Reviews() {
         variant="dark"
         className={classes.carousel}
       >
-        {reviews.map((review) => (
-          <Carousel.Item className={classes.carouselItem}>
+        {reviews.map((review, i) => (
+          <Carousel.Item className={classes.carouselItem} key={`carousel-${i}`}>
             <div className={classes.item}>
               <img src={review.src} alt="First slide" />
               <h5>
