@@ -632,6 +632,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 .shippingService .cards h1 {
   color: #0275d8;
