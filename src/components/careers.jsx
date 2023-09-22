@@ -2,28 +2,28 @@ import React, { useState } from "react";
 import NavbarComponent from "../components/common/Navbar";
 import FooterComponent from "../components/common/Footer";
 import Joi from "joi-browser";
-import Input from "../components/common/input";
-import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "emailjs-com";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import "react-toastify/dist/ReactToastify.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { ParallaxBanner } from "react-scroll-parallax";
+import Loader from "./common/loader";
 
-// images
-import group from "../images/careers/aboutus.jpg";
-import driver from "../images/professional-truck-driver-entering-his-truck-long-vehicle-holding-thumbs-up-1024x683.jpg";
-import owner from "../images/careers/Truck Driver Owner Driver.jpg";
-import staff from "../images/careers/arlington-research-kN_kViDchA0-unsplash.jpg";
-// beneftis icons
-import arrow from "../images/careers/benefits/arrow.svg";
-import clock from "../images/careers/benefits/clock.svg";
-import cycle from "../images/careers/benefits/cycle.svg";
-import dollar from "../images/careers/benefits/dollar.svg";
-import ribon from "../images/careers/benefits/ribon.svg";
-import thumbsup from "../images/careers/benefits/thumbsup.svg";
+import main from "../images/careerspage/main.jpg";
+import flash from "../images/careerspage/flash-small.png";
+import office from "../images/careerspage/darkoffice.jpg";
+import officeSmall from "../images/careerspage/darkoffice-small.png";
+import snowtruck from "../images/careerspage/snowtruck.jpg";
+import snowtruckSmall from "../images/careerspage/snowtruck-small.png";
+import horizon from "../images/careerspage/horizontruck.jpg";
+import horizonSmall from "../images/careerspage/horizon-small.png";
+import network from "../images/careerspage/network.jpg";
+import networkSmall from "../images/careerspage/network-small.png";
 
 import classes from "../styles/careers.module.css";
+import { Link } from "react-router-dom";
 
 const schema = {
   firstName: Joi.string().required().label("First Name"),
@@ -32,7 +32,7 @@ const schema = {
   phone: Joi.number().required().label("Phone"),
   zipcode: Joi.number().required().label("Zipcode"),
   state: Joi.string().required().label("State"),
-  captcha: Joi.string().required().label("Captcha")
+  captcha: Joi.string().required().label("Captcha"),
 };
 
 export default function Careers() {
@@ -43,12 +43,12 @@ export default function Careers() {
     phone: "",
     zipcode: "",
     state: "",
-    captcha: ""
+    captcha: "",
   });
-  const [errors, setErrors] = useState({ });
+  const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-  
-  const { t } = useTranslation(); 
+
+  const { t } = useTranslation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -69,8 +69,8 @@ export default function Careers() {
         console.log(res);
       })
       .catch((err) => console.log(err));
-    
-    toast.success(t('careers.toastMessage'));
+
+    toast.success(t("careers.toastMessage"));
     var form = document.getElementById("application-form");
     var elements = form.elements;
     for (var i = 0, len = elements.length; i < len; ++i) {
@@ -100,11 +100,11 @@ export default function Careers() {
       abortEarly: false,
     };
     let { error: result } = Joi.validate(data, schema, options);
-    
+
     if (result) {
       result.details.forEach((element) => {
         errors[element.context.key] = element.message;
-      });      
+      });
       console.log(errors);
       return errors;
     }
@@ -120,156 +120,212 @@ export default function Careers() {
     return error ? error.details[0].message : null;
   };
 
-  const handleCaptchaComplete = () => {            
+  const handleCaptchaComplete = () => {
     setAccount({
       ...data,
-      ['captcha']: 'complete'
+      ["captcha"]: "complete",
     });
-  }
+  };
 
   return (
     <React.Fragment>
       <ToastContainer />
       <div className={classes.careers}>
-        <NavbarComponent />
+        <div
+          className={classes.header}
+          // layers={[{ image: main, speed: 20 }]}
+        >
+          <div className={classes.content}>
+            <h1>Come work with us</h1>
+            <Link className={classes.button}>Current Opening</Link>
+          </div>
+        </div>        
 
-        <div className={classes.header}>
-          <h1>{t('careers.header-h1')}</h1>
-          <img src={group} alt="" />
+
+
+        <p className={classes.description}>
+          Lorem ipsum dolor sit amet <span>consectetur adipisicing</span> elit.
+          Dolores a sit consectetur illo consequatur <br />
+          expedita perferendis at praesentium, ipsa nulla?
+        </p>
+
+        <div
+          className={classes.banner}
+          style={{ backgroundImage: `url('${flash}')` }}
+        >
+          <h1>
+            <strong>Life is a highway,</strong>
+            <br /> and truckers drive the soul of the nation.
+          </h1>
         </div>
 
-        <t className={classes.description}>
-          {t('careers.header-desc')}
-        </t>
+        <p className={classes.description2}>
+          What's your passion? Check out and check one of the tabs below!
+        </p>
 
         <ul className={classes.careerList}>
           <div className={classes.career}>
-            <img src={driver} alt="" />
+            {/* <ParallaxBanner
+              className={classes.image}
+              layers={[{ image: office, speed: 20 }]}
+            /> */}
+            {/* <img
+              src={officeSmall}
+              srcset={`
+    ${officeSmall} 1500w,
+    ${office} 3000w
+  `}
+              sizes="(max-width: 1500px) 100vw, 1500px"
+              alt="Dark Office"
+            /> */}
             <div>
-              <h1>{t('careers.career_1.h1')}</h1>
-              <span>
-                {t('careers.career_1.span')}
-              </span>
+              <h1>Office Team</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus aliquid commodi atque, assumenda numquam eius unde illo
+                quos consequatur ipsa tenetur sequi id vero aspernatur porro,
+                veniam soluta quas explicabo dignissimos incidunt adipisci,
+                minima ducimus? Amet voluptatem possimus, sint iste perferendis
+                optio ea maxime, incidunt libero eaque ipsam? Illo quo,
+                accusantium aliquid, voluptatibus qui est velit architecto
+                temporibus aut, autem odit! Dolores ratione iusto beatae
+                consequatur ad doloremque unde cumque? Magnam praesentium iure
+                quibusdam autem exercitationem molestiae in facilis facere!
+              </p>
+              <Link className={classes.button}>Unlock Your Potential</Link>
             </div>
           </div>
           <div className={classes.career}>
-            <img src={owner} alt="" />
+            {/* <ParallaxBanner
+              className={classes.image}
+              layers={[{ image: snowtruck, speed: 20 }]}
+            /> */}
+            {/* <img
+              src={snowtruckSmall}
+              srcset={`
+    ${snowtruckSmall} 1500w,
+    ${snowtruck} 3000w
+  `}
+              sizes="(max-width: 1500px) 100vw, 1500px"
+              alt="Snow Truck"
+            /> */}
             <div>
-              <h1>{t('careers.career_2.h1')}</h1>
-              <span>
-                {t('careers.career_2.span')}
-              </span>
+              <h1>Company Drivers</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus aliquid commodi atque, assumenda numquam eius unde illo
+                quos consequatur ipsa tenetur sequi id vero aspernatur porro,
+                veniam soluta quas explicabo dignissimos incidunt adipisci,
+                minima ducimus? Amet voluptatem possimus, sint iste perferendis
+                optio ea maxime, incidunt libero eaque ipsam? Illo quo,
+                accusantium aliquid, voluptatibus qui est velit architecto
+                temporibus aut, autem odit! Dolores ratione iusto beatae
+                consequatur ad doloremque unde cumque? Magnam praesentium iure
+                quibusdam autem exercitationem molestiae in facilis facere!
+              </p>
+              <Link className={classes.button}>Hit the Road With Us</Link>
             </div>
           </div>
           <div className={classes.career}>
-            <img src={staff} alt="" />
+            {/* <ParallaxBanner
+              className={classes.image}
+              layers={[{ image: horizon, speed: 20 }]}
+            /> */}
+            {/* <img
+              src={horizonSmall}
+              srcset={`
+    ${horizonSmall} 1500w,
+    ${horizon} 3000w
+  `}
+              sizes="(max-width: 1500px) 100vw, 1500px"
+              alt="Horizon Truck"
+            /> */}
             <div>
-              <h1>{t('careers.career_3.h1')}</h1>
-              <span>
-                {t('careers.career_3.span')}
-              </span>
+              <h1>Owner Operators</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus aliquid commodi atque, assumenda numquam eius unde illo
+                quos consequatur ipsa tenetur sequi id vero aspernatur porro,
+                veniam soluta quas explicabo dignissimos incidunt adipisci,
+                minima ducimus? Amet voluptatem possimus, sint iste perferendis
+                optio ea maxime, incidunt libero eaque ipsam? Illo quo,
+                accusantium aliquid, voluptatibus qui est velit architecto
+                temporibus aut, autem odit! Dolores ratione iusto beatae
+                consequatur ad doloremque unde cumque? Magnam praesentium iure
+                quibusdam autem exercitationem molestiae in facilis facere!
+              </p>
+              <Link className={classes.button}>Drive Your Destiny</Link>
+            </div>
+          </div>
+          <div className={classes.career}>
+            {/* <ParallaxBanner
+              className={classes.image}
+              layers={[{ image: network, speed: 20 }]}
+            /> */}
+            {/* <img
+              src={networkSmall}
+              srcset={`
+    ${networkSmall} 1500w,
+    ${network} 3000w
+  `}
+              sizes="(max-width: 1500px) 100vw, 1500px"
+              alt="Network"
+            /> */}
+            <div>
+              <h1>Career Network</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus aliquid commodi atque, assumenda numquam eius unde illo
+                quos consequatur ipsa tenetur sequi id vero aspernatur porro,
+                veniam soluta quas explicabo dignissimos incidunt adipisci,
+                minima ducimus? Amet voluptatem possimus, sint iste perferendis
+                optio ea maxime, incidunt libero eaque ipsam? Illo quo,
+                accusantium aliquid, voluptatibus qui est velit architecto
+                temporibus aut, autem odit! Dolores ratione iusto beatae
+                consequatur ad doloremque unde cumque? Magnam praesentium iure
+                quibusdam autem exercitationem molestiae in facilis facere!
+              </p>
+              <Link className={classes.button}>Expand Your Horizons</Link>
             </div>
           </div>
         </ul>
 
-        <div className={classes.benefitsWrapper}>
-          <h1>{t('careers.benefits-h1')}</h1>
-
-          <div className={classes.listWrapper}>
-            <ul className={classes.left}>
-              <li>
-                <img src={ribon} alt="" />
-                <span>{t('careers.benefit_1')}</span>
-              </li>
-              <li>
-                <img src={dollar} alt="" />
-                <span>{t('careers.benefit_2')}</span>
-              </li>
-              <li>
-                <img src={clock} alt="" />
-                <span>{t('careers.benefit_3')}</span>
-              </li>
-            </ul>
-            <ul className={classes.right}>
-              <li>
-                <img src={thumbsup} alt="" />
-                <span>{t('careers.benefit_4')}</span>
-              </li>
-              <li>
-                <img src={arrow} alt="" />
-                <span>{t('careers.benefit_5')}</span>
-              </li>
-              <li>
-                <img src={cycle} alt="" />
-                <span>{t('careers.benefit_6')}</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className={classes.applyWrapper}>
-          <h1>{t('careers.apply-h1')}</h1>
-          <form id='application-form' className={classes.form} onSubmit={handleSubmit} style={{ opacity: (submitted) ? 0.5 : 1 }}>
-            <Input
-              name="firstName"
-              value={data?.firstName}
-              onChange={handleChange}
-              label={t('careers.label_1')}
-              error={errors?.firstName}
-              classes={classes}
-            />
-            <Input
-              name="lastName"
-              value={data?.lastName}
-              onChange={handleChange}
-              label={t('careers.label_2')}
-              error={errors?.lastName}
-              classes={classes}
-            />
-            <Input
-              name="email"
-              value={data.email}
-              onChange={handleChange}
-              label={t('careers.label_3')}
-              error={errors?.email}
-              classes={classes}
-            />
-            <Input
-              name="phone"
-              value={data?.phone}
-              onChange={handleChange}
-              label={t('careers.label_4')}
-              error={errors?.phone}
-              classes={classes}
-            />
-            <Input
-              name="zipcode"
-              value={data?.zipcode}
-              onChange={handleChange}
-              label={t('careers.label_5')}
-              error={errors?.zipcode}
-              classes={classes}
-            />
-            <Input
-              name="state"
-              value={data?.state}
-              onChange={handleChange}
-              label={t('careers.label_6')}
-              error={errors?.state}
-              classes={classes}
-            />
-            <ReCAPTCHA
-              sitekey="6LfqImYkAAAAAL8VkvEQy-uxn1x_vAYWtcsot2ZA"
-              style={{
-                gridColumn: "1 / span 2",
-                marginTop: "20px",
-              }}              
-              onChange={handleCaptchaComplete}
-            />            
-            <button className={"btn btn-primary btn-sm"} type="submit" disabled={submitted || validate()}>
-              {t('careers.button')}
-            </button>
-          </form>
+        <div className={classes.careerFooter}>
+          <span>Please dont forget to follow us</span>
+          <ul className="social-links">
+            <li>
+              <Link className={classes.icon}>
+                <FontAwesomeIcon
+                  icon={["fab", "twitter"]}
+                  size={"2x"}
+                  color="white"
+                />
+                <span>V&Y Horizon</span>
+              </Link>
+            </li>
+            <li>
+              <Link className={classes.icon}>
+                <FontAwesomeIcon
+                  icon={["fab", "facebook"]}
+                  size={"2x"}
+                  color="white"
+                />
+                <span>V&Y Horizon</span>
+              </Link>
+            </li>
+            <li>
+              <Link className={classes.icon}>
+                <FontAwesomeIcon
+                  icon={["fab", "linkedin"]}
+                  size={"2x"}
+                  color="white"
+                />
+                <span>V&Y Horizon</span>
+              </Link>
+            </li>
+            {/* Add more social links as needed */}
+          </ul>
+          <span>Thank you!</span>
         </div>
 
         <FooterComponent />

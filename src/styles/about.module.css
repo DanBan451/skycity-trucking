@@ -1,44 +1,181 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600&display=swap');
-
-h1 {
-  font-family: 'Poppins', sans-serif;	
-}
-
-
 #about {
-  height: 100%;  
-  width: 100%;  
-}
-
-.header {    
-  height: auto;
-  width: 95%;
-  margin: auto;
-  height: 45vh;
-  overflow: hidden;
-}
-
-.header h1 {  
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-family: 'Poppins', sans-serif;	
-  font-weight: 500;  
-}
-.header img {
-  width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center
+  width: 100%;
 }
+
+/* ----------------> header */
+
+.header {
+  /* height: 50vh; */
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0 10px;
+  padding-top: clamp(150px, 20vw, 250px);
+  margin-bottom: clamp(50px, 10vw, 100px);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 30px;
+}
+.header .stream1 {
+  border: 0.5px solid white;
+  margin-bottom: auto;
+  margin-top: -30px;
+  width: 0%;
+  height: 0px;
+  z-index: -10;
+}
+.header .button {
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 930px) {
+  .header {
+    width: 100vw;
+    max-width: none;
+    text-align: center;
+    gap: clamp(50px, 10vw, 300px);
+  }  
+  .header h1 {
+    font-size: 50px;
+  }
+  .header p {
+    font-size: 22px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* for header stream1  */
+    
+  /* Media query for larger screens */
+  @media screen and (min-width: 768px) {
+    .header .stream1 {
+      margin-top: calc(15vw - 250px);
+    }
+  }
+  
+  /* Media query for even larger screens */
+  @media screen and (min-width: 1200px) {
+    .header .stream1 {
+      margin-top: -250px;
+    }
+  }
+}
+
+/* for the first stream1 */
+ 
+
+/* ----------------> image */
+
+.image {
+  height: clamp(300px, 70vw, 700px);
+  width: 100vw;
+  /* background-image: url("../images/aboutpage/iStock-1413625824.jpg"); */
+  background-size: cover;
+  background-position: center;
+}
+
+/* ----------------> mission */
+
+.mission {
+  margin: clamp(100px, 10vw, 400px) auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 5vw, 60px);
+  max-width: 500px;
+  padding: 10px;
+}
+
+.mission span {
+  font-size: 20px;
+  font-weight: 500;
+}
+.mission p {
+  /* font-size: 18px; */
+}
+
+@media only screen and (min-width: 930px) {
+  .mission {
+    text-align: center;
+    max-width: 1000px;
+    padding: 0 20px;
+  }
+  .mission p {
+    font-size: 19px;
+  }
+}
+
+/* ---------------> values */
+
+.values {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+.values > h1 {
+  text-align: center;
+  font-size: clamp(25px, 3vw, 40px);
+}
+.values .card {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.values .card h1 {
+  color: rgb(233, 233, 233);
+  font-size: clamp(100px, 15vw, 600px);
+}
+.values .card span {
+  color: #0052b0;
+  font-weight: 600;
+  /* font-size: 20px; */
+  font-size: clamp(20px, 2vw, 30px);
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.values .card p {
+  font-size: clamp(18px, 2vw, 20px);
+}
+@media only screen and (min-width: 930px) {
+  .values {
+    max-width: 700px;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .values {
+    max-width: 2000px;
+    width: 75%;
+  }
+  .values .card {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .values .card h1 {
+    color: rgb(233, 233, 233);
+    font-size: clamp(100px, 22vw, 600px);
+  }
+  .values .card div {
+    width: 70%;
+    margin: auto;
+  }
+}
+
+/* ----------------> content */
 
 .content {
-  display: flex;   
-  flex-direction: column;  
+  display: flex;
+  flex-direction: column;
   width: 95%;
-  margin: auto;      
+  margin: auto;
 }
 .content .description {
-  font-size: 20px;  
+  font-size: 20px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -46,56 +183,26 @@ h1 {
   margin-bottom: 30px;
 }
 .content .features h1 {
-  font-weight: 500;   
-  font-size: 22px; 
-  font-family: 'Poppins', sans-serif;	
+  font-weight: 500;
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
   margin: 30px 0;
 }
 .content .features ul {
   list-style: none;
-  padding-left: 0;    
+  padding-left: 0;
 }
 .content .features li {
   margin: 20px 0;
   display: flex;
 }
 .content .features ul li img {
-  padding-right: 20px;  
+  padding-right: 20px;
   align-self: flex-start;
-  margin-top: 4px;  
+  margin-top: 4px;
 }
 
 @media only screen and (min-width: 930px) {
-  .header {
-    display: flex;            
-    height: 30vh;
-  }
-  .header h1 { 
-    width: 40%;  
-    align-self: flex-end;   
-    margin: 0;      
-    padding-left: 20px;  
-  }
-  .header img {
-    width: 60%;    
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .header {
-    height: 37vh;
-    max-width: 1700px;
-  }  
-  .header h1 { 
-    width: 30%;          
-    font-size: 45px;
-    padding-left: 50px;
-  }
-  .header img {
-    width: 70%;    
-  }
-}
-
-@media only screen and (min-width: 930px) {  
   .content {
     padding-left: 20px;
     flex-direction: row;
@@ -103,9 +210,9 @@ h1 {
   .content .description {
     flex-basis: 50%;
   }
-  .content .features {    
+  .content .features {
     flex-basis: 45%;
-    margin-left: auto;    
+    margin-left: auto;
   }
   .content .features ul li {
   }
@@ -113,17 +220,16 @@ h1 {
 @media only screen and (min-width: 1200px) {
   .content {
     padding-left: 50px;
-  }  
-  .content .features {    
+  }
+  .content .features {
     flex-basis: 40%;
   }
 }
 @media only screen and (min-width: 1500px) {
-  .content .features {    
+  .content .features {
     flex-basis: 35%;
   }
 }
-
 
 .title {
   font-size: 60px;
@@ -134,61 +240,54 @@ h1 {
 
 .contentWrapper {
   display: flex;
-  width: 75%;  
+  width: 75%;
   margin: auto;
-  height: 50vh;  
+  height: 50vh;
   margin-bottom: 20vh;
-  flex-direction: column;  
+  flex-direction: column;
 }
 .contentWrapper h1 {
   font-size: 50px;
   font-weight: 500;
-  margin-bottom: 0;  
+  margin-bottom: 0;
 }
 .contentWrapper h1:before {
   position: absolute;
   width: 150px;
   height: 60px;
-  border-bottom: 2.2px solid darkblue;    
-  content: ""    
+  border-bottom: 2.2px solid darkblue;
+  content: "";
 }
 .contentWrapper .content {
   display: flex;
-  flex-direction: row;   
-  width: 100%; 
-  height: 65%; 
+  flex-direction: row;
+  width: 100%;
+  height: 65%;
 }
-/* .content > * {
-  width: 50%;     
-  border: 1px solid red;
-} */
 .content .text {
   width: 50%;
 }
-.content .image {    
+.content .image {
   width: 50%;
-  display: flex;    
-  justify-content: right;  
+  display: flex;
+  justify-content: right;
 }
-.content .image img {  
-  /* width: 85%;
-  height: 65%;    */
+.content .image img {
   width: 85%;
   height: 100%;
-  object-fit: cover;      
+  object-fit: cover;
   box-shadow: 9px 10px 17px -5px rgba(0, 0, 0, 0.49);
   -webkit-box-shadow: 9px 10px 17px -5px rgba(0, 0, 0, 0.49);
   -moz-box-shadow: 9px 10px 17px -5px rgba(0, 0, 0, 0.49);
-  margin-top: auto;  
-  margin-bottom: auto;  
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .content .text {
   font-size: 25px;
   margin-top: auto;
-  /* margin-bottom: auto;   */
 }
-.contentWrapper .button {  
-  margin-top: auto;  
+.contentWrapper .button {
+  margin-top: auto;
   font-size: 30px;
   font-weight: bold;
   padding: 10px;
@@ -203,52 +302,3 @@ h1 {
   background-color: white;
   color: black;
 }
-
-
-/* .content-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.content-text h1 {
-  font-size: 50px;
-  font-weight: bold;
-}
-.content-text h1:before {
-    position: absolute;
-    width: 150px;
-    height: 60px;
-    border-bottom: 2.2px solid darkblue;    
-    content: ""    
-}
-.content-text p {
-  font-size: 24px;
-}
-.content-text button {
-  font-size: 30px;
-  font-weight: bold;
-  padding: 10px;
-  border-radius: 25px;
-  border-width: 0;
-  transition: 0.3s;
-  width: 37%;
-  background-color: #16375d;
-  color: white;
-}
-.content-text button:hover {
-  background-color: white;
-  color: black;
-} */
-
-/* .image {
-  display: flex;
-}
-.image img {
-  width: 80%;
-  height: 65%;   
-  object-fit: cover;
-  margin: 8%;
-  box-shadow: 9px 10px 17px -5px rgba(0, 0, 0, 0.49);
-  -webkit-box-shadow: 9px 10px 17px -5px rgba(0, 0, 0, 0.49);
-  -moz-box-shadow: 9px 10px 17px -5px rgba(0, 0, 0, 0.49);
-} */
