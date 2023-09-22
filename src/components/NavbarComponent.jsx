@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import useWindowDimensions from "../utils/useWindowDimensions";
 import logo from "../images/company-logo.png";
+import globe from "../images/home/globe.svg";
+import menuIcon from "../images/menu.png";
 
 import classes from "../styles/navbar.module.css";
 
@@ -41,12 +43,12 @@ function NavBarComponent({ navigation }) {
           </a>
         </div>
 
-        {/* <div className={classes.options}>
+        <div className={classes.options}>
           <a>ENG</a>
           <a>PYC</a>
           <a>YKP</a>
           <img src={globe} alt="" />
-        </div> */}
+        </div>
 
       </div>
     </div>

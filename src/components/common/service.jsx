@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useWindowDimensions from "../../utils/useWindowDimensions";
 import classes from "../../styles/main.module.css";
 
 const Service = ({ image, title, desc, actionCall, styles, endpoint }) => { 

@@ -8,7 +8,7 @@ $font-family-sans-serif: "Bungee Spice", sans-serif;
 // mobile
 
 .navbar {
-  // margin: 10px;
+  margin: 10px;
 }
 .navbar-inner {
   max-width: 1500px;  
@@ -20,20 +20,18 @@ $font-family-sans-serif: "Bungee Spice", sans-serif;
 .nav {
 	text-align: center;	
 }
-
 #nav-wrapper a.nav-link {  		
   font-size: 17px;
   font-family: 'Poppins', sans-serif;	
   color: black;
-  border-bottom: 1px solid black;    
+  border-bottom: 1px solid black;  
 }
-
 .options-container {
   margin-top: 30px;
   margin-bottom: 15px;
 }
 .btn.quote-btn {
-  background-color: #005cac;
+  background-color: black;
   border: 0px solid white;
   margin-left: auto;  
   display: inline-block;
@@ -45,9 +43,7 @@ $font-family-sans-serif: "Bungee Spice", sans-serif;
   color: white;
   font-size: 15px;
   width: auto;
-  padding: 10px 25px;
   border-width: 1px;
-  border-radius: 100px;
 }
 .btn.quote-btn:hover {
   color: black;
@@ -80,6 +76,8 @@ $font-family-sans-serif: "Bungee Spice", sans-serif;
 }
 
 
+// tablet
+
 @media screen and (min-width: 1200px) {
   #navWrapper {  		    
     border-bottom: 1px solid white; 
@@ -91,8 +89,7 @@ $font-family-sans-serif: "Bungee Spice", sans-serif;
   }
 }
 
-
-
+// laptop
 
 
 
