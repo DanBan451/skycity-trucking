@@ -63,6 +63,11 @@ button {
   color: white;
 }
 
+.loaderHeaderImage {
+  width: 100%;
+  object-fit: cover;
+}
+
 .header .divider {
   margin: auto;
   z-index: 2;
@@ -73,19 +78,20 @@ button {
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 450px;
   gap: 25px;
   top: 0px;
   bottom: 0px;
   z-index: 5;
   justify-content: center;
   position: absolute;
+  /* width: 450px; */
+  width: 100%;
 }
 .header .divider > div {
   z-index: 12;
 }
 .header .divider h1 br {
-  display: none;
+  display: none;  
 }
 
 .header .divider h1 span {
@@ -93,7 +99,7 @@ button {
 }
 
 .header .divider h1 {
-  font-size: 25px;
+  font-size: 25px;  
 }
 .header .divider div {
   display: flex;
@@ -128,9 +134,11 @@ button {
 .header .button:last-of-type {
   border-radius: 100px;
   background-color: transparent;
-  border-color: black;  
-  color: black;
+  border-color: white;
+  color: white;
 }
+/* border-color: black;  
+color: black; */
 .header .button:last-of-type:hover {
   background-color: #005cac;
   border-color: #005cac;
@@ -201,7 +209,7 @@ button {
     display: inline-block;
     position: relative;
     text-align: left;
-    margin-left: 8px;
+    margin-left: 8px;        
   }
   .words-wrapper span {
     width: 0px;

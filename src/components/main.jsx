@@ -183,10 +183,10 @@ export default function Main({ navigation }) {
           className={classes.header}
           // layers={[{ image: main, speed: 20 }]}
         >
-          <Loader src={main} />
+          <Loader src={main} classNameProp={classes.loaderHeaderImage} />
           <div className={classes.divider}>
             <h1>
-              Old-School Robust Services
+              {"Old-School Robust Services "}
               <br />
               <span>
                 <h1 style={{ margin: "0px", padding: "0px" }}>With Modern</h1>

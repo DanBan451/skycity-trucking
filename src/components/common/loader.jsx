@@ -18,6 +18,7 @@ export default function Loader({ src, styles, index, classNameProp, id }) {
         index={index || 0}
         className={classNameProp}
         id={id}
+        // srcSet=""
       />
     </React.Fragment>
   );
