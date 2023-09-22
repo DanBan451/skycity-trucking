@@ -106,7 +106,7 @@ function NavBarComponent({ handleOpenModal }) {
             </Nav>
             <div className="d-flex options-container">
               <Link className="btn quote-btn" to={""} onClick={handleOpenModal}>
-                Quote
+                Get a Quote
               </Link>              
             </div>
           </Navbar.Collapse>

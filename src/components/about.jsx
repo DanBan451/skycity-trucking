@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect }from "react";
 import { Link } from "react-router-dom";
 import NavbarComponent from "./common/Navbar";
 import FooterComponent from "./common/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { ParallaxBanner } from "react-scroll-parallax";
+import { animateScroll as scroll } from "react-scroll";
 import Loader from "./common/loader";
 
 import { useTranslation } from "react-i18next";
@@ -15,33 +15,43 @@ import highway from "../images/aboutpage/iStock-1413625824.jpg";
 export default function About({ navigation }) {
   const { t } = useTranslation();
 
+  useEffect(() => {
+    scroll.scrollToTop({
+      smooth: true,
+      duration: 0
+    });
+  })
+
+
   return (
     <div id={classes.about}>
       <div className={classes.header}>
         <h1>About V&Y Horizon</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum unde
-          vel adipisci veritatis molestias, tenetur, mollitia labore obcaecati
-          officiis cum quasi illum! Eveniet, aperiam maxime, distinctio atque
-          voluptatum amet ipsam dolores voluptates asperiores, fuga accusamus
-          laboriosam. Quis labore blanditiis illum corporis officiis nam
-          voluptatibus, in possimus quae? Aperiam nostrum similique maxime
-          officiis assumenda asperiores veniam! Cupiditate atque quae deserunt
-          minima doloribus debitis veritatis expedita molestiae obcaecati, aut
-          error illum accusantium quam! Repudiandae vero provident officiis
-          soluta, autem esse earum laboriosam?
+          Since the the inception of V&Y in 2015, its owners and employees
+          already had an extensive transportation experience in various
+          capacities from 2005 — we are by no means new to this industry! From
+          the very beginning we put out word, our integrity, and our reputation
+          at our core. There are many “good” transportation companies out there
+          and we believe we are among those who provide extraordinary services
+          while upholding our shares values. These values not only make us excel
+          in what we do but ensure long lasting partnerships with customers and
+          employees. As a result, we have been recognized as the carrier of the
+          year in 2020 in the PNW intermodal market. This is just the beginning
+          for us and we strive to be the best in the industry, serving our
+          customers, community and our team.
         </p>
-        <Link className={classes.button}>
+        <a className={classes.button} href={'#mission'}>
           <FontAwesomeIcon
             icon="chevron-down"
             color="#005cac"
             fontSize={30}
             className="blue-chevron"
           />
-        </Link>
+        </a>
       </div>
 
-      <Loader src={highway} classNameProp={classes.image} />
+      <Loader src={highway} classNameProp={classes.image} id={'mission'} />
       {/* <ParallaxBanner
         className={classes.image}
         layers={[{ image: highway, speed: 20 }]}
@@ -52,14 +62,11 @@ export default function About({ navigation }) {
       <div className={classes.mission}>
         <span>OUR MISSION</span>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae
-          voluptates sequi fugiat delectus et debitis totam adipisci deserunt
-          quisquam. Ab sequi accusantium inventore ullam ipsam quaerat!
-          Voluptatem inventore ab tempora similique cumque vel? Quaerat
-          dignissimos iusto facere dicta ipsa iste ullam maxime rerum?
-          Accusantium quo numquam harum ullam repellat in blanditiis mollitia
-          autem esse, dolorum earum, cum, et praesentium? Atque unde qui ratione
-          labore similique quod hic dolorem voluptatibus non.
+          Our mission at V&Y Horizon is to provide you with old-school robust
+          services with modern transportation — rail & port drayage,
+          over-the-road operations, less-than-truckload cartage — you can rely
+          on. We are dedicated to providing hassle-free service with clear
+          communication every step of the way.
         </p>
       </div>
 
@@ -68,42 +75,37 @@ export default function About({ navigation }) {
         <div className={classes.card}>
           <h1>1</h1>
           <div>
-            <span>A company value</span>
+            <span>Safety First & Always</span>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
-              ad necessitatibus fugit quod voluptates temporibus dolor aperiam a
-              aut voluptatum expedita illo consequatur, quos amet atque.
-              Explicabo quae velit obcaecati illo, pariatur dolor, repudiandae
-              autem, voluptate distinctio dolore quia eos eaque? Ratione
-              asperiores voluptatibus soluta quam id qui illo similique?
+              We operate on a Safety First & Always standard, from start to
+              finish. We strive to enhance the well-being of our employees,
+              protect our cargo, as well as the greater community. We are
+              continously improving our safety protocals to ensure that no one
+              gets hurt.
             </p>
           </div>
         </div>
         <div className={classes.card}>
           <h1>2</h1>
           <div>
-            <span>A company value</span>
+            <span>Community Aware</span>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
-              ad necessitatibus fugit quod voluptates temporibus dolor aperiam a
-              aut voluptatum expedita illo consequatur, quos amet atque.
-              Explicabo quae velit obcaecati illo, pariatur dolor, repudiandae
-              autem, voluptate distinctio dolore quia eos eaque? Ratione
-              asperiores voluptatibus soluta quam id qui illo similique?
+              In all of our transportation operations, we are mindful of our
+              community. At V&Y Horizon we partner with major companies such as
+              SmartWay Transport, which stands by “Getting there with cleaner
+              air.”
             </p>
           </div>
         </div>
         <div className={classes.card}>
           <h1>3</h1>
           <div>
-            <span>A company value</span>
+            <span>Clear Communication</span>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
-              ad necessitatibus fugit quod voluptates temporibus dolor aperiam a
-              aut voluptatum expedita illo consequatur, quos amet atque.
-              Explicabo quae velit obcaecati illo, pariatur dolor, repudiandae
-              autem, voluptate distinctio dolore quia eos eaque? Ratione
-              asperiores voluptatibus soluta quam id qui illo similique?
+              We have said before, and we will say it again: Clear Communication
+              is our all. We are transparent upfront and ensure that you have no
+              surprises — other than exceptinal transportation & customer
+              service from our end.
             </p>
           </div>
         </div>

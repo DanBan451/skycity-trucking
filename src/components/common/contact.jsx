@@ -11,7 +11,7 @@ export default function Contact() {
         We look forward to <br />
         hearing from you!
       </h1>
-      <Link className={classes.button}>Contact Us</Link>
+      <Link className={classes.button} to="/contact">Contact Us</Link>
     </div>
   );
 }

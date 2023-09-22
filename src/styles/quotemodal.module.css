@@ -8,13 +8,21 @@
   width: 100%;
   height: 100%;
   z-index: 100; 
-  background-image: url("../images/quoteimage.jpg");  
-  background-size: cover;
+  /* background-image: url("../images/quoteimage.jpg");   */
+  /* background-size: cover; */
 }
+.modal .image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .modal h1 {
   color: white;
   text-align: center;
   margin-top: 50px;
+  position: absolute;
+  width: 100%;
 }
 
 .modal-content {

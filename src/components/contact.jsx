@@ -1,5 +1,6 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { animateScroll as scroll } from "react-scroll";
 import NavbarComponent from "../components/common/Navbar";
 import FooterComponent from "../components/common/Footer";
 import classes from "../styles/contact.module.css";
@@ -134,6 +135,13 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const { t } = useTranslation();
+
+  useEffect(() => {
+    scroll.scrollToTop({
+      smooth: true,
+      duration: 0
+    });
+  })
 
   const handleSubmit = (e) => {
     e.preventDefault();

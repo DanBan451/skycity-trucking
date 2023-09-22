@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import classes from "../styles/quotemodal.module.css";
 import Joi from "joi-browser";
-import Input from "./common/input";
 
+import Input from "./common/input";
+import Loader from "./common/loader";
+import image from "../images/quoteimage.jpg";
 
 const schema = {
   name: Joi.string().required().label("Name"),
@@ -96,6 +98,7 @@ const QuoteModal = ({ isOpen, onClose }) => {
     <div>
       {/* <ToastContainer /> */}
       <div className={`${classes.modal} ${isOpen ? `${classes.open}` : ""}`}>
+        <Loader src={image} classNameProp={classes.image} />      
         <h1>Contact Us Today!</h1>
         <div className={classes["modal-content"]}>
           <span className={classes.close} onClick={() => onClose(false)}>

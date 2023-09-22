@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavbarComponent from "../components/common/Navbar";
 import FooterComponent from "../components/common/Footer";
 import Joi from "joi-browser";
@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { ParallaxBanner } from "react-scroll-parallax";
+import { animateScroll as scroll } from "react-scroll";
 import Loader from "./common/loader";
 
 import main from "../images/careerspage/main.jpg";
@@ -49,6 +49,13 @@ export default function Careers() {
   const [submitted, setSubmitted] = useState(false);
 
   const { t } = useTranslation();
+
+  useEffect(() => {
+    scroll.scrollToTop({
+      smooth: true,
+      duration: 0,
+    });
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -137,16 +144,15 @@ export default function Careers() {
         >
           <div className={classes.content}>
             <h1>Come work with us</h1>
-            <Link className={classes.button}>Current Opening</Link>
+            <Link className={classes.button} to="/contact">
+              Let's Talk
+            </Link>
           </div>
-        </div>        
-
-
+        </div>
 
         <p className={classes.description}>
-          Lorem ipsum dolor sit amet <span>consectetur adipisicing</span> elit.
-          Dolores a sit consectetur illo consequatur <br />
-          expedita perferendis at praesentium, ipsa nulla?
+          Discover exciting career opportunities with us in the world of{" "}
+          <span>Transportation</span> excellence.
         </p>
 
         <div
@@ -172,27 +178,28 @@ export default function Careers() {
             {/* <img
               src={officeSmall}
               srcset={`
-    ${officeSmall} 1500w,
-    ${office} 3000w
-  `}
+              ${officeSmall} 1500w,
+              ${office} 3000w
+              `}
               sizes="(max-width: 1500px) 100vw, 1500px"
               alt="Dark Office"
             /> */}
+            <Loader src={office} classNameProp={classes.image} />
             <div>
               <h1>Office Team</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus aliquid commodi atque, assumenda numquam eius unde illo
-                quos consequatur ipsa tenetur sequi id vero aspernatur porro,
-                veniam soluta quas explicabo dignissimos incidunt adipisci,
-                minima ducimus? Amet voluptatem possimus, sint iste perferendis
-                optio ea maxime, incidunt libero eaque ipsam? Illo quo,
-                accusantium aliquid, voluptatibus qui est velit architecto
-                temporibus aut, autem odit! Dolores ratione iusto beatae
-                consequatur ad doloremque unde cumque? Magnam praesentium iure
-                quibusdam autem exercitationem molestiae in facilis facere!
+                Our dedicated office team plays a crucial role in ensuring
+                smooth operations and effective communication. From dispatchers
+                to logistics coordinators, our knowledgeable professionals work
+                diligently to support our carriers. Our priority is clear
+                communication and transparency, keeping you informed about load
+                assignments, pickup and delivery schedules, and any necessary
+                documentation. Our goal is to create a seamless and efficient
+                experience for carriers, allowing you to focus on the road.
               </p>
-              <Link className={classes.button}>Unlock Your Potential</Link>
+              <Link className={classes.button} to="/contact">
+                Unlock Your Potential
+              </Link>
             </div>
           </div>
           <div className={classes.career}>
@@ -209,21 +216,23 @@ export default function Careers() {
               sizes="(max-width: 1500px) 100vw, 1500px"
               alt="Snow Truck"
             /> */}
+            <Loader src={snowtruck} classNameProp={classes.image} />
             <div>
               <h1>Company Drivers</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus aliquid commodi atque, assumenda numquam eius unde illo
-                quos consequatur ipsa tenetur sequi id vero aspernatur porro,
-                veniam soluta quas explicabo dignissimos incidunt adipisci,
-                minima ducimus? Amet voluptatem possimus, sint iste perferendis
-                optio ea maxime, incidunt libero eaque ipsam? Illo quo,
-                accusantium aliquid, voluptatibus qui est velit architecto
-                temporibus aut, autem odit! Dolores ratione iusto beatae
-                consequatur ad doloremque unde cumque? Magnam praesentium iure
-                quibusdam autem exercitationem molestiae in facilis facere!
+                Our company drivers are an essential part of our team,
+                representing our commitment to excellence on the road. We value
+                the skills and expertise of our drivers, and we provide a
+                supportive work environment that prioritizes safety, compliance,
+                and professional growth. We offer competitive compensation
+                packages and benefits to attract and retain the best talent in
+                the industry. As a company driver at V&Y Horizon, you can expect
+                fair treatment, ongoing training, and opportunities for
+                advancement within our organization.
               </p>
-              <Link className={classes.button}>Hit the Road With Us</Link>
+              <Link className={classes.button} to="/contact">
+                Hit the Road With Us
+              </Link>
             </div>
           </div>
           <div className={classes.career}>
@@ -240,21 +249,25 @@ export default function Careers() {
               sizes="(max-width: 1500px) 100vw, 1500px"
               alt="Horizon Truck"
             /> */}
+            <Loader src={horizon} classNameProp={classes.image} />
             <div>
               <h1>Owner Operators</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus aliquid commodi atque, assumenda numquam eius unde illo
-                quos consequatur ipsa tenetur sequi id vero aspernatur porro,
-                veniam soluta quas explicabo dignissimos incidunt adipisci,
-                minima ducimus? Amet voluptatem possimus, sint iste perferendis
-                optio ea maxime, incidunt libero eaque ipsam? Illo quo,
-                accusantium aliquid, voluptatibus qui est velit architecto
-                temporibus aut, autem odit! Dolores ratione iusto beatae
-                consequatur ad doloremque unde cumque? Magnam praesentium iure
-                quibusdam autem exercitationem molestiae in facilis facere!
+                We understand the unique needs and challenges faced by
+                owner-operators, and we are committed to supporting your
+                success. As an owner-operator partnering with V&Y Horizon, you
+                have the freedom to run your own business while enjoying the
+                benefits of our established network and resources. We will never
+                promise anyone golden mountains and then deliver reality far
+                from it. We offer competitive rates, realistic expectations and
+                personalized support to help you optimize your operations and
+                maximize profitability. We value your partnership and strive to
+                create a mutually beneficial relationship based on trust,
+                transparency, and open communication.
               </p>
-              <Link className={classes.button}>Drive Your Destiny</Link>
+              <Link className={classes.button} to="/contact">
+                Drive Your Destiny
+              </Link>
             </div>
           </div>
           <div className={classes.career}>
@@ -271,21 +284,22 @@ export default function Careers() {
               sizes="(max-width: 1500px) 100vw, 1500px"
               alt="Network"
             /> */}
+            <Loader src={network} classNameProp={classes.image} />
             <div>
               <h1>Career Network</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus aliquid commodi atque, assumenda numquam eius unde illo
-                quos consequatur ipsa tenetur sequi id vero aspernatur porro,
-                veniam soluta quas explicabo dignissimos incidunt adipisci,
-                minima ducimus? Amet voluptatem possimus, sint iste perferendis
-                optio ea maxime, incidunt libero eaque ipsam? Illo quo,
-                accusantium aliquid, voluptatibus qui est velit architecto
-                temporibus aut, autem odit! Dolores ratione iusto beatae
-                consequatur ad doloremque unde cumque? Magnam praesentium iure
-                quibusdam autem exercitationem molestiae in facilis facere!
+                Whether you are an office team member, company driver, or
+                owner-operator looking for a trusted and reliable partner, we
+                invite you to join our carrier network at V&Y Horizon. We
+                believe in fostering a collaborative and mutually beneficial and
+                a family like relationship with our employees, recognizing their
+                invaluable contributions to our success. By joining our network,
+                you gain access to a wide range of freight opportunities,
+                personalized support, and a team dedicated to your success.
               </p>
-              <Link className={classes.button}>Expand Your Horizons</Link>
+              <Link className={classes.button} to="/contact">
+                Expand Your Horizons
+              </Link>
             </div>
           </div>
         </ul>

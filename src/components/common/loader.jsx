@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "../../styles/loader.module.css";
 
-export default function Loader({ src, styles, index, classNameProp }) {
+export default function Loader({ src, styles, index, classNameProp, id }) {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const handleImageLoad = () => {
@@ -17,6 +17,7 @@ export default function Loader({ src, styles, index, classNameProp }) {
         style={{ display: isImageLoaded ? "block" : "none", ...styles }}
         index={index || 0}
         className={classNameProp}
+        id={id}
       />
     </React.Fragment>
   );

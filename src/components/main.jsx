@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import $ from "jquery";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { ParallaxBanner } from "react-scroll-parallax";
+import { animateScroll as scroll } from "react-scroll";
 
 import Reviews from "./common/Reviews";
 import Loader from "./common/loader";
 
 import FastMarquee from "react-fast-marquee";
-
 
 import Contact from "./common/contact";
 import Footer from "../components/common/Footer";
@@ -29,7 +28,6 @@ import image6 from "../images/partnerships/20171101-loup-logo-vertical.png";
 import image7 from "../images/partnerships/ptl-logo-emblem-outlined-rgb.svg";
 import image8 from "../images/partnerships/UIIALogo.png";
 import image9 from "../images/partnerships/union-pacific-logo-png-transparent.png";
-
 
 export default function Main({ navigation }) {
   const { t } = useTranslation();
@@ -84,7 +82,7 @@ export default function Main({ navigation }) {
       } else {
         // If it's not a percentage, parse it to an integer
         maxHeight = parseInt(maxHeightStr, 10);
-      }      
+      }
 
       let value = Math.abs(fixedElementTopPosition - elementTopPosition);
       let isFullSize = Math.abs(value > maxHeight);
@@ -116,6 +114,10 @@ export default function Main({ navigation }) {
   };
 
   useEffect(() => {
+    scroll.scrollToTop({
+      smooth: true,
+      duration: 0,
+    });
     // After a delay, mark all elements as "first animation done"
     const timer = setTimeout(() => {
       setAnimationFlags(Array(words.length).fill(true));
@@ -178,9 +180,9 @@ export default function Main({ navigation }) {
 
       <div className={classes.wrapper}>
         <div
-          className={classes.header}          
-          // layers={[{ image: main, speed: 20 }]}          
-        >        
+          className={classes.header}
+          // layers={[{ image: main, speed: 20 }]}
+        >
           <Loader src={main} />
           <div className={classes.divider}>
             <h1>
@@ -253,21 +255,24 @@ export default function Main({ navigation }) {
             className={classes.serviceImage}
             layers={[{ image: warehouse, speed: 20 }]}
           /> */}
-          
+
           <Loader src={warehouse} classNameProp={classes.serviceImage} />
-          
+
           <div className={classes.serviceContent}>
             <h1>{"Why V&Y Horizon?"}</h1>
             <span>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-              sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
-              vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-              imperdiet a, venenatis vitae, justo
+              We do what we say, we do not overpromise or inflate our commitment
+              but work with a deep integrity. Whether you need LTL Cartage,
+              Drayage, dry goods or refrigerated, etc., you are covered and we
+              strive for you to be surprised with our level of commitment to
+              customer service. Serving the PNW since 2015, we are a Husband and
+              Wife owned company which sets us apart due to the values we hold
+              such as trust, integrity, and diligency. Companies like SAIA and
+              XPO Logistics partner with us because of our honest and major
+              focus on communication — which is highly overlooked in
+              transportation.
             </span>
-            <Link className={`${classes.serviceBtn}`} to={""}>
+            <Link className={`${classes.serviceBtn}`} to={"/services"}>
               Learn more
             </Link>
           </div>
@@ -277,13 +282,13 @@ export default function Main({ navigation }) {
           <div className={`${classes.stream1} stream1`} />
           <h1>
             Shipping Services to fill your logistics and transportation
-            operations.
+            operations
           </h1>
-          <div className={`${classes.stream2} stream2`} />          
-          
+          <div className={`${classes.stream2} stream2`} />
+
           <Loader src={mountain} classNameProp={classes.shippingImage} />
-          
-          <div className={`${classes.stream3} stream3`} />        
+
+          <div className={`${classes.stream3} stream3`} />
           <div style={{ height: "1px", width: "80%", margin: "-10px auto" }}>
             <div
               style={{
@@ -301,32 +306,35 @@ export default function Main({ navigation }) {
           </div>
           <div className={classes.cards}>
             <div className={`${classes.card}`}>
-              <h1>Lorem Ipsum</h1>
+              <h1>Rail & Port Drayage</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                penatibus et magnis dis parturient montes, nascetur ridiculus
-                mus. Donec quam felis, ultricies nec,
+                Transporting goods from ports or rail with V&Y Horizon is made
+                easy and clean. We are set up with all major companies that
+                specialize in ports/rail ensuring smooth logistics. In addition,
+                our commitment to clear communication means that you will be
+                updated every step of the way.
+              </p>
+              <Link className={`${classes.button}`} to={"/contact"}>
+                Learn more
+              </Link>
+            </div>
+            <div className={`${classes.card}`}>
+              <h1>Over the Road</h1>
+              <p>
+                At V&Y Horizon, we handle all sorts of operations, whether it's
+                expedited, dry freight, refrigerated, drop-trailer, or
+                LTL/Partial shipping. If you've got something else in mind, give
+                us a call and we’ll see what can do.
               </p>
               <Link className={`${classes.button}`}>Learn more</Link>
             </div>
             <div className={`${classes.card}`}>
-              <h1>Lorem Ipsum</h1>
+              <h1>Less-Than-Truckload Cartage</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                penatibus et magnis dis parturient montes, nascetur ridiculus
-                mus. Donec quam felis, ultricies nec,
-              </p>
-              <Link className={`${classes.button}`}>Learn more</Link>
-            </div>
-            <div className={`${classes.card}`}>
-              <h1>Lorem Ipsum</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                penatibus et magnis dis parturient montes, nascetur ridiculus
-                mus. Donec quam felis, ultricies nec,
+                We provide robust Less-Than-Truckload Cartage (LTL) services.
+                Major LTL shipping companies choose us as their cartage partner
+                because of our deep-seated commitment to clear communication and
+                our hard-working customer service.
               </p>
               <Link className={`${classes.button}`}>Learn more</Link>
             </div>
@@ -340,18 +348,18 @@ export default function Main({ navigation }) {
           {/* <div style={{ height: "30px", margin: "-40px auto" }}> */}
           <div className={`${classes.stream1} stream1`} />
           {/* </div> */}
-          <h1>Lorem ipsum dolor sit amet, consectetuer</h1>
+          <h1>Communication Matters To Us</h1>
           {/* <div style={{ height: "30px", margin: "-40px auto" }}> */}
           <div className={`${classes.stream2} stream2`} />
           {/* </div> */}
           <span>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            Donec quam felis, ultricies nec, Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-            montes, nascetur ridiculus mus. Donec quam
+            Communication is number one in transportation, often missed and
+            overlooked. We put it as a corner stone of our business philosophy
+            and listening is what we strive to do to ensure we can meet your
+            shipping needs. We maintain a dilligent commitment to transparency
+            and integrity from project start-to-finish. As a family-owned
+            business, we instill these core values of trust throughout our
+            entire company.
           </span>
         </div>
         <div className={`${classes.streamSection2} streamSection2`}>
@@ -364,11 +372,11 @@ export default function Main({ navigation }) {
             <div>
               <h1>Careers at V&Y Horizon</h1>
               <span>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa.
+                At V&Y Horizon, we build, find, and recruit top transportation
+                talent -- be a part of our team!
               </span>
             </div>
-            <Link className={`btn ${classes.button}`} to={"/contact"}>
+            <Link className={`btn ${classes.button}`} to={"/careers"}>
               Join Our Team
             </Link>
           </div>
@@ -392,10 +400,10 @@ export default function Main({ navigation }) {
             </Link>
           </div>
         </ParallaxBanner> */}
-        
+
         <Reviews />
-          
-        <Contact />        
+
+        <Contact />
         <Footer />
       </div>
     </React.Fragment>

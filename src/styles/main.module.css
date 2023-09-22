@@ -659,6 +659,7 @@ button {
   padding-bottom: 2px;
   margin-bottom: 0;
   font-weight: 300;
+  z-index: 10;
 }
 .shippingService .cards .button:hover {
   color: gray;
@@ -870,10 +871,6 @@ button {
   border: 0.5px solid gray;  
   max-height: 100px;
 }
-
-
-
-
 
 .bottomHeader {
   height: 50vh;
