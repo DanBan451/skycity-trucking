@@ -914,8 +914,8 @@ color: black; */
   color: white;
 }
 .bottomHeader .divider {
-  margin-top: auto;
-  margin-bottom: auto;
+  /* margin-top: auto;
+  margin-bottom: auto; */
   margin-right: 10px;
   margin-left: 10px;
   display: flex;
@@ -928,7 +928,9 @@ color: black; */
   width: 95%;
   max-width: 500px;
   z-index: 5;
-  position: absolute;
+  position: absolute;  
+  bottom: 25%;
+  left: 25%;  
 }
 .bottomHeader .divider h1 br {
   display: none;

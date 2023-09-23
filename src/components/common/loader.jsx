@@ -8,22 +8,28 @@ export default function Loader({ src, styles, index, classNameProp, id, small, m
     setIsImageLoaded(true);
   };
 
+  console.log(`Here is small: ${small}`);
+  console.log(`Here is medium: ${medium}`);
+  console.log(`Here is large: ${large}`);
+  
+
   return (
     <React.Fragment>
       {!isImageLoaded && <div className={classes.placeholder}></div>}
       <img
+        srcSet={`
+          ${small} 400w,
+          ${medium} 800w,
+          ${large} 1200w,
+          ${src} 1950w
+        `}
         src={src}
         onLoad={handleImageLoad}
         style={{ display: isImageLoaded ? "block" : "none", ...styles }}
         index={index || 0}
         className={classNameProp}
         id={id}
-        srcSet={`
-        ${small || src} 320w,
-        ${medium || src} 640w,
-        ${large || src} 1200w,
-        ${src || src} 1920w
-      `}
+        alt=""
       />
     </React.Fragment>
   );

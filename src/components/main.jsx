@@ -14,14 +14,30 @@ import Footer from "../components/common/Footer";
 
 import classes from "../styles/main.module.css";
 
-import mainSmall from "../images/homepage/main-320.jpg";
-import mainMedium from "../images/homepage/main-640.jpg";
-import mainLarge from "../images/homepage/main-1200.jpg";
-import mainBeyond from "../images/homepage/main.jpg";
+// header
+import hSmall from "../images/homepage/header/400.png";
+import hMedium from "../images/homepage/header/800.png";
+import hLarge from "../images/homepage/header/1200.png";
+import hBeyond from "../images/homepage/header/1950.png";
 
-import warehouse from "../images/homepage/warehouse.jpg";
-import mountain from "../images/homepage/mountain.jpg";
-import wheel from "../images/homepage/handeonwheel.jpg";
+// warehouse
+import wSmall from "../images/homepage/warehouse-derivatives/400.jpg";
+import wMedium from "../images/homepage/warehouse-derivatives/800.jpg";
+import wLarge from "../images/homepage/warehouse-derivatives/1200.jpg";
+import wBeyond from "../images/homepage/warehouse-derivatives/1950.jpg";
+
+// mountain
+import mSmall from "../images/homepage/mountain-derivatives/400.jpg"
+import mMedium from "../images/homepage/mountain-derivatives/800.jpg";
+import mLarge from "../images/homepage/mountain-derivatives/1200.jpg";
+import mBeyond from "../images/homepage/mountain-derivatives/1950.jpg";
+
+// on wheel
+import oSmall from "../images/homepage/wheel-derivatives/400.jpg"
+import oMedium from "../images/homepage/wheel-derivatives/800.jpg";
+import oLarge from "../images/homepage/wheel-derivatives/1200.jpg";
+import oBeyond from "../images/homepage/wheel-derivatives/1950.jpg";
+
 // partnerships
 import image1 from "../images/partnerships/Saia_logo.svg.png";
 import image2 from "../images/partnerships/XPO_Logistics_logo.svg.png";
@@ -187,7 +203,21 @@ export default function Main({ navigation }) {
           className={classes.header}
           // layers={[{ image: main, speed: 20 }]}
         >
-          <Loader src={mainBeyond} small={mainSmall} medium={mainMedium} large={mainLarge} classNameProp={classes.loaderHeaderImage} />
+          <Loader src={hBeyond} small={hSmall} medium={hMedium} large={hLarge} 
+          classNameProp={classes.loaderHeaderImage} />
+
+          {/* <img
+            srcSet={`
+          ${mainSmall} 320w,
+          ${mainMedium} 640w,
+          ${mainLarge} 1200w,
+          ${mainBeyond} 1920w
+        `}
+            src={mainBeyond}
+            className={classes.loaderHeaderImage}
+            alt=""
+          /> */}
+
           <div className={classes.divider}>
             <h1>
               {"Old-School Robust Services "}
@@ -260,7 +290,8 @@ export default function Main({ navigation }) {
             layers={[{ image: warehouse, speed: 20 }]}
           /> */}
 
-          <Loader src={warehouse} classNameProp={classes.serviceImage} />
+          <Loader src={wBeyond} small={wSmall} medium={wMedium} large={wLarge} 
+          classNameProp={classes.loaderHeaderImage} />
 
           <div className={classes.serviceContent}>
             <h1>{"Why V&Y Horizon?"}</h1>
@@ -290,7 +321,8 @@ export default function Main({ navigation }) {
           </h1>
           <div className={`${classes.stream2} stream2`} />
 
-          <Loader src={mountain} classNameProp={classes.shippingImage} />
+          <Loader src={mBeyond} small={mSmall} medium={mMedium} large={mLarge} 
+          classNameProp={classes.loaderHeaderImage} />
 
           <div className={`${classes.stream3} stream3`} />
           <div style={{ height: "1px", width: "80%", margin: "-10px auto" }}>
@@ -370,7 +402,8 @@ export default function Main({ navigation }) {
           <div className={`${classes.stream1} stream1`} />
         </div>
         <div className={classes.bottomHeader}>
-          <Loader src={wheel} classNameProp={classes.image} />
+          <Loader src={oBeyond} small={oSmall} medium={oMedium} large={oLarge} 
+          classNameProp={classes.loaderHeaderImage} />
           <div className={classes.divider}>
             <span>JOIN OUR TEAM</span>
             <div>
