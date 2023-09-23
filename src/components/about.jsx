@@ -1,4 +1,4 @@
-import React, { useEffect }from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import NavbarComponent from "./common/Navbar";
 import FooterComponent from "./common/Footer";
@@ -10,6 +10,12 @@ import { useTranslation } from "react-i18next";
 import classes from "../styles/about.module.css";
 import Contact from "./common/contact";
 
+// highway images
+import hSmall from "../images/aboutpage/400.jpg";
+import hMedium from "../images/aboutpage/800.jpg";
+import hLarge from "../images/aboutpage/1200.jpg";
+import hBeyond from "../images/aboutpage/1950.jpg";
+
 import highway from "../images/aboutpage/iStock-1413625824.jpg";
 
 export default function About({ navigation }) {
@@ -18,10 +24,9 @@ export default function About({ navigation }) {
   useEffect(() => {
     scroll.scrollToTop({
       smooth: true,
-      duration: 0
+      duration: 0,
     });
-  })
-
+  });
 
   return (
     <div id={classes.about}>
@@ -41,7 +46,7 @@ export default function About({ navigation }) {
           for us and we strive to be the best in the industry, serving our
           customers, community and our team.
         </p>
-        <a className={classes.button} href={'#mission'}>
+        <a className={classes.button} href={"#mission"}>
           <FontAwesomeIcon
             icon="chevron-down"
             color="#005cac"
@@ -51,7 +56,15 @@ export default function About({ navigation }) {
         </a>
       </div>
 
-      <Loader src={highway} classNameProp={classes.image} id={'mission'} />
+      <Loader
+        src={hBeyond}
+        small={hSmall}
+        medium={hMedium}
+        large={hLarge}
+        classNameProp={classes.image}
+        id={"mission"}
+      />
+
       {/* <ParallaxBanner
         className={classes.image}
         layers={[{ image: highway, speed: 20 }]}

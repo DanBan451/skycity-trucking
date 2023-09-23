@@ -43,8 +43,7 @@ h1 {
 .scrollButton {
   display: flex;
   justify-content: center;
-  margin: clamp(50px, 5vw, 200px);
-  margin-bottom: clamp(50px, 8vw, 300px);
+  margin: clamp(50px, 5vw, 200px);  
 }
 
 @media only screen and (min-width: 930px) {
@@ -68,7 +67,7 @@ h1 {
 }
 @media only screen and (min-width: 1500px) {
   .header {
-    background-image: url("../images/servicespage/darkfreight.jpg");
+    /* background-image: url("../images/servicespage/darkfreight.jpg"); */
   }
 }
 
@@ -85,6 +84,7 @@ h1 {
   padding: 10px;  
   max-height: 620px;
   margin-bottom: clamp(50px, 15vw, 600px);
+  padding-top: clamp(50px, 8vw, 300px);;
 }
 .shipping br {
   display: none;
@@ -96,7 +96,7 @@ h1 {
 
 .shipping::after {
   content: "";
-  background-image: url("../images/servicespage/truckwhite-1500_x_999.png");
+  background-image: url("../images/servicespage/truckwhite-derivatives/truckwhite-400_x_266.jpg");
   width: 100%;
   height: 100%;
   position: absolute;
@@ -109,12 +109,23 @@ h1 {
   right: 0;
 }
 
+@media only screen and (min-width: 400px) {
+  .shipping::after {
+    content: "";
+    background-image: url("../images/servicespage/truckwhite-derivatives/truckwhite-800_x_532.jpg");
+  }
+}
+
 @media only screen and (min-width: 800px) {
   .shipping {
     max-height: 650px;
   }
   .shipping div {
     width: 70%;
+  }
+  .shipping::after {
+    content: "";
+    background-image: url("../images/servicespage/truckwhite-derivatives/truckwhite-1200_x_799.jpg");
   }
 }
 @media only screen and (min-width: 1050px) {
@@ -141,6 +152,12 @@ h1 {
   }
   .shipping p {
     font-size: 20px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .shipping::after {
+    content: "";
+    background-image: url("../images/servicespage/truckwhite-derivatives/truckwhite-1950_x_1298.jpg");
   }
 }
 @media only screen and (min-width: 1300px) {
@@ -228,6 +245,7 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    flex-basis: 100%;
   }
   .fleet .cards img {
     height: clamp(250px, 20vw, 300px);
@@ -322,11 +340,13 @@ h1 {
     gap: 7vw;
     width: clamp(900px, 90vw, 1500px);
     margin: auto;
+    width: 100%;
   }
   .capacity .cards .card {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
   }
   .capacity .cards p {
     font-size: clamp(16px, 1.2vw, 20px);

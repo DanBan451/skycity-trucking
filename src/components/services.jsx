@@ -9,15 +9,36 @@ import classes from "../styles/services.module.css";
 import Cards from "../Cards";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import darkFreight from "../images/servicespage/darkfreight.jpg";
-import freight from "../images/servicespage/freight.jpg";
-import freightSmall from "../images/servicespage/freight-1500_x_1001.png";
-import whitebluetrucks from "../images/servicespage/whitebluetrucks.jpg";
-import whitebluetrucksSmall from "../images/servicespage/whitebluetrucks-1500_x_999.png";
-import boxes from "../images/servicespage/boxes.jpg";
-import boxesSmall from "../images/servicespage/boxes-1500_x_969.png";
-import birdseye from "../images/servicespage/birdseyefreight.jpg";
-import birdseyeSmall from "../images/servicespage/birdseyefreight-1500_x_842.jpg";
+
+// darkfreight images
+import dSmall from "../images/servicespage/darkfreight-derivatives/darkfreight-400_x_184.jpg";
+import dMedium from "../images/servicespage/darkfreight-derivatives/darkfreight-800_x_369.jpg";
+import dLarge from "../images/servicespage/darkfreight-derivatives/darkfreight-1200_x_554.jpg";
+import dBeyond from "../images/servicespage/darkfreight-derivatives/darkfreight-1950_x_900.jpg";
+
+// freight images
+import fSmall from "../images/servicespage/freight-derivatives/freight-400_x_266.jpg";
+import fMedium from "../images/servicespage/freight-derivatives/freight-800_x_533.jpg";
+import fLarge from "../images/servicespage/freight-derivatives/freight-1200_x_800.jpg";
+import fBeyond from "../images/servicespage/freight-derivatives/freight-1950_x_1301.jpg";
+
+// white blue trucks images
+import wSmall from "../images/servicespage/whitebluetrucks-derivatives/whitebluetrucks-400_x_266.jpg";
+import wMedium from "../images/servicespage/whitebluetrucks-derivatives/whitebluetrucks-800_x_533.jpg";
+import wLarge from "../images/servicespage/whitebluetrucks-derivatives/whitebluetrucks-1200_x_799.jpg";
+import wBeyond from "../images/servicespage/whitebluetrucks-derivatives/whitebluetrucks-1950_x_1300.jpg";
+
+// boxes
+import bSmall from "../images/servicespage/boxes-derivatives/boxes-400_x_258.jpg";
+import bMedium from "../images/servicespage/boxes-derivatives/boxes-800_x_516.jpg";
+import bLarge from "../images/servicespage/boxes-derivatives/boxes-1200_x_774.jpg";
+import bBeyond from "../images/servicespage/boxes-derivatives/boxes-1950_x_1259.jpg";
+
+// birdseye
+import eSmall from "../images/servicespage/birdseyefreight-derivatives/birdseyefreight-400_x_224.jpg";
+import eMedium from "../images/servicespage/birdseyefreight-derivatives/birdseyefreight-800_x_449.jpg";
+import eLarge from "../images/servicespage/birdseyefreight-derivatives/birdseyefreight-1200_x_673.jpg";
+import eBeyond from "../images/servicespage/birdseyefreight-derivatives/birdseyefreight-1950_x_1095.jpg";
 
 export default function Services({ navigation }) {
   const { t } = useTranslation();
@@ -25,9 +46,9 @@ export default function Services({ navigation }) {
   useEffect(() => {
     scroll.scrollToTop({
       smooth: true,
-      duration: 0
+      duration: 0,
     });
-  })
+  });
 
   return (
     <div>
@@ -41,23 +62,29 @@ export default function Services({ navigation }) {
         </h1>
       </ParallaxBanner> */}
       <div className={classes.header}>
-        <Loader src={darkFreight} classNameProp={classes.image} />
+        <Loader
+          src={dBeyond}
+          small={dSmall}
+          medium={dMedium}
+          large={dLarge}
+          classNameProp={classes.image}
+        />
         <h1>
           Services &<br />
           Freight Solutions
         </h1>
       </div>
 
-      <Link className={classes.scrollButton}>
+      <a className={classes.scrollButton} href={"#shipping"}>
         <FontAwesomeIcon
           icon="chevron-down"
           color="black"
           fontSize={40}
           className="blue-chevron"
         />
-      </Link>
+      </a>
 
-      <div className={classes.shipping}>
+      <div className={classes.shipping} id={"shipping"}> 
         <div>
           <h1>
             Shipping services that meet your <br />
@@ -76,11 +103,12 @@ export default function Services({ navigation }) {
         <h1>Dedicated Fleet Operations</h1>
         <div className={classes.cards}>
           <div className={classes.card}>
-            <img
-              srcset={`${freight} 1500w,
-              ${freightSmall} 768w`}
-              sizes="(max-width: 768px) 100vw, 1500px"
-              alt="Freight"
+            <Loader
+              src={fBeyond}
+              small={fSmall}
+              medium={fMedium}
+              large={fLarge}
+              classNameProp={classes.image}
             />
             <h1>Rail & Port Drayage</h1>
             <p>
@@ -95,12 +123,12 @@ export default function Services({ navigation }) {
             </Link>
           </div>
           <div className={classes.card}>
-            <img
-              srcset={`
-              ${whitebluetrucks} 1500w,
-              ${whitebluetrucksSmall} 768w`}
-              sizes="(max-width: 768px) 100vw, 1500px"
-              alt="White Blue Trucks"
+            <Loader
+              src={wBeyond}
+              small={wSmall}
+              medium={wMedium}
+              large={wLarge}
+              classNameProp={classes.image}
             />
 
             <h1>Over the Road</h1>
@@ -115,13 +143,13 @@ export default function Services({ navigation }) {
             </Link>
           </div>
           <div className={classes.card}>
-            <img
-              srcset={`
-    ${boxes} 1500w,
-    ${boxesSmall} 768w`}
-              sizes="(max-width: 768px) 100vw, 1500px"
-              alt="Boxes"
-            />
+            <Loader
+              src={bBeyond}
+              small={bSmall}
+              medium={bMedium}
+              large={bLarge}
+              classNameProp={classes.image}
+            />            
             <h1>Less-Than-Truckload Cartage</h1>
             <p>
               We provide robust Less-Than-Truckload Cartage (LTL) services.
@@ -142,7 +170,13 @@ export default function Services({ navigation }) {
           className={classes.image}
           layers={[{ image: birdseye, speed: 20 }]}
         /> */}
-        <Loader src={birdseye} classNameProp={classes.image} />
+        <Loader
+          src={eBeyond}
+          small={eSmall}
+          medium={eMedium}
+          large={eLarge}
+          classNameProp={classes.image}
+        />
 
         {/* <img
           srcset={`${birdseye} 1500w,
@@ -185,7 +219,9 @@ export default function Services({ navigation }) {
           <br />
           cargo with V&Y Horizon.
         </h1>
-        <Link className={`${classes.button}`} to={"/contact"}>Get a Quote!</Link>
+        <Link className={`${classes.button}`} to={"/contact"}>
+          Get a Quote!
+        </Link>
       </div>
 
       <FooterComponent />

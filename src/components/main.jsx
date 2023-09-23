@@ -27,13 +27,13 @@ import wLarge from "../images/homepage/warehouse-derivatives/1200.jpg";
 import wBeyond from "../images/homepage/warehouse-derivatives/1950.jpg";
 
 // mountain
-import mSmall from "../images/homepage/mountain-derivatives/400.jpg"
+import mSmall from "../images/homepage/mountain-derivatives/400.jpg";
 import mMedium from "../images/homepage/mountain-derivatives/800.jpg";
 import mLarge from "../images/homepage/mountain-derivatives/1200.jpg";
 import mBeyond from "../images/homepage/mountain-derivatives/1950.jpg";
 
 // on wheel
-import oSmall from "../images/homepage/wheel-derivatives/400.jpg"
+import oSmall from "../images/homepage/wheel-derivatives/400.jpg";
 import oMedium from "../images/homepage/wheel-derivatives/800.jpg";
 import oLarge from "../images/homepage/wheel-derivatives/1200.jpg";
 import oBeyond from "../images/homepage/wheel-derivatives/1950.jpg";
@@ -85,7 +85,10 @@ export default function Main({ navigation }) {
 
     // console.log("current stream index", streamIndex);
     // calculation of nth stream
+    if (!$(`${streamQueries[streamIndex]}`).length) return;
+
     const elementTopPosition = $(`${streamQueries[streamIndex]}`).offset().top;
+
     if (fixedElementTopPosition >= elementTopPosition) {
       const element = $(`${streamQueries[streamIndex]}`);
       element.css("border-color", "gray");
@@ -203,8 +206,13 @@ export default function Main({ navigation }) {
           className={classes.header}
           // layers={[{ image: main, speed: 20 }]}
         >
-          <Loader src={hBeyond} small={hSmall} medium={hMedium} large={hLarge} 
-          classNameProp={classes.loaderHeaderImage} />
+          <Loader
+            src={hBeyond}
+            small={hSmall}
+            medium={hMedium}
+            large={hLarge}
+            classNameProp={classes.loaderHeaderImage}
+          />
 
           {/* <img
             srcSet={`
@@ -290,8 +298,13 @@ export default function Main({ navigation }) {
             layers={[{ image: warehouse, speed: 20 }]}
           /> */}
 
-          <Loader src={wBeyond} small={wSmall} medium={wMedium} large={wLarge} 
-          classNameProp={classes.loaderHeaderImage} />
+          <Loader
+            src={wBeyond}
+            small={wSmall}
+            medium={wMedium}
+            large={wLarge}
+            classNameProp={classes.serviceImage}
+          />
 
           <div className={classes.serviceContent}>
             <h1>{"Why V&Y Horizon?"}</h1>
@@ -321,8 +334,13 @@ export default function Main({ navigation }) {
           </h1>
           <div className={`${classes.stream2} stream2`} />
 
-          <Loader src={mBeyond} small={mSmall} medium={mMedium} large={mLarge} 
-          classNameProp={classes.loaderHeaderImage} />
+          <Loader
+            src={mBeyond}
+            small={mSmall}
+            medium={mMedium}
+            large={mLarge}
+            classNameProp={classes.shippingImage}
+          />
 
           <div className={`${classes.stream3} stream3`} />
           <div style={{ height: "1px", width: "80%", margin: "-10px auto" }}>
@@ -402,42 +420,29 @@ export default function Main({ navigation }) {
           <div className={`${classes.stream1} stream1`} />
         </div>
         <div className={classes.bottomHeader}>
-          <Loader src={oBeyond} small={oSmall} medium={oMedium} large={oLarge} 
-          classNameProp={classes.loaderHeaderImage} />
-          <div className={classes.divider}>
-            <span>JOIN OUR TEAM</span>
-            <div>
-              <h1>Careers at V&Y Horizon</h1>
-              <span>
-                At V&Y Horizon, we build, find, and recruit top transportation
-                talent -- be a part of our team!
-              </span>
+          <Loader
+            src={oBeyond}
+            small={oSmall}
+            medium={oMedium}
+            large={oLarge}
+            classNameProp={classes.image}
+          />
+          <div className={classes.dividerWrapper}>
+            <div className={classes.divider}>
+              <span>JOIN OUR TEAM</span>
+              <div>
+                <h1>Careers at V&Y Horizon</h1>
+                <span>
+                  At V&Y Horizon, we build, find, and recruit top transportation
+                  talent -- be a part of our team!
+                </span>
+              </div>
+              <Link className={`btn ${classes.button}`} to={"/careers"}>
+                Join Our Team
+              </Link>
             </div>
-            <Link className={`btn ${classes.button}`} to={"/careers"}>
-              Join Our Team
-            </Link>
           </div>
         </div>
-
-        {/* <ParallaxBanner
-          className={classes.bottomHeader}
-          layers={[{ image: wheel, speed: 20 }]}
-        >
-          <div className={classes.divider}>
-            <span>JOIN OUR TEAM</span>
-            <div>
-              <h1>Careers at V&Y Horizon</h1>
-              <span>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa.
-              </span>
-            </div>
-            <Link className={`btn ${classes.button}`} to={"/contact"}>
-              Join Our Team
-            </Link>
-          </div>
-        </ParallaxBanner> */}
-
         <Reviews />
 
         <Contact />
