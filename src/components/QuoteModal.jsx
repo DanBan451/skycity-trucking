@@ -4,7 +4,12 @@ import Joi from "joi-browser";
 
 import Input from "./common/input";
 import Loader from "./common/loader";
-import image from "../images/quoteimage.jpg";
+
+// quote images
+import qSmall from "../images/quoteimage-derivatives/quoteimage-400_x_266.jpg";
+import qMedium from "../images/quoteimage-derivatives/quoteimage-800_x_532.jpg";
+import qLarge from "../images/quoteimage-derivatives/quoteimage-1200_x_799.jpg";
+import qBeyond from "../images/quoteimage-derivatives/quoteimage.jpg";
 
 const schema = {
   name: Joi.string().required().label("Name"),
@@ -98,7 +103,13 @@ const QuoteModal = ({ isOpen, onClose }) => {
     <div>
       {/* <ToastContainer /> */}
       <div className={`${classes.modal} ${isOpen ? `${classes.open}` : ""}`}>
-        <Loader src={image} classNameProp={classes.image} />      
+        <Loader
+          src={qBeyond}
+          small={qSmall}
+          medium={qMedium}
+          large={qLarge}
+          classNameProp={classes.image}
+        />
         <h1>Contact Us Today!</h1>
         <div className={classes["modal-content"]}>
           <span className={classes.close} onClick={() => onClose(false)}>
@@ -120,32 +131,32 @@ const QuoteModal = ({ isOpen, onClose }) => {
               classes={classes}
             />
             <Input
-            name="companyName"
-            value={data.companyName}
-            onChange={handleChange}
-            label={"Company Name"}
-            placeholder={"ABC Logistics"}
-            error={errors?.companyName}
-            classes={classes}
-          />
-          <Input
-            name="email"
-            value={data.email}
-            onChange={handleChange}
-            label={'Email'}
-            placeholder={"johndoe@domain.com"}
-            error={errors?.email}
-            classes={classes}
-          />
-          <Input
-            name="phone"
-            value={data?.phone}
-            onChange={handleChange}
-            label={"Phone Number"}
-            placeholder={"(123) 456-7890"}
-            error={errors?.phone}
-            classes={classes}
-          />
+              name="companyName"
+              value={data.companyName}
+              onChange={handleChange}
+              label={"Company Name"}
+              placeholder={"ABC Logistics"}
+              error={errors?.companyName}
+              classes={classes}
+            />
+            <Input
+              name="email"
+              value={data.email}
+              onChange={handleChange}
+              label={"Email"}
+              placeholder={"johndoe@domain.com"}
+              error={errors?.email}
+              classes={classes}
+            />
+            <Input
+              name="phone"
+              value={data?.phone}
+              onChange={handleChange}
+              label={"Phone Number"}
+              placeholder={"(123) 456-7890"}
+              error={errors?.phone}
+              classes={classes}
+            />
             <div className={[classes.textArea]}>
               <label className={classes.label}>Shipment Details</label>
               <textarea
@@ -168,7 +179,7 @@ const QuoteModal = ({ isOpen, onClose }) => {
               type="submit"
               disabled={submitted || validate()}
             >
-              {'Submit'}
+              {"Submit"}
             </button>
           </form>
         </div>
