@@ -11,16 +11,41 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { animateScroll as scroll } from "react-scroll";
 import Loader from "./common/loader";
 
-import main from "../images/careerspage/main.jpg";
-import flash from "../images/careerspage/flash-small.png";
-import office from "../images/careerspage/darkoffice.jpg";
-import officeSmall from "../images/careerspage/darkoffice-small.png";
-import snowtruck from "../images/careerspage/snowtruck.jpg";
-import snowtruckSmall from "../images/careerspage/snowtruck-small.png";
-import horizon from "../images/careerspage/horizontruck.jpg";
-import horizonSmall from "../images/careerspage/horizon-small.png";
-import network from "../images/careerspage/network.jpg";
-import networkSmall from "../images/careerspage/network-small.png";
+// darkfreight images
+import mSmall from "../images/careerspage/main-derivatives/main-400_x_266.jpg";
+import mMedium from "../images/careerspage/main-derivatives/main-800_x_534.jpg";
+import mLarge from "../images/careerspage/main-derivatives/main-1200_x_801.jpg";
+import mBeyond from "../images/careerspage/main-derivatives/main-1950_x_1301.jpg";
+
+// flash images
+import fSmall from "../images/careerspage/flash-derivatives/flash-400_x_266.jpg";
+import fMedium from "../images/careerspage/flash-derivatives/flash-800_x_533.jpg";
+import fLarge from "../images/careerspage/flash-derivatives/flash-1200_x_799.jpg";
+import fBeyond from "../images/careerspage/flash-derivatives/flash-1950_x_1299.jpg";
+
+// office images
+import oSmall from "../images/careerspage/darkoffice-derivatives/darkoffice-400_x_266.jpg";
+import oMedium from "../images/careerspage/darkoffice-derivatives/darkoffice-800_x_532.jpg";
+import oLarge from "../images/careerspage/darkoffice-derivatives/darkoffice-1200_x_800.jpg";
+import oBeyond from "../images/careerspage/darkoffice-derivatives/darkoffice-1950_x_1300.jpg";
+
+// snow truck images
+import sSmall from "../images/careerspage/snowtruck-derivatives/snowtruck-400_x_600.jpg";
+import sMedium from "../images/careerspage/snowtruck-derivatives/snowtruck-800_x_1200.jpg";
+import sLarge from "../images/careerspage/snowtruck-derivatives/snowtruck-1200_x_1800.jpg";
+import sBeyond from "../images/careerspage/snowtruck-derivatives/snowtruck-1950_x_2925.jpg";
+
+// horizon images
+import hSmall from "../images/careerspage/horizontruck-derivatives/horizontruck-400_x_600.jpg";
+import hMedium from "../images/careerspage/horizontruck-derivatives/horizontruck-800_x_1199.jpg";
+import hLarge from "../images/careerspage/horizontruck-derivatives/horizontruck-1200_x_1799.jpg";
+import hBeyond from "../images/careerspage/horizontruck-derivatives/horizontruck-1950_x_2923.jpg";
+
+// horizon images
+import nSmall from "../images/careerspage/network-derivatives/network-400_x_249.jpg";
+import nMedium from "../images/careerspage/network-derivatives/network-800_x_500.jpg";
+import nLarge from "../images/careerspage/network-derivatives/network-1200_x_750.jpg";
+import nBeyond from "../images/careerspage/network-derivatives/network-1950_x_1218.jpg";
 
 import classes from "../styles/careers.module.css";
 import { Link } from "react-router-dom";
@@ -157,7 +182,7 @@ export default function Careers() {
 
         <div
           className={classes.banner}
-          style={{ backgroundImage: `url('${flash}')` }}
+          style={{ backgroundImage: `url('${fMedium}')` }}
         >
           <h1>
             <strong>Life is a highway,</strong>
@@ -184,7 +209,13 @@ export default function Careers() {
               sizes="(max-width: 1500px) 100vw, 1500px"
               alt="Dark Office"
             /> */}
-            <Loader src={office} classNameProp={classes.image} />
+            <Loader
+              src={oBeyond}
+              small={oSmall}
+              medium={oMedium}
+              large={oLarge}
+              classNameProp={classes.image}
+            />
             <div>
               <h1>Office Team</h1>
               <p>
@@ -215,8 +246,14 @@ export default function Careers() {
   `}
               sizes="(max-width: 1500px) 100vw, 1500px"
               alt="Snow Truck"
-            /> */}
-            <Loader src={snowtruck} classNameProp={classes.image} />
+            /> */}            
+            <Loader
+              src={sBeyond}
+              small={sSmall}
+              medium={sMedium}
+              large={sLarge}
+              classNameProp={classes.image}
+            />
             <div>
               <h1>Company Drivers</h1>
               <p>
@@ -248,8 +285,14 @@ export default function Careers() {
   `}
               sizes="(max-width: 1500px) 100vw, 1500px"
               alt="Horizon Truck"
-            /> */}
-            <Loader src={horizon} classNameProp={classes.image} />
+            /> */}            
+            <Loader
+              src={hBeyond}
+              small={hSmall}
+              medium={hMedium}
+              large={hLarge}
+              classNameProp={classes.image}
+            />
             <div>
               <h1>Owner Operators</h1>
               <p>
@@ -283,8 +326,14 @@ export default function Careers() {
   `}
               sizes="(max-width: 1500px) 100vw, 1500px"
               alt="Network"
-            /> */}
-            <Loader src={network} classNameProp={classes.image} />
+            /> */}            
+            <Loader
+              src={nBeyond}
+              small={nSmall}
+              medium={nMedium}
+              large={nLarge}
+              classNameProp={classes.image}
+            />
             <div>
               <h1>Career Network</h1>
               <p>
@@ -303,8 +352,6 @@ export default function Careers() {
             </div>
           </div>
         </ul>
-
-        
 
         <div className={classes.careerFooter}>
           <span>Please dont forget to follow us</span>

@@ -24,7 +24,7 @@ h1 {
   text-align: center;
   display: flex;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-  background-image: url("../images/careerspage/main.jpg");
+  background-image: url("../images/careerspage/main-derivatives/main-1200_x_801.jpg");
 }
 .header::after {
   content: "";
@@ -82,15 +82,13 @@ h1 {
   .description br {
     display: block;
   }
+  .header {
+    background-image: url("../images/careerspage/main-derivatives/main-1950_x_1301.jpg");
+  }
 }
 @media only screen and (min-width: 1050px) {
   .header h1 {
     font-size: clamp(30px, 3vw, 60px);
-  }
-}
-@media only screen and (min-width: 1500px) {
-  .header {
-    background-image: url("../images/careerspage/main.jpg");
   }
 }
 
