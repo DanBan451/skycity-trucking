@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import classes from "../styles/quotemodal.module.css";
 import Joi from "joi-browser";
-
 import Input from "./common/input";
+
 import Loader from "./common/loader";
 
 // quote images
@@ -52,6 +52,7 @@ const QuoteModal = ({ isOpen, onClose }) => {
     //   .catch((err) => console.log(err));
 
     onClose(true);
+    
     var form = document.getElementById("application-form");
     var elements = form.elements;
     for (var i = 0, len = elements.length; i < len; ++i) {

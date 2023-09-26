@@ -6,7 +6,7 @@
 .footer .contact li:first-of-type {
   font-size: 17px;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;  
 }
 .footer .links li a,
 li,
@@ -19,11 +19,12 @@ li,
 /* ------------------------footer */
 
 .footerWrapper {
-  background-color: white;     
-  border: 0.5px solid black;
-  /* width: 85%; */
-  /* max-width: 1600px; */
+  background-color: white;       
+  background-color: #005aa8;
   width: 100%;
+}
+.footerWrapper * {
+  color: white;
 }
 
 .footer {
@@ -57,7 +58,7 @@ li,
   color: #017de9;
 }
 .nonActive {
-  color: black;
+  color: #ffffff;
 }
 
 /* .footer .brand ul {
@@ -69,6 +70,8 @@ li,
   margin-right: 10%;
   transition: 0.1s;
 } */
+.footer .brand ul img {  
+}
 .footer .brand ul img:hover {
   filter: invert(48%) sepia(77%) saturate(1534%) hue-rotate(191deg)
     brightness(100%) contrast(102%);
@@ -97,7 +100,7 @@ li,
 .footer .links li a,
 li {
   text-decoration: none;
-  color: black;
+  color: white;
   transition: 0.3s;
   font-size: 15px;
 }
@@ -112,7 +115,7 @@ li {
   list-style: none;
 }
 .footer .contact ul li {
-  color: black;
+  color: white;
   margin-bottom: 10px;
   font-size: 15px;
 }
@@ -124,7 +127,7 @@ li {
 }
 .footer > .icons h1 {
   margin-top: auto;
-  color: black;
+  color: white;
   margin-bottom: 15px;
 }
 .footer > .icons div {
@@ -136,7 +139,15 @@ li {
 .footer > .icons img {
   width: 35px;
 }
-.footer > .icons img:hover {
+.footer > .icons img {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(290deg) brightness(108%) contrast(104%);
+  /* filter: invert(41%) sepia(84%) saturate(6711%) hue-rotate(195deg)
+    brightness(98%) contrast(98%); */
+}
+.footer .brand * {
+  color: white; 
+}
+.footer > .icons img:hover {  
   filter: invert(41%) sepia(84%) saturate(6711%) hue-rotate(195deg)
     brightness(98%) contrast(98%);
 }
@@ -150,14 +161,14 @@ li {
   margin: 20px auto;
 }
 
-@media only screen and (min-width: 850px) {  
+@media only screen and (min-width: 850px) {    
   .footerWrapper {
-    /* width: 90%; */
     margin: auto;
   }
   .footer .brand .icons {
     display: block;
-  }
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(290deg) brightness(108%) contrast(104%);
+  }  
   .footer > .icons {
     display: none;
   }
@@ -178,7 +189,7 @@ li {
     width: 100%;
   }
   .footer .icons h1 {
-    margin-bottom: 15px;
+    margin-bottom: 15px;    
   }
   .footer .brand .icons div :nth-child(2) {
     margin: 0 15px;

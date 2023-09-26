@@ -31,8 +31,8 @@ function Reviews() {
   return (
     <div className={classes.wrapper}>
       <Carousel
-        data-bs-theme="dark"
-        variant="dark"
+        data-bs-theme="light"
+        variant="light"
         className={classes.carousel}
       >
         {reviews.map((review, i) => (

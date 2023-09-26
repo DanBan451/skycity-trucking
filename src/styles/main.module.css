@@ -892,7 +892,7 @@ color: black; */
   background-color: rgba(0, 200, 255, 0.5);
   background-blend-mode: multiply;
   position: relative;
-  margin-bottom: clamp(100px, 20vw, 200px);
+  /* margin-bottom: clamp(100px, 20vw, 200px); */
   /* border: 3px solid red;   */
 }
 .bottomHeader .image {

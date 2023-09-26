@@ -16,7 +16,7 @@ export default function FooterComponent() {
           <div className={classes.brand}>
             <img src={logo} alt="" />
             <ul className={classes.icons}>
-              <h1>{t("footer.header-h1")}</h1>
+              <h1 style={{ color: "black" }}>Follow Us</h1>
               <div>
                 <a href="">
                   <img src={facebookIcon} />

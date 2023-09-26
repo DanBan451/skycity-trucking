@@ -3,6 +3,7 @@ import $ from "jquery";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { animateScroll as scroll } from "react-scroll";
+import ScrollAnimation from "react-animate-on-scroll";
 
 import Reviews from "./common/Reviews";
 import Loader from "./common/loader";
@@ -202,10 +203,7 @@ export default function Main({ navigation }) {
       <div className={`${classes.fixed} fixed`}></div>
 
       <div className={classes.wrapper}>
-        <div
-          className={classes.header}
-          // layers={[{ image: main, speed: 20 }]}
-        >
+        <div className={classes.header}>
           <Loader
             src={hBeyond}
             small={hSmall}
@@ -213,18 +211,6 @@ export default function Main({ navigation }) {
             large={hLarge}
             classNameProp={classes.loaderHeaderImage}
           />
-
-          {/* <img
-            srcSet={`
-          ${mainSmall} 320w,
-          ${mainMedium} 640w,
-          ${mainLarge} 1200w,
-          ${mainBeyond} 1920w
-        `}
-            src={mainBeyond}
-            className={classes.loaderHeaderImage}
-            alt=""
-          /> */}
 
           <div className={classes.divider}>
             <h1>
@@ -285,46 +271,49 @@ export default function Main({ navigation }) {
           ))}
         </FastMarquee>
 
-        <div className={`${classes.service} ${classes.rev} service`}>
-          <div className={`${classes.blueprint} blueprint`}>
-            <div
-              className={`${classes.stream1} stream1`}
-              style={{ maxHeight: "100%" }}
+        <ScrollAnimation animateIn="fadeIn" duration={1}>
+          <div className={`${classes.service} ${classes.rev} service`}>
+            <div className={`${classes.blueprint} blueprint`}>
+              <div
+                className={`${classes.stream1} stream1`}
+                style={{ maxHeight: "100%" }}
+              />
+            </div>
+
+            {/* <ParallaxBanner
+              className={classes.serviceImage}
+              layers={[{ image: warehouse, speed: 20 }]}
+            /> */}
+
+            <Loader
+              src={wBeyond}
+              small={wSmall}
+              medium={wMedium}
+              large={wLarge}
+              classNameProp={classes.serviceImage}
             />
+
+            <div className={classes.serviceContent}>
+              <h1>{"Why V&Y Horizon?"}</h1>
+              <span>
+                We do what we say, we do not overpromise or inflate our
+                commitment but work with a deep integrity. Whether you need LTL
+                Cartage, Drayage, dry goods or refrigerated, etc., you are
+                covered and we strive for you to be surprised with our level of
+                commitment to customer service. Serving the PNW since 2015, we
+                are a Husband and Wife owned company which sets us apart due to
+                the values we hold such as trust, integrity, and diligency.
+                Companies like SAIA and XPO Logistics partner with us because of
+                our honest and major focus on communication — which is highly
+                overlooked in transportation.
+              </span>
+              <Link className={`${classes.serviceBtn}`} to={"/services"}>
+                Learn more
+              </Link>
+            </div>
           </div>
+        </ScrollAnimation>
 
-          {/* <ParallaxBanner
-            className={classes.serviceImage}
-            layers={[{ image: warehouse, speed: 20 }]}
-          /> */}
-
-          <Loader
-            src={wBeyond}
-            small={wSmall}
-            medium={wMedium}
-            large={wLarge}
-            classNameProp={classes.serviceImage}
-          />
-
-          <div className={classes.serviceContent}>
-            <h1>{"Why V&Y Horizon?"}</h1>
-            <span>
-              We do what we say, we do not overpromise or inflate our commitment
-              but work with a deep integrity. Whether you need LTL Cartage,
-              Drayage, dry goods or refrigerated, etc., you are covered and we
-              strive for you to be surprised with our level of commitment to
-              customer service. Serving the PNW since 2015, we are a Husband and
-              Wife owned company which sets us apart due to the values we hold
-              such as trust, integrity, and diligency. Companies like SAIA and
-              XPO Logistics partner with us because of our honest and major
-              focus on communication — which is highly overlooked in
-              transportation.
-            </span>
-            <Link className={`${classes.serviceBtn}`} to={"/services"}>
-              Learn more
-            </Link>
-          </div>
-        </div>
         <div className={`${classes.shippingService} shippingService`}>
           <span>SHIPPING SERVICES</span>
           <div className={`${classes.stream1} stream1`} />

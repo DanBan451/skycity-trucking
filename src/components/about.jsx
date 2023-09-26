@@ -31,29 +31,31 @@ export default function About({ navigation }) {
   return (
     <div id={classes.about}>
       <div className={classes.header}>
-        <h1>About V&Y Horizon</h1>
-        <p>
-          Since the the inception of V&Y in 2015, its owners and employees
-          already had an extensive transportation experience in various
-          capacities from 2005 — we are by no means new to this industry! From
-          the very beginning we put out word, our integrity, and our reputation
-          at our core. There are many “good” transportation companies out there
-          and we believe we are among those who provide extraordinary services
-          while upholding our shares values. These values not only make us excel
-          in what we do but ensure long lasting partnerships with customers and
-          employees. As a result, we have been recognized as the carrier of the
-          year in 2020 in the PNW intermodal market. This is just the beginning
-          for us and we strive to be the best in the industry, serving our
-          customers, community and our team.
-        </p>
-        <a className={classes.button} href={"#mission"}>
-          <FontAwesomeIcon
-            icon="chevron-down"
-            color="#005cac"
-            fontSize={30}
-            className="blue-chevron"
-          />
-        </a>
+        <div>
+          <h1>About V&Y Horizon</h1>
+          <p>
+            Since the the inception of V&Y in 2015, its owners and employees
+            already had an extensive transportation experience in various
+            capacities from 2005 — we are by no means new to this industry! From
+            the very beginning we put out word, our integrity, and our reputation
+            at our core. There are many “good” transportation companies out there
+            and we believe we are among those who provide extraordinary services
+            while upholding our shares values. These values not only make us excel
+            in what we do but ensure long lasting partnerships with customers and
+            employees. As a result, we have been recognized as the carrier of the
+            year in 2020 in the PNW intermodal market. This is just the beginning
+            for us and we strive to be the best in the industry, serving our
+            customers, community and our team.
+          </p>
+          <a className={classes.button} href={"#mission"}>
+            <FontAwesomeIcon
+              icon="chevron-down"
+              color="#005cac"
+              fontSize={30}
+              className="blue-chevron"
+            />
+          </a>
+        </div>
       </div>
 
       <Loader
@@ -64,13 +66,6 @@ export default function About({ navigation }) {
         classNameProp={classes.image}
         id={"mission"}
       />
-
-      {/* <ParallaxBanner
-        className={classes.image}
-        layers={[{ image: highway, speed: 20 }]}
-      /> */}
-
-      {/* <div className={classes.image} /> */}
 
       <div className={classes.mission}>
         <span>OUR MISSION</span>

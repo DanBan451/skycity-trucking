@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import NavbarComponent from "../components/common/Navbar";
 import FooterComponent from "../components/common/Footer";
+
 import Joi from "joi-browser";
+import Input from "./common/input";
+import Loader from "./common/loader";
 import emailjs from "emailjs-com";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
@@ -9,7 +12,6 @@ import { useTranslation } from "react-i18next";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { animateScroll as scroll } from "react-scroll";
-import Loader from "./common/loader";
 
 // darkfreight images
 import mSmall from "../images/careerspage/main-derivatives/main-400_x_266.jpg";
@@ -55,9 +57,7 @@ const schema = {
   lastName: Joi.string().required().label("Last Name"),
   email: Joi.string().required().email({ allowTld: true }).label("Email"),
   phone: Joi.number().required().label("Phone"),
-  zipcode: Joi.number().required().label("Zipcode"),
-  state: Joi.string().required().label("State"),
-  captcha: Joi.string().required().label("Captcha"),
+  description: Joi.string().min(25).max(500).required().label("Message"),  
 };
 
 export default function Careers() {
@@ -66,10 +66,9 @@ export default function Careers() {
     lastName: "",
     email: "",
     phone: "",
-    zipcode: "",
-    state: "",
-    captcha: "",
+    description: "",
   });
+
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
@@ -90,17 +89,17 @@ export default function Careers() {
     if (errors) return;
 
     // call server
-    emailjs
-      .sendForm(
-        "service_l080czw",
-        "template_kjwh8zl",
-        e.target,
-        "HPTwBnzpPBp6w8zW0"
-      )
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => console.log(err));
+    // emailjs
+    //   .sendForm(
+    //     "service_l080czw",
+    //     "template_kjwh8zl",
+    //     e.target,
+    //     "HPTwBnzpPBp6w8zW0"
+    //   )
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => console.log(err));
 
     toast.success(t("careers.toastMessage"));
     var form = document.getElementById("application-form");
@@ -246,7 +245,7 @@ export default function Careers() {
   `}
               sizes="(max-width: 1500px) 100vw, 1500px"
               alt="Snow Truck"
-            /> */}            
+            /> */}
             <Loader
               src={sBeyond}
               small={sSmall}
@@ -285,7 +284,7 @@ export default function Careers() {
   `}
               sizes="(max-width: 1500px) 100vw, 1500px"
               alt="Horizon Truck"
-            /> */}            
+            /> */}
             <Loader
               src={hBeyond}
               small={hSmall}
@@ -326,7 +325,7 @@ export default function Careers() {
   `}
               sizes="(max-width: 1500px) 100vw, 1500px"
               alt="Network"
-            /> */}            
+            /> */}
             <Loader
               src={nBeyond}
               small={nSmall}
@@ -352,6 +351,77 @@ export default function Careers() {
             </div>
           </div>
         </ul>
+
+        <h1 className={classes.title}>Contact Us Today!</h1>
+        <div className={classes["modal-content"]}>          
+          <form
+            id="application-form"
+            className={classes.form}
+            onSubmit={handleSubmit}
+            style={{ opacity: submitted ? 0.5 : 1 }}
+          >
+            <Input
+              name="firstName"
+              value={data.firstName}
+              onChange={handleChange}
+              label={"Name"}
+              placeholder={"John"}
+              error={errors?.firstName}
+              classes={classes}
+            />
+            <Input
+              name="lastName"
+              value={data.lastName}
+              onChange={handleChange}
+              label={"Last Name"}
+              placeholder={"Doe"}
+              error={errors?.lastName}
+              classes={classes}
+            />
+            <Input
+              name="email"
+              value={data.email}
+              onChange={handleChange}
+              label={"Email"}
+              placeholder={"johndoe@domain.com"}
+              error={errors?.email}
+              classes={classes}
+            />
+            <Input
+              name="phone"
+              value={data?.phone}
+              onChange={handleChange}
+              label={"Phone Number"}
+              placeholder={"(123) 456-7890"}
+              error={errors?.phone}
+              classes={classes}
+            />
+            <div className={[classes.textArea]}>
+              <label className={classes.label}>Message</label>
+              <textarea
+                name="description"
+                value={data?.description}
+                id=""
+                cols="30"
+                rows="10"
+                placeholder={"Tell us about yourself and career interests at V&Y Horizon"}
+                onChange={handleChange}
+              />
+              {errors?.description && (
+                <div className={`alert alert-danger m-0 mb-3 ${classes.error}`}>
+                  {errors?.description}
+                </div>
+              )}
+            </div>
+            <button
+              className={"btn btn-primary btn-sm"}
+              type="submit"
+              disabled={submitted || validate()}
+            >
+              {"Submit"}
+            </button>
+          </form>
+        </div>
 
         <div className={classes.careerFooter}>
           <span>Please dont forget to follow us</span>
@@ -386,7 +456,6 @@ export default function Careers() {
                 <span>V&Y Horizon</span>
               </Link>
             </li>
-            {/* Add more social links as needed */}
           </ul>
           <span>Thank you!</span>
         </div>

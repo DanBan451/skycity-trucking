@@ -1,16 +1,23 @@
 .wrapper {
-  margin-bottom: clamp(100px, 10vw,  500px);
+  margin-bottom: clamp(100px, 10vw,  500px);  
+  height: 80vh;
+  background-color: #005aa8;
+  display: flex;
 }
 
-.carousel { 
-  border: 1px solid gray;
-  height: auto; 
+.carousel {     
+  /* height: auto;  */
   padding-bottom: 50px;  
+  height: min-content;
+  margin: auto;
+}
+
+.carousel *  { 
+color: white;
 }
 
 .carousel .carouselItem {
   height: 100%;
-
 }
 .carousel .item {
   margin: auto;
@@ -36,6 +43,9 @@
     height: 250px;
   }
 }
+
+
+
 
 
 
