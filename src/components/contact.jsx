@@ -11,6 +11,7 @@ import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useTranslation } from "react-i18next";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 const schema = {
   name: Joi.string().required().label("Name"),
@@ -138,9 +139,9 @@ export default function Contact() {
   useEffect(() => {
     scroll.scrollToTop({
       smooth: true,
-      duration: 0
+      duration: 0,
     });
-  })
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -216,14 +217,14 @@ export default function Contact() {
     const errors = {};
     const options = {
       abortEarly: false,
-    };    
+    };
     let { error: result } = Joi.validate(data, schema, options);
 
     if (result) {
       result.details.forEach((element) => {
         errors[element.context.key] = element.message;
       });
-      console.log(errors)
+      console.log(errors);
       return errors;
     }
     return null;
@@ -246,162 +247,166 @@ export default function Contact() {
           our specialists will contact you shortly.
         </p>
       </div>
-      <div className={classes.contactWrapper}>
-        <div className={classes.content}>
-          <h1>Call or email us today!</h1>
-          <span>Phone: (000) 000-000</span>
-          <span>Email: email@gmail.com</span>
-        </div>
-        <form
-          id="application-form"
-          className={classes.form}
-          onSubmit={handleSubmit}
-          style={{ opacity: submitted ? 0.5 : 1 }}
-        >
-          <Input
-            name="name"
-            value={data.name}
-            onChange={handleChange}
-            label={"Name"}
-            placeholder={"John Doe"}
-            error={errors?.name}
-            classes={classes}
-          />
-          <Input
-            name="companyName"
-            value={data.companyName}
-            onChange={handleChange}
-            label={"Company Name"}
-            placeholder={"ABC Logistics"}
-            error={errors?.companyName}
-            classes={classes}
-          />
-          <Input
-            name="email"
-            value={data.email}
-            onChange={handleChange}
-            label={t("contact.label_3")}
-            placeholder={"johndoe@domain.com"}
-            error={errors?.email}
-            classes={classes}
-          />
-          <Input
-            name="phone"
-            value={data?.phone}
-            onChange={handleChange}
-            label={t("contact.label_4")}
-            placeholder={"(123) 456-7890"}
-            error={errors?.phone}
-            classes={classes}
-          />
-          <Input
-            name="pickupLocation"
-            value={data?.pickupLocation}
-            onChange={handleChange}
-            label={"Pick-up Location"}
-            placeholder={"City"}
-            error={errors?.pickupLocation}
-            classes={classes}
-          />
-          <Input
-            name="pickupLocationState"
-            value={data?.pickupLocationState}
-            label={"State"}
-            placeholder={"AK"}
-            error={errors?.pickupLocationState}
-            classes={classes}
-            select={[...states]}
-            onChange={handleChangeSelect}
-          />
-          <Input
-            name="deliveryLocation"
-            value={data?.deliveryLocation}
-            onChange={handleChange}
-            label={"Delivery Location"}
-            placeholder={"City"}
-            error={errors?.deliveryLocation}
-            classes={classes}
-          />
-          <Input
-            name="deliveryLocationState"
-            value={data?.deliveryLocationState}
-            label={"State"}
-            placeholder={"AK"}
-            error={errors?.deliveryLocationState}
-            classes={classes}
-            select={[...states]}
-            onChange={handleChangeSelect}
-          />
-          <div className={classes.weight}>
+      <AnimationOnScroll animateIn="animate__fadeIn">
+        <div className={classes.contactWrapper}>
+          <div className={classes.content}>
+            <h1>Call or email us today!</h1>
+            <span>Phone: (000) 000-000</span>
+            <span>Email: email@gmail.com</span>
+          </div>
+          <form
+            id="application-form"
+            className={classes.form}
+            onSubmit={handleSubmit}
+            style={{ opacity: submitted ? 0.5 : 1 }}
+          >
             <Input
-              name="weight"
-              value={data?.weight}
-              label={"Weight"}
-              placeholder={"Example: 100"}
-              error={errors?.weight}
-              required={false}
-              classes={classes}
+              name="name"
+              value={data.name}
               onChange={handleChange}
+              label={"Name"}
+              placeholder={"John Doe"}
+              error={errors?.name}
+              classes={classes}
             />
             <Input
-              name="weightUnits"
-              value={data?.weightUnits}
-              label={"Units"}
-              placeholder={"lbs"}
-              error={errors?.weightUnits}
-              required={false}
+              name="companyName"
+              value={data.companyName}
+              onChange={handleChange}
+              label={"Company Name"}
+              placeholder={"ABC Logistics"}
+              error={errors?.companyName}
               classes={classes}
-              select={[...weight]}
+            />
+            <Input
+              name="email"
+              value={data.email}
+              onChange={handleChange}
+              label={t("contact.label_3")}
+              placeholder={"johndoe@domain.com"}
+              error={errors?.email}
+              classes={classes}
+            />
+            <Input
+              name="phone"
+              value={data?.phone}
+              onChange={handleChange}
+              label={t("contact.label_4")}
+              placeholder={"(123) 456-7890"}
+              error={errors?.phone}
+              classes={classes}
+            />
+            <Input
+              name="pickupLocation"
+              value={data?.pickupLocation}
+              onChange={handleChange}
+              label={"Pick-up Location"}
+              placeholder={"City"}
+              error={errors?.pickupLocation}
+              classes={classes}
+            />
+            <Input
+              name="pickupLocationState"
+              value={data?.pickupLocationState}
+              label={"State"}
+              placeholder={"AK"}
+              error={errors?.pickupLocationState}
+              classes={classes}
+              select={[...states]}
               onChange={handleChangeSelect}
             />
-          </div>
-          <Input
-            name="mode"
-            value={data?.mode}
-            label={"Mode"}
-            placeholder={"Equipment Type"}
-            error={errors?.mode}
-            required={false}
-            classes={classes}
-            select={[...modes]}
-            onChange={handleChangeSelect}
-          />
-          <div className={[classes.textArea]}>
-            <label className={classes.label}>Shipment Details</label>
-            <textarea
-              name="description"
-              value={data?.description}
-              id=""
-              cols="30"
-              rows="10"
-              placeholder={"Tell us about your shipment request."}
+            <Input
+              name="deliveryLocation"
+              value={data?.deliveryLocation}
               onChange={handleChange}
+              label={"Delivery Location"}
+              placeholder={"City"}
+              error={errors?.deliveryLocation}
+              classes={classes}
             />
-            {errors?.description && (
-              <div className={`alert alert-danger m-0 mb-3 ${classes.error}`}>
-                {errors?.description}
-              </div>
+            <Input
+              name="deliveryLocationState"
+              value={data?.deliveryLocationState}
+              label={"State"}
+              placeholder={"AK"}
+              error={errors?.deliveryLocationState}
+              classes={classes}
+              select={[...states]}
+              onChange={handleChangeSelect}
+            />
+            <div className={classes.weight}>
+              <Input
+                name="weight"
+                value={data?.weight}
+                label={"Weight"}
+                placeholder={"Example: 100"}
+                error={errors?.weight}
+                required={false}
+                classes={classes}
+                onChange={handleChange}
+              />
+              <Input
+                name="weightUnits"
+                value={data?.weightUnits}
+                label={"Units"}
+                placeholder={"lbs"}
+                error={errors?.weightUnits}
+                required={false}
+                classes={classes}
+                select={[...weight]}
+                onChange={handleChangeSelect}
+              />
+            </div>
+            <Input
+              name="mode"
+              value={data?.mode}
+              label={"Mode"}
+              placeholder={"Equipment Type"}
+              error={errors?.mode}
+              required={false}
+              classes={classes}
+              select={[...modes]}
+              onChange={handleChangeSelect}
+            />
+            <div className={[classes.textArea]}>
+              <label className={classes.label}>Shipment Details</label>
+              <textarea
+                name="description"
+                value={data?.description}
+                id=""
+                cols="30"
+                rows="10"
+                placeholder={"Tell us about your shipment request."}
+                onChange={handleChange}
+              />
+              {errors?.description && (
+                <div className={`alert alert-danger m-0 mb-3 ${classes.error}`}>
+                  {errors?.description}
+                </div>
+              )}
+            </div>
+            {submitted || validate() ? (
+              <ReCAPTCHA
+                sitekey="6LfqImYkAAAAAL8VkvEQy-uxn1x_vAYWtcsot2ZA"
+                style={{ gridColumn: "1 / span 2" }}
+                onChange={handleCaptchaComplete}
+              />
+            ) : (
+              <div></div>
             )}
-          </div>
-          {(submitted || validate()) ? (
-            <ReCAPTCHA
-              sitekey="6LfqImYkAAAAAL8VkvEQy-uxn1x_vAYWtcsot2ZA"
-              style={{ gridColumn: "1 / span 2" }}
-              onChange={handleCaptchaComplete}            
-            />
-          ) : (
-            <div></div>
-          )}
-          <button
-            className={"btn btn-primary btn-sm"}
-            type="submit"
-            disabled={submitted || validate()}
-          >
-            {t("contact.button")}
-          </button>
-        </form>
-      </div>
-      <FooterComponent />
+            <button
+              className={"btn btn-primary btn-sm"}
+              type="submit"
+              disabled={submitted || validate()}
+            >
+              {t("contact.button")}
+            </button>
+          </form>
+        </div>
+      </AnimationOnScroll>
+      <AnimationOnScroll animateIn="animate__fadeIn">
+        <FooterComponent />
+      </AnimationOnScroll>
     </div>
   );
 }

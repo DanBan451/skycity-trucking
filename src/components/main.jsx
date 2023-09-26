@@ -3,7 +3,7 @@ import $ from "jquery";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { animateScroll as scroll } from "react-scroll";
-import ScrollAnimation from "react-animate-on-scroll";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 import Reviews from "./common/Reviews";
 import Loader from "./common/loader";
@@ -14,6 +14,7 @@ import Contact from "./common/contact";
 import Footer from "../components/common/Footer";
 
 import classes from "../styles/main.module.css";
+import "animate.css/animate.min.css";
 
 // header
 import hSmall from "../images/homepage/header/400.png";
@@ -271,48 +272,46 @@ export default function Main({ navigation }) {
           ))}
         </FastMarquee>
 
-        <ScrollAnimation animateIn="fadeIn" duration={1}>
-          <div className={`${classes.service} ${classes.rev} service`}>
-            <div className={`${classes.blueprint} blueprint`}>
-              <div
-                className={`${classes.stream1} stream1`}
-                style={{ maxHeight: "100%" }}
-              />
-            </div>
+        <div className={`${classes.service} ${classes.rev} service`}>
+          <div className={`${classes.blueprint} blueprint`}>
+            <div
+              className={`${classes.stream1} stream1`}
+              style={{ maxHeight: "100%" }}
+            />
+          </div>
 
-            {/* <ParallaxBanner
+          {/* <ParallaxBanner
               className={classes.serviceImage}
               layers={[{ image: warehouse, speed: 20 }]}
             /> */}
 
-            <Loader
-              src={wBeyond}
-              small={wSmall}
-              medium={wMedium}
-              large={wLarge}
-              classNameProp={classes.serviceImage}
-            />
+          <Loader
+            src={wBeyond}
+            small={wSmall}
+            medium={wMedium}
+            large={wLarge}
+            classNameProp={classes.serviceImage}
+          />
 
-            <div className={classes.serviceContent}>
-              <h1>{"Why V&Y Horizon?"}</h1>
-              <span>
-                We do what we say, we do not overpromise or inflate our
-                commitment but work with a deep integrity. Whether you need LTL
-                Cartage, Drayage, dry goods or refrigerated, etc., you are
-                covered and we strive for you to be surprised with our level of
-                commitment to customer service. Serving the PNW since 2015, we
-                are a Husband and Wife owned company which sets us apart due to
-                the values we hold such as trust, integrity, and diligency.
-                Companies like SAIA and XPO Logistics partner with us because of
-                our honest and major focus on communication — which is highly
-                overlooked in transportation.
-              </span>
-              <Link className={`${classes.serviceBtn}`} to={"/services"}>
-                Learn more
-              </Link>
-            </div>
+          <div className={classes.serviceContent}>
+            <h1>{"Why V&Y Horizon?"}</h1>
+            <span>
+              We do what we say, we do not overpromise or inflate our commitment
+              but work with a deep integrity. Whether you need LTL Cartage,
+              Drayage, dry goods or refrigerated, etc., you are covered and we
+              strive for you to be surprised with our level of commitment to
+              customer service. Serving the PNW since 2015, we are a Husband and
+              Wife owned company which sets us apart due to the values we hold
+              such as trust, integrity, and diligency. Companies like SAIA and
+              XPO Logistics partner with us because of our honest and major
+              focus on communication — which is highly overlooked in
+              transportation.
+            </span>
+            <Link className={`${classes.serviceBtn}`} to={"/services"}>
+              Learn more
+            </Link>
           </div>
-        </ScrollAnimation>
+        </div>
 
         <div className={`${classes.shippingService} shippingService`}>
           <span>SHIPPING SERVICES</span>
@@ -408,34 +407,40 @@ export default function Main({ navigation }) {
         <div className={`${classes.streamSection2} streamSection2`}>
           <div className={`${classes.stream1} stream1`} />
         </div>
-        <div className={classes.bottomHeader}>
-          <Loader
-            src={oBeyond}
-            small={oSmall}
-            medium={oMedium}
-            large={oLarge}
-            classNameProp={classes.image}
-          />
-          <div className={classes.dividerWrapper}>
-            <div className={classes.divider}>
-              <span>JOIN OUR TEAM</span>
-              <div>
-                <h1>Careers at V&Y Horizon</h1>
-                <span>
-                  At V&Y Horizon, we build, find, and recruit top transportation
-                  talent -- be a part of our team!
-                </span>
+        <AnimationOnScroll animateIn="animate__fadeIn">
+          <div className={classes.bottomHeader}>
+            <Loader
+              src={oBeyond}
+              small={oSmall}
+              medium={oMedium}
+              large={oLarge}
+              classNameProp={classes.image}
+            />
+            <div className={classes.dividerWrapper}>
+              <div className={classes.divider}>
+                <span>JOIN OUR TEAM</span>
+                <div>
+                  <h1>Careers at V&Y Horizon</h1>
+                  <span>
+                    At V&Y Horizon, we build, find, and recruit top
+                    transportation talent -- be a part of our team!
+                  </span>
+                </div>
+                <Link className={`btn ${classes.button}`} to={"/careers"}>
+                  Join Our Team
+                </Link>
               </div>
-              <Link className={`btn ${classes.button}`} to={"/careers"}>
-                Join Our Team
-              </Link>
             </div>
           </div>
-        </div>
-        <Reviews />
+          <Reviews />
+        </AnimationOnScroll>
+        <AnimationOnScroll animateIn="animate__fadeIn">
+          <Contact />
+        </AnimationOnScroll>
 
-        <Contact />
-        <Footer />
+        <AnimationOnScroll animateIn="animate__fadeIn">
+          <Footer />
+        </AnimationOnScroll>
       </div>
     </React.Fragment>
   );

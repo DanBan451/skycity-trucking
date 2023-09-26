@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { animateScroll as scroll } from "react-scroll";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 // darkfreight images
 import mSmall from "../images/careerspage/main-derivatives/main-400_x_266.jpg";
@@ -57,7 +58,7 @@ const schema = {
   lastName: Joi.string().required().label("Last Name"),
   email: Joi.string().required().email({ allowTld: true }).label("Email"),
   phone: Joi.number().required().label("Phone"),
-  description: Joi.string().min(25).max(500).required().label("Message"),  
+  description: Joi.string().min(25).max(500).required().label("Message"),
 };
 
 export default function Careers() {
@@ -162,10 +163,7 @@ export default function Careers() {
     <React.Fragment>
       <ToastContainer />
       <div className={classes.careers}>
-        <div
-          className={classes.header}
-          // layers={[{ image: main, speed: 20 }]}
-        >
+        <div className={classes.header}>
           <div className={classes.content}>
             <h1>Come work with us</h1>
             <Link className={classes.button} to="/contact">
@@ -179,288 +177,255 @@ export default function Careers() {
           <span>Transportation</span> excellence.
         </p>
 
-        <div
-          className={classes.banner}
-          style={{ backgroundImage: `url('${fMedium}')` }}
-        >
-          <h1>
-            <strong>Life is a highway,</strong>
-            <br /> and truckers drive the soul of the nation.
-          </h1>
-        </div>
-
-        <p className={classes.description2}>
-          What's your passion? Check out and check one of the tabs below!
-        </p>
-
-        <ul className={classes.careerList}>
-          <div className={classes.career}>
-            {/* <ParallaxBanner
-              className={classes.image}
-              layers={[{ image: office, speed: 20 }]}
-            /> */}
-            {/* <img
-              src={officeSmall}
-              srcset={`
-              ${officeSmall} 1500w,
-              ${office} 3000w
-              `}
-              sizes="(max-width: 1500px) 100vw, 1500px"
-              alt="Dark Office"
-            /> */}
-            <Loader
-              src={oBeyond}
-              small={oSmall}
-              medium={oMedium}
-              large={oLarge}
-              classNameProp={classes.image}
-            />
-            <div>
-              <h1>Office Team</h1>
-              <p>
-                Our dedicated office team plays a crucial role in ensuring
-                smooth operations and effective communication. From dispatchers
-                to logistics coordinators, our knowledgeable professionals work
-                diligently to support our carriers. Our priority is clear
-                communication and transparency, keeping you informed about load
-                assignments, pickup and delivery schedules, and any necessary
-                documentation. Our goal is to create a seamless and efficient
-                experience for carriers, allowing you to focus on the road.
-              </p>
-              <Link className={classes.button} to="/contact">
-                Unlock Your Potential
-              </Link>
-            </div>
-          </div>
-          <div className={classes.career}>
-            {/* <ParallaxBanner
-              className={classes.image}
-              layers={[{ image: snowtruck, speed: 20 }]}
-            /> */}
-            {/* <img
-              src={snowtruckSmall}
-              srcset={`
-    ${snowtruckSmall} 1500w,
-    ${snowtruck} 3000w
-  `}
-              sizes="(max-width: 1500px) 100vw, 1500px"
-              alt="Snow Truck"
-            /> */}
-            <Loader
-              src={sBeyond}
-              small={sSmall}
-              medium={sMedium}
-              large={sLarge}
-              classNameProp={classes.image}
-            />
-            <div>
-              <h1>Company Drivers</h1>
-              <p>
-                Our company drivers are an essential part of our team,
-                representing our commitment to excellence on the road. We value
-                the skills and expertise of our drivers, and we provide a
-                supportive work environment that prioritizes safety, compliance,
-                and professional growth. We offer competitive compensation
-                packages and benefits to attract and retain the best talent in
-                the industry. As a company driver at V&Y Horizon, you can expect
-                fair treatment, ongoing training, and opportunities for
-                advancement within our organization.
-              </p>
-              <Link className={classes.button} to="/contact">
-                Hit the Road With Us
-              </Link>
-            </div>
-          </div>
-          <div className={classes.career}>
-            {/* <ParallaxBanner
-              className={classes.image}
-              layers={[{ image: horizon, speed: 20 }]}
-            /> */}
-            {/* <img
-              src={horizonSmall}
-              srcset={`
-    ${horizonSmall} 1500w,
-    ${horizon} 3000w
-  `}
-              sizes="(max-width: 1500px) 100vw, 1500px"
-              alt="Horizon Truck"
-            /> */}
-            <Loader
-              src={hBeyond}
-              small={hSmall}
-              medium={hMedium}
-              large={hLarge}
-              classNameProp={classes.image}
-            />
-            <div>
-              <h1>Owner Operators</h1>
-              <p>
-                We understand the unique needs and challenges faced by
-                owner-operators, and we are committed to supporting your
-                success. As an owner-operator partnering with V&Y Horizon, you
-                have the freedom to run your own business while enjoying the
-                benefits of our established network and resources. We will never
-                promise anyone golden mountains and then deliver reality far
-                from it. We offer competitive rates, realistic expectations and
-                personalized support to help you optimize your operations and
-                maximize profitability. We value your partnership and strive to
-                create a mutually beneficial relationship based on trust,
-                transparency, and open communication.
-              </p>
-              <Link className={classes.button} to="/contact">
-                Drive Your Destiny
-              </Link>
-            </div>
-          </div>
-          <div className={classes.career}>
-            {/* <ParallaxBanner
-              className={classes.image}
-              layers={[{ image: network, speed: 20 }]}
-            /> */}
-            {/* <img
-              src={networkSmall}
-              srcset={`
-    ${networkSmall} 1500w,
-    ${network} 3000w
-  `}
-              sizes="(max-width: 1500px) 100vw, 1500px"
-              alt="Network"
-            /> */}
-            <Loader
-              src={nBeyond}
-              small={nSmall}
-              medium={nMedium}
-              large={nLarge}
-              classNameProp={classes.image}
-            />
-            <div>
-              <h1>Career Network</h1>
-              <p>
-                Whether you are an office team member, company driver, or
-                owner-operator looking for a trusted and reliable partner, we
-                invite you to join our carrier network at V&Y Horizon. We
-                believe in fostering a collaborative and mutually beneficial and
-                a family like relationship with our employees, recognizing their
-                invaluable contributions to our success. By joining our network,
-                you gain access to a wide range of freight opportunities,
-                personalized support, and a team dedicated to your success.
-              </p>
-              <Link className={classes.button} to="/contact">
-                Expand Your Horizons
-              </Link>
-            </div>
-          </div>
-        </ul>
-
-        <h1 className={classes.title}>Contact Us Today!</h1>
-        <div className={classes["modal-content"]}>          
-          <form
-            id="application-form"
-            className={classes.form}
-            onSubmit={handleSubmit}
-            style={{ opacity: submitted ? 0.5 : 1 }}
+        <AnimationOnScroll animateIn="animate__fadeIn">
+          <div
+            className={classes.banner}
+            style={{ backgroundImage: `url('${fMedium}')` }}
           >
-            <Input
-              name="firstName"
-              value={data.firstName}
-              onChange={handleChange}
-              label={"Name"}
-              placeholder={"John"}
-              error={errors?.firstName}
-              classes={classes}
-            />
-            <Input
-              name="lastName"
-              value={data.lastName}
-              onChange={handleChange}
-              label={"Last Name"}
-              placeholder={"Doe"}
-              error={errors?.lastName}
-              classes={classes}
-            />
-            <Input
-              name="email"
-              value={data.email}
-              onChange={handleChange}
-              label={"Email"}
-              placeholder={"johndoe@domain.com"}
-              error={errors?.email}
-              classes={classes}
-            />
-            <Input
-              name="phone"
-              value={data?.phone}
-              onChange={handleChange}
-              label={"Phone Number"}
-              placeholder={"(123) 456-7890"}
-              error={errors?.phone}
-              classes={classes}
-            />
-            <div className={[classes.textArea]}>
-              <label className={classes.label}>Message</label>
-              <textarea
-                name="description"
-                value={data?.description}
-                id=""
-                cols="30"
-                rows="10"
-                placeholder={"Tell us about yourself and career interests at V&Y Horizon"}
-                onChange={handleChange}
+            <h1>
+              <strong>Life is a highway,</strong>
+              <br /> and truckers drive the soul of the nation.
+            </h1>
+          </div>
+        </AnimationOnScroll>
+
+        <AnimationOnScroll animateIn="animate__fadeIn">
+          <p className={classes.description2}>
+            What's your passion? Check out and check one of the tabs below!
+          </p>
+        </AnimationOnScroll>
+
+        <AnimationOnScroll animateIn="animate__fadeIn">
+          <ul className={classes.careerList}>
+            <div className={classes.career}>
+              <Loader
+                src={oBeyond}
+                small={oSmall}
+                medium={oMedium}
+                large={oLarge}
+                classNameProp={classes.image}
               />
-              {errors?.description && (
-                <div className={`alert alert-danger m-0 mb-3 ${classes.error}`}>
-                  {errors?.description}
-                </div>
-              )}
+              <div>
+                <h1>Office Team</h1>
+                <p>
+                  Our dedicated office team plays a crucial role in ensuring
+                  smooth operations and effective communication. From
+                  dispatchers to logistics coordinators, our knowledgeable
+                  professionals work diligently to support our carriers. Our
+                  priority is clear communication and transparency, keeping you
+                  informed about load assignments, pickup and delivery
+                  schedules, and any necessary documentation. Our goal is to
+                  create a seamless and efficient experience for carriers,
+                  allowing you to focus on the road.
+                </p>
+                <Link className={classes.button} to="/contact">
+                  Unlock Your Potential
+                </Link>
+              </div>
             </div>
-            <button
-              className={"btn btn-primary btn-sm"}
-              type="submit"
-              disabled={submitted || validate()}
-            >
-              {"Submit"}
-            </button>
-          </form>
-        </div>
-
-        <div className={classes.careerFooter}>
-          <span>Please dont forget to follow us</span>
-          <ul className="social-links">
-            <li>
-              <Link className={classes.icon}>
-                <FontAwesomeIcon
-                  icon={["fab", "twitter"]}
-                  size={"2x"}
-                  color="white"
-                />
-                <span>V&Y Horizon</span>
-              </Link>
-            </li>
-            <li>
-              <Link className={classes.icon}>
-                <FontAwesomeIcon
-                  icon={["fab", "facebook"]}
-                  size={"2x"}
-                  color="white"
-                />
-                <span>V&Y Horizon</span>
-              </Link>
-            </li>
-            <li>
-              <Link className={classes.icon}>
-                <FontAwesomeIcon
-                  icon={["fab", "linkedin"]}
-                  size={"2x"}
-                  color="white"
-                />
-                <span>V&Y Horizon</span>
-              </Link>
-            </li>
+            <div className={classes.career}>
+              <Loader
+                src={sBeyond}
+                small={sSmall}
+                medium={sMedium}
+                large={sLarge}
+                classNameProp={classes.image}
+              />
+              <div>
+                <h1>Company Drivers</h1>
+                <p>
+                  Our company drivers are an essential part of our team,
+                  representing our commitment to excellence on the road. We
+                  value the skills and expertise of our drivers, and we provide
+                  a supportive work environment that prioritizes safety,
+                  compliance, and professional growth. We offer competitive
+                  compensation packages and benefits to attract and retain the
+                  best talent in the industry. As a company driver at V&Y
+                  Horizon, you can expect fair treatment, ongoing training, and
+                  opportunities for advancement within our organization.
+                </p>
+                <Link className={classes.button} to="/contact">
+                  Hit the Road With Us
+                </Link>
+              </div>
+            </div>
+            <div className={classes.career}>
+              <Loader
+                src={hBeyond}
+                small={hSmall}
+                medium={hMedium}
+                large={hLarge}
+                classNameProp={classes.image}
+              />
+              <div>
+                <h1>Owner Operators</h1>
+                <p>
+                  We understand the unique needs and challenges faced by
+                  owner-operators, and we are committed to supporting your
+                  success. As an owner-operator partnering with V&Y Horizon, you
+                  have the freedom to run your own business while enjoying the
+                  benefits of our established network and resources. We will
+                  never promise anyone golden mountains and then deliver reality
+                  far from it. We offer competitive rates, realistic
+                  expectations and personalized support to help you optimize
+                  your operations and maximize profitability. We value your
+                  partnership and strive to create a mutually beneficial
+                  relationship based on trust, transparency, and open
+                  communication.
+                </p>
+                <Link className={classes.button} to="/contact">
+                  Drive Your Destiny
+                </Link>
+              </div>
+            </div>
+            <div className={classes.career}>
+              <Loader
+                src={nBeyond}
+                small={nSmall}
+                medium={nMedium}
+                large={nLarge}
+                classNameProp={classes.image}
+              />
+              <div>
+                <h1>Career Network</h1>
+                <p>
+                  Whether you are an office team member, company driver, or
+                  owner-operator looking for a trusted and reliable partner, we
+                  invite you to join our carrier network at V&Y Horizon. We
+                  believe in fostering a collaborative and mutually beneficial
+                  and a family like relationship with our employees, recognizing
+                  their invaluable contributions to our success. By joining our
+                  network, you gain access to a wide range of freight
+                  opportunities, personalized support, and a team dedicated to
+                  your success.
+                </p>
+                <Link className={classes.button} to="/contact">
+                  Expand Your Horizons
+                </Link>
+              </div>
+            </div>
           </ul>
-          <span>Thank you!</span>
-        </div>
+        </AnimationOnScroll>
 
-        <FooterComponent />
+        <AnimationOnScroll animateIn="animate__fadeIn">
+          <h1 className={classes.title}>Contact Us Today!</h1>
+          <div className={classes["modal-content"]}>
+            <form
+              id="application-form"
+              className={classes.form}
+              onSubmit={handleSubmit}
+              style={{ opacity: submitted ? 0.5 : 1 }}
+            >
+              <Input
+                name="firstName"
+                value={data.firstName}
+                onChange={handleChange}
+                label={"Name"}
+                placeholder={"John"}
+                error={errors?.firstName}
+                classes={classes}
+              />
+              <Input
+                name="lastName"
+                value={data.lastName}
+                onChange={handleChange}
+                label={"Last Name"}
+                placeholder={"Doe"}
+                error={errors?.lastName}
+                classes={classes}
+              />
+              <Input
+                name="email"
+                value={data.email}
+                onChange={handleChange}
+                label={"Email"}
+                placeholder={"johndoe@domain.com"}
+                error={errors?.email}
+                classes={classes}
+              />
+              <Input
+                name="phone"
+                value={data?.phone}
+                onChange={handleChange}
+                label={"Phone Number"}
+                placeholder={"(123) 456-7890"}
+                error={errors?.phone}
+                classes={classes}
+              />
+              <div className={[classes.textArea]}>
+                <label className={classes.label}>Message</label>
+                <textarea
+                  name="description"
+                  value={data?.description}
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder={
+                    "Tell us about yourself and career interests at V&Y Horizon"
+                  }
+                  onChange={handleChange}
+                />
+                {errors?.description && (
+                  <div
+                    className={`alert alert-danger m-0 mb-3 ${classes.error}`}
+                  >
+                    {errors?.description}
+                  </div>
+                )}
+              </div>
+              <button
+                className={"btn btn-primary btn-sm"}
+                type="submit"
+                disabled={submitted || validate()}
+              >
+                {"Submit"}
+              </button>
+            </form>
+          </div>
+        </AnimationOnScroll>
+
+        <AnimationOnScroll animateIn="animate__fadeIn">
+          <div className={classes.careerFooter}>
+            <span>Please dont forget to follow us</span>
+            <ul className="social-links">
+              <li>
+                <Link className={classes.icon}>
+                  <FontAwesomeIcon
+                    icon={["fab", "twitter"]}
+                    size={"2x"}
+                    color="white"
+                  />
+                  <span>V&Y Horizon</span>
+                </Link>
+              </li>
+              <li>
+                <Link className={classes.icon}>
+                  <FontAwesomeIcon
+                    icon={["fab", "facebook"]}
+                    size={"2x"}
+                    color="white"
+                  />
+                  <span>V&Y Horizon</span>
+                </Link>
+              </li>
+              <li>
+                <Link className={classes.icon}>
+                  <FontAwesomeIcon
+                    icon={["fab", "linkedin"]}
+                    size={"2x"}
+                    color="white"
+                  />
+                  <span>V&Y Horizon</span>
+                </Link>
+              </li>
+            </ul>
+            <span>Thank you!</span>
+          </div>
+        </AnimationOnScroll>
+
+        <AnimationOnScroll animateIn="animate__fadeIn">
+          <FooterComponent />
+        </AnimationOnScroll>
       </div>
     </React.Fragment>
   );
