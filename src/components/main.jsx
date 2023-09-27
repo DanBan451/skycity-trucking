@@ -51,6 +51,9 @@ import image7 from "../images/partnerships/ptl-logo-emblem-outlined-rgb.svg";
 import image8 from "../images/partnerships/UIIALogo.png";
 import image9 from "../images/partnerships/union-pacific-logo-png-transparent.png";
 
+// import { Query } from "react-apollo";
+// import HOME_QUERY from "../CMS/main.js";
+
 export default function Main({ navigation }) {
   const { t } = useTranslation();
 
@@ -202,7 +205,6 @@ export default function Main({ navigation }) {
   return (
     <React.Fragment>
       <div className={`${classes.fixed} fixed`}></div>
-
       <div className={classes.wrapper}>
         <div className={classes.header}>
           <Loader
@@ -279,11 +281,6 @@ export default function Main({ navigation }) {
               style={{ maxHeight: "100%" }}
             />
           </div>
-
-          {/* <ParallaxBanner
-              className={classes.serviceImage}
-              layers={[{ image: warehouse, speed: 20 }]}
-            /> */}
 
           <Loader
             src={wBeyond}
