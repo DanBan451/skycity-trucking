@@ -5,9 +5,9 @@ import classes from "../../styles/slideshow.module.css";
 import scrollDown from "../../images/icons8-scroll-down-100.png";
 import { useTranslation } from "react-i18next";
 
-import Image1 from "../../images/home/timelab-pro-sWOvgOOFk1g-unsplash.jpg";
-import Image2 from "../../images/home/airport.jpg";
-import Image3 from "../../images/home/betterimage.jpg";
+import Image1 from "../../images/home/slideshow_1.jpg";
+import Image2 from "../../images/home/slidershow_2.jpg";
+import Image3 from "../../images/home/slideshow_3.jpg";
 
 import openCircle from "../../images/home/icons8-circle-100.png";
 import closedCircle from "../../images/home/icons8-filled-circle-100.png";

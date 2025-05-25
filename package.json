@@ -27,7 +27,7 @@
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
     "react-slideshow-image": "^4.1.1",
-    "react-slideshow-with-pagination": "^1.0.2",
+    "swiper": "^11.0.0",
     "react-toastify": "^9.1.1",
     "reactstrap": "^9.1.4",
     "sass": "^1.55.0",

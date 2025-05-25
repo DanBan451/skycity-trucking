@@ -7,11 +7,11 @@ import Service from "../components/common/service";
 import Footer from "../components/common/Footer";
 import SlideShow from "../components/common/SlideShow";
 
-import warehouse from "../images/home/petrebels-JwMGy1h-JsY-unsplash.jpg";
-import twoSemisOnRoad from "../images/home/warehouse.jpg";
-import semiOnRoad from "../images/home/trusted.jpg";
+import warehouse from "../images/home/warehouse.jpg";
+import drayageServices from "../images/services/drayage.jpg";
+import trustedCompanies from "../images/professional-truck-driver-entering-his-truck-long-vehicle-holding-thumbs-up-1024x683.jpg";
 import largeSemi from "../images/home/Large-semi-truck-hauling-freight-on-the-open-highway-in-the-western-USA-under-an-evening-sky.jpg";
-import personLookingAtComputer from "../images/home/thisisengineering-raeng-lLrZy195sIU-unsplash.jpg";
+import careersImage from "../images/careers/memento-media-SuDN17Hzudc-unsplash.jpg";
 
 import classes from "../styles/main.module.css";
 
@@ -50,14 +50,14 @@ export default function Main({ navigation }) {
           endpoint={'/services'}          
         />
         <Service
-          image={twoSemisOnRoad}
+          image={drayageServices}
           title={t("main.services.service-3.h1")}
           desc={t("main.services.service-3.span")}
           actionCall={t("main.services.service-3.Link")}
           endpoint={'/contact'}          
         />
         <Service
-          image={personLookingAtComputer}
+          image={careersImage}
           title={t("main.services.service-4.h1")}
           desc={t("main.services.service-4.span")}
           actionCall={t("main.services.service-4.Link")}
@@ -65,7 +65,7 @@ export default function Main({ navigation }) {
           endpoint={'/careers'}          
         />
         <Service
-          image={semiOnRoad}
+          image={trustedCompanies}
           title={t("main.services.service-5.h1")}
           desc={t("main.services.service-5.span")}
           actionCall={t("main.services.service-5.Link")}
