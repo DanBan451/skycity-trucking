@@ -13,7 +13,7 @@ h1 {
   height: auto;
   width: 95%;
   margin: auto;  
-  max-width: 1700px;
+  max-width: 1523px;
   height: 45vh;
   overflow: hidden;
 }
@@ -38,7 +38,7 @@ h1 {
   font-size: 20px;
   margin-top: 30px;
   margin-bottom: 30px;
-  max-width: 1700px;
+  max-width: 1523px;
   margin-bottom: 10vh;
 }
 
@@ -79,7 +79,7 @@ ul.careerList .career img {
 
 .benefitsWrapper {
   margin-bottom: 100px;
-  max-width: 1700px;  
+  max-width: 1523px;  
   width: 95%;
   margin: auto;
   margin-bottom: 100px;
@@ -128,7 +128,7 @@ ul.careerList .career img {
 
 
 .applyWrapper {  
-  max-width: 1700px;  
+  max-width: 1523px;  
   width: 95%;
   margin: auto;    
 }
@@ -311,10 +311,28 @@ ul.careerList .career img {
 }
 @media only screen and (min-width: 1200px) {
   .header {
-    height: 37vh;    
+    height: 37vh;
+    max-width: 1523px;
+    width: 98%;
   }
   .description {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 10vh;
     padding-right: 300px;
+  }
+  .benefitsWrapper {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+  }
+  .applyWrapper {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
   }
   ul.careerList .career {
     /* gap: 300px; */
@@ -329,6 +347,58 @@ ul.careerList .career img {
     max-width: 900px;     
     margin: 0;
     margin-left: 15%;
+  }
+}
+
+@media only screen and (min-width: 1260px) {
+  .header {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
+  }
+  .description {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 10vh;
+  }
+  .benefitsWrapper {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+  }
+  .applyWrapper {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .header {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
+  }
+  .description {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 10vh;
+  }
+  .benefitsWrapper {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+  }
+  .applyWrapper {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
   }
 }
 

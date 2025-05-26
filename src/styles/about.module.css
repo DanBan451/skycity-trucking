@@ -83,7 +83,8 @@ h1 {
 @media only screen and (min-width: 1200px) {
   .header {
     height: 37vh;
-    max-width: 1700px;
+    max-width: 1523px;
+    width: 98%;
   }  
   .header h1 { 
     width: 30%;          
@@ -112,15 +113,46 @@ h1 {
 }
 @media only screen and (min-width: 1200px) {
   .content {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
     padding-left: 50px;
   }  
   .content .features {    
     flex-basis: 40%;
   }
 }
+@media only screen and (min-width: 1260px) {
+  .header {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
+  }
+  .content {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
+    padding-left: 50px;
+  }
+}
+
 @media only screen and (min-width: 1500px) {
   .content .features {    
     flex-basis: 35%;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .header {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
+  }
+  .content {
+    max-width: 1523px;
+    width: 98%;
+    margin: 0 auto;
+    padding-left: 50px;
   }
 }
 
