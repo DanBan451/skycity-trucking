@@ -24,8 +24,8 @@ import { initReactI18next } from "react-i18next";
 import Backend from "i18next-xhr-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-const fallbackLng = ["EN"];
-const availableLanguages = ["EN", "RS", "UK"];
+const fallbackLng = ["en"];
+const availableLanguages = ["en", "rs", "uk"];
 
 i18n
   .use(Backend)
@@ -33,6 +33,7 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng,
+    lng: "en",
     detection: {
       checkWhitelist: true,
     },
@@ -42,23 +43,8 @@ i18n
     interpolation: {
       escapeValue: false, // no need for react. it escapes by default
     },
-
-    loadPath: (lng, ns) => {
-      // Get the base URL of the app
-      const baseUrl = window.location.origin + window.location.pathname;
-
-      // Check if the app is running in production
-      const isProduction = process.env.NODE_ENV === "production";
-
-      // Construct the load path for the translation file
-
-      const path = isProduction
-        ? `/locales/${lng.charAt(0).toLowerCase() + lng.slice(1)}/${ns}.json`
-        : `/locales/${lng}/${ns}.json`;
-
-      console.log("Translation file URL: ", baseUrl + path);
-
-      return path;
+    backend: {
+      loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
   });
 

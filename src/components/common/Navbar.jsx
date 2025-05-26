@@ -9,7 +9,7 @@ import globe from "../../images/home/globe.svg";
 import classes from "../../styles/navbar.module.css";
 
 function NavBarComponent({ navigation }) {
-  const [language, setLanguage] = useState("EN");
+  const [language, setLanguage] = useState("en");
   const { t } = useTranslation();
 
   const handleLanguageChange = (value) => {
