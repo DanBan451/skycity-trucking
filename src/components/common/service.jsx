@@ -1,15 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import useWindowDimensions from "../../utils/useWindowDimensions";
 import classes from "../../styles/main.module.css";
 
-const Service = ({ image, title, desc, actionCall, styles, endpoint }) => { 
+const Service = ({ image, title, desc, actionCall, styles, endpoint }) => {
+  const paragraphs = Array.isArray(desc) ? desc : [desc];
   return (
     <div className={`${classes.service} ${[styles]}`}>      
       <div style={{ backgroundImage: `url(${image})` }} className={`${classes.serviceImage}`} />
       <div>
         <h1>{title}</h1>
-        <span>{desc}</span>
+        {paragraphs.map((paragraph, index) => (
+          <span key={index}>{paragraph}</span>
+        ))}
         <Link className={`btn ${classes.serviceBtn}`} to={endpoint}>{actionCall}</Link>
       </div>
     </div>    

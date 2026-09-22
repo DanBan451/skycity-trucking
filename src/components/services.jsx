@@ -1,4 +1,4 @@
-import React, { img } from "react";
+import React from "react";
 import NavbarComponent from "../components/common/Navbar";
 import FooterComponent from "../components/common/Footer";
 import { Link } from "react-router-dom";
@@ -16,6 +16,7 @@ export default function Services({ navigation }) {
       <NavbarComponent />
       <div className={classes.header}>
         <h1 className={classes.title}>{t('services.header-h1')}</h1>
+        <h2 className={classes.tagline}>{t('services.header-h2')}</h2>
         <span className={classes.subTitle}>
           {t('services.header-span')}
         </span>

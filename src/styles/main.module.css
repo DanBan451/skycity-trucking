@@ -58,6 +58,9 @@ span, button { font-weight: 400; }
   font-size: 18px;
   display: block;  
 }
+.services span + span {
+  margin-top: 14px;
+}
 .services .serviceBtn {
   margin-top: 20px;
   margin-bottom: 20px;  
@@ -177,7 +180,8 @@ span, button { font-weight: 400; }
   .services .serviceImage {
     display: flex;
     width: 50%;
-    height: 100%;
+    height: auto;
+    align-self: stretch;
     object-fit: cover;
     object-position: right;
   }
@@ -220,7 +224,7 @@ span, button { font-weight: 400; }
 		margin-top: auto;		
 		overflow-y: visible;
 		display: flex;		
-    height: 48vh;		
+    min-height: 48vh;		
 	}
 	.services .service img {						
 		flex-grow: 0;		
@@ -234,7 +238,11 @@ span, button { font-weight: 400; }
     font-size: 30px;		
   }
   .services span {
-    font-size: 21px;
+    font-size: 19px;
+  }
+  .services .service div {
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   .services .serviceBtn {
     font-size: 25px;    

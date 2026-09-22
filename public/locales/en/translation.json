@@ -2,42 +2,58 @@
   "navbar": {
     "home": "Home",
     "about": "About Us",
-    "services": "Our Services",
+    "services": "Our Capabilities",
     "contact": "Contact Us",
     "careers": "Careers",
     "quote": "Get a Quote"
   },
   "main": {
     "about": {
-      "h1-1": "Freight services specialized in every aspect. ",
-      "h1-2": " Customized to your needs and delivered with excellence.",
-      "span-1": "We understand today's shipping challenges and customer demands that require efficient performance and ",
-      "span-2": " consistent reliability. We offer multiple modes and specialized services tailored to your freight needs."
+      "h1-1": "Truck it. Store it. Transload it. ",
+      "h1-2": " Stage it. Handle it. Deliver it.",
+      "span-1": "From everyday freight to complex project cargo, our goal is simple: make logistics easier for our customers. ",
+      "span-2": " If you're looking for a transportation and logistics partner in the Pacific Northwest that is willing to think beyond the standard solution, welcome to Sky City."
     },
     "services": {
       "service-1": {
-        "h1": "Warehouse & Storage Services",
-        "span": "With multiple warehouse facilities in the Seattle area a total of 90,000 square feet of warehouse space and secured 5-Acre yard with 24 hour video Surveillance as well as an onsite Top Pick for any lifting needs. Whether you have cold storage or crossdocking needs, we provide food-grade storage solutions with warehouse software, packing and labeling services for all of your transportation needs.",
+        "h1": "Transportation & Drayage",
+        "p": [
+          "From the ports to the final destination, Sky City provides dependable transportation solutions backed by our own assets and experienced operations team. Our capabilities include port drayage, local and regional transportation, flatbed, over-the-road service, oversized and overweight freight, and specialized project moves.",
+          "Whether it's a single container or an ongoing program, our team is built to respond quickly, communicate clearly, and keep freight moving."
+        ],
         "Link": "Get a Quote"
       },
       "service-2": {
-        "h1": "Shipping Solutions",
-        "span": "With over 100 asset-based logistics equipment ranging from standard & super chassis, drayage, dry van, refrigerated, flatbed, stepdeck, and more. Nationwide pick ups, deliveries, air, rail, import and export services. Your one-stop shop for all of your transportation needs.",
-        "Link": "Explore Our Services"
+        "h1": "Warehousing & Transloading",
+        "p": [
+          "Our 100,000-square-foot Sumner, Washington facility provides flexible warehousing, cross-dock and transloading solutions for both food-grade and general commodities.",
+          "With 36 dock doors, ramp access, secure parking and reefer plug capabilities, our facility is equipped to support everything from traditional palletized freight to floor-loaded containers, short- and long-term storage, container transfers, and specialized cargo.",
+          "Our team understands that not every project fits into a standard warehouse model. We work with our customers to develop solutions around the freight, not the other way around."
+        ],
+        "Link": "Explore Our Capabilities"
       },
       "service-3": {
-        "h1": "Drayage",
-        "span": "Drayage made simple with Sky City specialists. We help reduce the costs associated with the use of containers to haul freight. With access to ports nationwide, our drivers are TWIC equipped and are well experienced for quick and hassle-free export and import solutions",
+        "h1": "Breakbulk & Project Cargo",
+        "p": [
+          "Sky City has expanded our capabilities to provide comprehensive breakbulk and project cargo logistics throughout the Pacific Northwest.",
+          "Our team can support oversized and out-of-gauge cargo, overweight transloads, open-top container transloading, top and crane flips, heavy and specialized freight, project staging, flatbed transportation, container stripping and loading, and other non-standard cargo requirements.",
+          "With access to both our Sumner facility and our 5-acre secured yard in the Port of Tacoma area, we have the space, equipment and transportation resources to support complex cargo from port arrival through final delivery."
+        ],
         "Link": "Get a Quote"
       },
       "service-4": {
-        "h1": "Careers at Sky City Trucking",
-        "span": "If you are looking for a place to grow and thrive in the transportation business, Sky City is for you. We are looking for people like you to help us lead and make an impact in the industry. Highly competitive pay and incentives for company drivers, owner operators, warehouse and dispatch employees.",
-        "Link": "Work for Sky City Trucking"
+        "h1": "Container & Port Support",
+        "p": [
+          "Our proximity to the Ports of Tacoma and Seattle allows Sky City to provide an integrated solution for importers, exporters, freight forwarders, NVOCCs, ocean carriers and project cargo customers.",
+          "Services include drayage, container storage, transloading, cross-docking, empty container storage, overweight cargo handling and coordinated transportation, all managed through one team."
+        ],
+        "Link": "Explore Our Capabilities"
       },
       "service-5": {
-        "h1": "Trusted by companies like yours",
-        "span": "We're no stranger to finding solutions. We work every day to improve the way freight is moved for shippers across North America. Our services are more than just getting the job done, it's about providing a smooth, worry-free experience that contributes to our customers overall success. Our moral and ethical values are threaded throughout our internal business procedures, and this is reflected in the way we treat Our customers. We live and breathe our values, making sure your needs are met.",
+        "h1": "Logistics & Brokerage",
+        "p": [
+          "When a shipment requires resources beyond our own assets, Sky City Logistics extends our reach through our brokerage network. This allows us to provide additional capacity and transportation solutions while maintaining the responsive service and communication our customers expect from Sky City."
+        ],
         "Link": "Contact Us Today"
       }
     },
@@ -49,10 +65,10 @@
   },
   "slideshow": {
     "headerContent": {
-      "h1-1": "Specializing in Transportation ",
-      "h1-2": "Services Nationwide.",
-      "h2-1": "Transportation services that help you control costs,",
-      "h2-2": " increase efficiency and deliver freight solutions.",
+      "h1-1": "One Team. ",
+      "h1-2": "Multiple Solutions.",
+      "h2-1": "What separates Sky City isn't simply the number of services we offer;",
+      "h2-2": " it's our ability to bring those services together.",
       "Link_1": "Ship with Sky City Trucking",
       "Link_2": "Drive for Sky City Trucking"
     },
@@ -63,92 +79,147 @@
   },
 
   "about": {
-    "header-h1": "About Us",
+    "header-h1": "Sky City Trucking",
+    "header-h2": "Driven by Performance. Powered by Partnership.",
     "content": {
-      "p_1": "We believe in providing safe and reliable services no matter the destination. We're dedicated to deliver the best service possible, putting the power of logistics to work for you. Our transportatioon solutions help you get better results, encounter fewer problems, and get more done every day.",
-      "p_2": "Specializing in cross docking services to help you reduce warehouse costs, shorten delivery lead times, and increase order fill rates. Utilizing our 90,000 sq. ft. warehouse, our professional and knowledgeable staff is prepared to handle all forms of freight from ground height to oversized. Whether you have an urgent, temporary or long term storage need, our warehousing team is equipped to create an individual plan for you."
-    },
-    "features": {
-      "h1": "COMPANY FEATURES & SERVICES",
-      "span_1": "Full Truckload & LTL Services Nationwide",
-      "span_2": "Drayage, Import & Export Services Nationwide",
-      "span_3": "Rail Service",
-      "span_4": "Canada Cross-Border",
-      "span_5": "Dry Van, Reefer, Flatbed, Stepdeck, Over-Sized, Pilot Cars, Super & Standard Chassis",
-      "span_6": "Onsite Top-Pick Crane",
-      "span_7": "Air Services",
-      "span_8": "90,000 sq. ft. Warehouse Space",
-      "span_9": "Food-grade & Temp. Controlled Storage",
-      "span_10": "Warehouse Software for Labeling & Repacking",
-      "span_11": "Dedicated Warehousing & Distribution",
-      "span_12": "Specialist",
-      "span_13": "Redeliveries",
-      "span_14": "Brokerage Division"
+      "p_1": "Sky City Trucking is a family-owned, Christian-valued 3PL provider based in the Pacific Northwest, delivering nationwide transportation, warehousing, and logistics solutions with integrity, reliability, and service you can count on.",
+      "p_2": "Our diverse capabilities allow us to support every stage of the supply chain, from port drayage and transportation to warehousing, transloading, heavy haul, container storage, and final-mile delivery. With more than 100,000 square feet of food-grade certified and general commodity warehouse space, along with a 5-acre secured yard in the Port of Tacoma area, Sky City is equipped to handle everything from everyday freight to oversized, specialized, and complex cargo.",
+      "p_3": "We provide a true end-to-end logistics solution, seamlessly coordinating transportation, transloading, warehousing, inventory management, and final delivery through one experienced team.",
+      "p_4": "What truly sets Sky City apart is our customer-driven approach. Built on Christian values, we believe in doing business with integrity, treating people with respect, communicating openly, and building relationships that last. Our team provides proactive communication and real-time visibility throughout the transportation process because we believe logistics should be simple, transparent, and dependable.",
+      "p_5": "At Sky City Trucking, we don't just move freight, we build partnerships. By combining industry expertise, flexible solutions, and exceptional customer service, we go beyond simply getting the job done. We become an extension of our customers' teams and a logistics partner they can depend on."
     }
   },
 
   "services": {
-    "header-h1": "Our Services",
-    "header-span": "Reliable service that you can count on. We offer capacity for every shipment with competitive rates. Our transportation solutions help you get better results, encounter fewer problems, and get more done every day.",
-    "card_1": {
-      "h1": "Warehousing Solutions",
-      "p": "Your one-stop warehouse and crossdocking solutions tailored to your unique needs."
+    "header-h1": "Our Capabilities",
+    "header-h2": "One Team. Complete Logistics Solutions.",
+    "header-span": "From port to warehouse to final delivery, Sky City Trucking provides integrated transportation, warehousing, transloading, and specialized cargo solutions throughout the Pacific Northwest and nationwide. Our combination of asset-based transportation, warehouse capacity, secured yard space, specialized equipment, and an experienced logistics team allows us to manage both everyday freight and complex projects from start to finish.",
+    "cta": "Get a Quote",
+    "section_1": {
+      "h1": "Port Drayage & Container Services",
+      "intro": [
+        "Strategically positioned to serve the Ports of Tacoma and Seattle, Sky City provides dependable port drayage and container solutions designed to keep import and export freight moving efficiently."
+      ],
+      "list-header": "Our capabilities include:",
+      "items": [
+        "Import and export drayage",
+        "20' and 40' container moves",
+        "5-axle Super Chassis",
+        "20'/40' Slider Super Chassis",
+        "Overweight container transportation",
+        "Empty container returns and storage",
+        "Container stripping and loading",
+        "Port-to-warehouse transportation",
+        "Transload and final-delivery coordination"
+      ],
+      "outro": []
     },
-    "card_2": {
-      "h1": "Drayage",
-      "p": "Save time and enjoy maximum flexibility with our drayage and inland shipping services."
+    "section_2": {
+      "h1": "Transportation",
+      "intro": [
+        "Our transportation network gives customers flexible capacity for local, regional, and nationwide freight."
+      ],
+      "list-header": "Equipment and services include:",
+      "items": [
+        "Dry vans",
+        "Refrigerated trailers",
+        "Flatbeds",
+        "Step decks",
+        "RGN / specialized equipment",
+        "Local and over-the-road transportation",
+        "Final-mile delivery",
+        "Dedicated transportation solutions",
+        "Oversized and specialized freight"
+      ],
+      "outro": [
+        "Our dedicated 53' MAXI flatbed division provides additional heavy-haul capacity throughout the Pacific Northwest for freight requiring specialized equipment and experienced handling."
+      ]
     },
-    "card_3": {
-      "h1": "Dedicated Truckload",
-      "p": "Strategic fleet services that you can depend on."
+    "section_3": {
+      "h1": "Warehousing & Distribution",
+      "intro": [
+        "Our 100,000+ square feet of food-grade certified, and general commodity warehouse space provides flexible solutions for customers needing short-term storage, long-term warehousing, cross-docking, distribution, and inventory support."
+      ],
+      "list-header": "Warehouse services include:",
+      "items": [
+        "Food-grade certified storage",
+        "General commodity storage",
+        "Short- and long-term storage",
+        "Cross-docking",
+        "Distribution",
+        "Inventory management",
+        "Floor-loaded container unloading",
+        "Palletized freight handling",
+        "Container stuffing and stripping",
+        "Inbound and outbound freight coordination"
+      ],
+      "outro": [
+        "Whether you need space for a single project or an ongoing warehouse program, our team can build a solution around your operation."
+      ]
     },
-    "card_4": {
-      "h1": "Dry Van Shipments",
-      "p": "Your dry-freight shipping needs fulfilled. Equipped with e-tracs, straps, load-bars to ensure that your freight is secure."
+    "section_4": {
+      "h1": "Transloading, Breakbulk & Project Cargo",
+      "intro": [
+        "Not every shipment fits neatly on a pallet—and that's where Sky City shines.",
+        "Our facilities, yard space, equipment, and transportation capabilities allow us to support breakbulk, project cargo, oversized, overweight, and out-of-gauge freight throughout the Pacific Northwest."
+      ],
+      "list-header": "Capabilities include:",
+      "items": [
+        "Oversized and OOG transloading",
+        "Overweight transloads",
+        "Open-top container transloading",
+        "Crane-assisted container flips",
+        "Top loading and unloading",
+        "Flatbed-to-container transfers",
+        "Container-to-flatbed transfers",
+        "Heavy and specialized cargo handling",
+        "Project cargo staging and storage",
+        "Floor-loaded and non-standard freight",
+        "Coordinated transportation to final destination"
+      ],
+      "outro": [
+        "From a single specialized shipment to a multi-container project, our operations team coordinates each stage to keep complex freight moving safely and efficiently."
+      ]
     },
-    "card_5": {
-      "h1": "Refrigerated Solutions",
-      "p": "Maximize our climate-controlled services to make sure that your freight arrives safely and on schedule."
+    "section_5": {
+      "h1": "Secure Yard & Container Storage",
+      "intro": [
+        "Our 5-acre secured yard in the Port of Tacoma area provides additional capacity for container storage, project cargo, equipment, and specialized freight."
+      ],
+      "list-header": "Yard capabilities include:",
+      "items": [
+        "Empty container depot storage",
+        "Loaded and empty container storage",
+        "Project cargo staging",
+        "Oversized freight storage",
+        "Equipment and chassis storage",
+        "Secured outdoor storage",
+        "Crane capabilities up to 75,000 lbs."
+      ],
+      "outro": [
+        "Combined with our transportation and warehousing operations, the yard allows Sky City to provide customers with a flexible solution when freight requires more than a traditional warehouse."
+      ]
     },
-    "card_6": {
-      "h1": "Flatbed & Stepdeck",
-      "p": "Whether shipping overdinmensional or heavy haul loads, trust our flatbed freight experts to help keep your unique cargo moving."
-    },
-    "card_7": {
-      "h1": "Conestega",
-      "p": "Providing security, protection, and versatility of loading and unloading."
-    },
-    "card_8": {
-      "h1": "Power Only Trucks",
-      "p": "Cover your most specific logistic needs with Our power-only truckload services."
-    },
-    "card_9": {
-      "h1": "Less-Than-Truckload",
-      "p": "Get the most from our LTL shipping with reliable options and complete shipment visibility."
-    },
-    "card_10": {
-      "h1": "Drop Trailer",
-      "p": "Gain more control in scheduling and timing your shipments so you can offer better service and visibility to your customers."
-    },
-    "card_11": {
-      "h1": "Oversized Shipments",
-      "p": "Solutions for your large projects and overdimensional freight - shipping anything, anywhere, anytime."
-    },
-    "card_12": {
-      "h1": "Military & Specialized",
-      "p": "Whether you're looking for specific services or specialized freight, sky City Trucking has you covered."
-    },
-    "card_13": {
-      "h1": "Air",
-      "p": "Strategic shipping solutions for your high-value, time-critical freight."
-    },
-    "card_14": {
-      "h1": "Intermodal",
-      "p": "Conveniernt truckload shipping with the long-haul economy of intermodal rail."
-    },
-    "card_15": {
-      "h1": "Cross-Border",
-      "p": "Maximize with our cross-border supply chain solutions. Providing you with transportation services to and from Canada and Alaska."
+    "section_6": {
+      "h1": "3PL & Logistics Management",
+      "intro": [
+        "Sky City provides more than individual transportation and warehouse services, we can manage the entire movement."
+      ],
+      "list-header": "Through our asset-based operations and extensive transportation network, we coordinate:",
+      "items": [
+        "Drayage",
+        "Transportation",
+        "Transloading",
+        "Warehousing",
+        "Inventory management",
+        "Appointment scheduling",
+        "Shipment tracing",
+        "Final-mile delivery",
+        "Specialized and project cargo transportation"
+      ],
+      "outro": [
+        "Our customers have one team and one point of contact coordinating the process from origin to final delivery."
+      ]
     },
     "buttonsWrapper": {
       "h1": "Start Shipping with SkyCity Trucking Today",
@@ -236,7 +307,7 @@
     "links-header": "Quick Links",
     "link_1": "Home",
     "link_2": "About Us",
-    "link_3": "Our Services",
+    "link_3": "Our Capabilities",
     "link_4": "Contact Us",
     "link_5": "Careers",
     "link_6": "Get a Quote",
