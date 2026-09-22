@@ -159,7 +159,7 @@
   }
   .headerContent h1,
   .headerContent h2 {
-    margin-top: 0px;
+    margin: 0;
   }
   .headerContent h1 {
     font-size: 40px;
@@ -175,7 +175,6 @@
     font-weight: 400;
     color: black;
     text-align: left;
-    margin: 0;
   }
   .headerButtons a {
     font-size: 25px;
