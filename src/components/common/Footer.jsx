@@ -59,8 +59,11 @@ export default function FooterComponent() {
               <li><strong>{t('footer.phone')}</strong>: (253) 719-8814</li>
               <li><strong>{t('footer.email')}</strong>: contact@skycitytrucking.com</li>             
               <li><strong>{t('footer.fax')}</strong>: 206.260.7200</li>             
-              <li><strong>{t('footer.corp-office')}</strong>: <br/>5555 8th St E, Ste B, Fife, Wa 98424</li>
-              <li><strong>{t('footer.ware-office')}</strong>: 4101 Industry Dr E, Suite I, Fife, WA 98424</li>
+              <li>
+                <strong>{t('footer.corp-office')}</strong>:
+                <br />
+                <span style={{ whiteSpace: "pre-line" }}>{t('footer.office-address')}</span>
+              </li>
               <li><strong>{t('footer.hours-1')}</strong>{t('footer.hours-2')}</li>              
               <li>{t('footer.emergency-1')}<br/>{t('footer.emergency-2')}</li>              
             </ul>

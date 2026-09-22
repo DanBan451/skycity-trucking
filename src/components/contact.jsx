@@ -178,7 +178,7 @@ export default function Contact() {
                 <img src={location} alt="" />
                 <label htmlFor="">{t('contact.content_1.label')}</label>
               </div>
-              <span>{t('contact.content_1.span')}</span>
+              <span style={{ whiteSpace: "pre-line" }}>{t('contact.content_1.span')}</span>
             </div>
             <div className={classes.item}>
               <div>
@@ -200,36 +200,6 @@ export default function Contact() {
                 <label htmlFor="">{t('contact.content_4.label')}</label>
               </div>
               <span>{t('contact.content_4.span')}</span>
-            </div>
-          </div>
-          <div className={classes.text}>
-            <div className={classes.item}>
-              <div>
-                <img src={location} alt="" />              
-                <label htmlFor="">{t('contact.content_5.label')}</label>
-              </div>
-              <span>{t('contact.content_5.span')}</span>
-            </div>
-            <div className={classes.item}>
-              <div>
-                <img src={mail} alt="" />
-                <label htmlFor="">{t('contact.content_6.label')}</label>
-              </div>
-              <span>{t('contact.content_6.span')}</span>
-            </div>
-            <div className={classes.item}>
-              <div>
-                <img src={phone} alt="" />
-                <label htmlFor="">{t('contact.content_7.label')}</label>
-              </div>
-              <span>{t('contact.content_7.span')}</span>
-            </div>
-            <div className={classes.item}>
-              <div>
-                <img src={fax} alt="" />
-                <label htmlFor="">{t('contact.content_8.label')}</label>
-              </div>
-              <span>{t('contact.content_8.span')}</span>
             </div>
           </div>
         </div>

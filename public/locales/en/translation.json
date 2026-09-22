@@ -238,8 +238,8 @@
     "description": "How can we help you?",
     "button": "Send Message",
     "content_1": {
-      "label": "Corporare office & warehouse: ",
-      "span": "5555 8th St E, Ste B, Fife, Wa 98424"
+      "label": "Office/Warehouse: ",
+      "span": "3520 142nd Ave E\nSTE 200\nSumner WA 98390"
     },
     "content_2": {
       "label": "Email: ",
@@ -254,8 +254,8 @@
       "span": "206.260.7200"
     },
     "content_5": {
-      "label": "Warehouse office: ",
-      "span": "4101 Industry Dr E, Suite I, Fife, WA 98424"
+      "label": "Office/Warehouse: ",
+      "span": "3520 142nd Ave E\nSTE 200\nSumner WA 98390"
     },
     "content_6": {
       "label": "Email: ",
@@ -315,8 +315,9 @@
     "phone": "Phone",    
     "email": "Email",
     "fax": "Fax",
-    "corp-office": "Corporate office & Warehouse Address",
-    "ware-office": "Warehouse Address",
+    "corp-office": "Office/Warehouse",
+    "ware-office": "Office/Warehouse",
+    "office-address": "3520 142nd Ave E\nSTE 200\nSumner WA 98390",
     "hours-1": "Office Hours",
     "hours-2": ": 5:00 AM - 6:00 PM (Monday-Friday)",
     "emergency-1": "For emergency/ after-hours inquiries, customer",
